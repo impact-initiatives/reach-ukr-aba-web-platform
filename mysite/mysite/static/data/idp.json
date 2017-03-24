@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "KOATUU": 500000000,
+    "Name": "Vinnytska",
+    "IDPs": 14283
+  },
+  {
+    "id": 2,
+    "KOATUU": 700000000,
+    "Name": "Volynska",
+    "IDPs": 4729
+  },
+  {
+    "id": 3,
+    "KOATUU": 1200000000,
+    "Name": "Dnipropetrovska",
+    "IDPs": 77156
+  },
+  {
+    "id": 4,
+    "KOATUU": 1400000000,
+    "Name": "Donetska",
+    "IDPs": 566779
+  },
+  {
+    "id": 5,
+    "KOATUU": 1800000000,
+    "Name": "Zhytomyrska",
+    "IDPs": 12013
+  },
+  {
+    "id": 6,
+    "KOATUU": 2100000000,
+    "Name": "Zakarpatska",
+    "IDPs": 3508
+  },
+  {
+    "id": 7,
+    "KOATUU": 2300000000,
+    "Name": "Zaporizska",
+    "IDPs": 95734
+  },
+  {
+    "id": 8,
+    "KOATUU": 2600000000,
+    "Name": "Ivano-Frankivska",
+    "IDPs": 4760
+  },
+  {
+    "id": 9,
+    "KOATUU": 3200000000,
+    "Name": "Kyivska",
+    "IDPs": 56743
+  },
+  {
+    "id": 10,
+    "KOATUU": 3500000000,
+    "Name": "Kirovohradska",
+    "IDPs": 14892
+  },
+  {
+    "id": 11,
+    "KOATUU": 4400000000,
+    "Name": "Luhanska",
+    "IDPs": 293416
+  },
+  {
+    "id": 12,
+    "KOATUU": 4600000000,
+    "Name": "Lvivska",
+    "IDPs": 12114
+  },
+  {
+    "id": 13,
+    "KOATUU": 4800000000,
+    "Name": "Mykolaivska",
+    "IDPs": 8544
+  },
+  {
+    "id": 14,
+    "KOATUU": 5100000000,
+    "Name": "Odeska",
+    "IDPs": 42075
+  },
+  {
+    "id": 15,
+    "KOATUU": 5300000000,
+    "Name": "Poltavska",
+    "IDPs": 29895
+  },
+  {
+    "id": 16,
+    "KOATUU": 5600000000,
+    "Name": "Rivnenska",
+    "IDPs": 3244
+  },
+  {
+    "id": 17,
+    "KOATUU": 5900000000,
+    "Name": "Sumska",
+    "IDPs": 16263
+  },
+  {
+    "id": 18,
+    "KOATUU": 6100000000,
+    "Name": "Ternopilska",
+    "IDPs": 2506
+  },
+  {
+    "id": 19,
+    "KOATUU": 6300000000,
+    "Name": "Kharkivska",
+    "IDPs": 193429
+  },
+  {
+    "id": 20,
+    "KOATUU": 6500000000,
+    "Name": "Khersonska",
+    "IDPs": 16565
+  },
+  {
+    "id": 21,
+    "KOATUU": 6800000000,
+    "Name": "Khmelnytska",
+    "IDPs": 6891
+  },
+  {
+    "id": 22,
+    "KOATUU": 7100000000,
+    "Name": "Cherkaska",
+    "IDPs": 13862
+  },
+  {
+    "id": 23,
+    "KOATUU": 7300000000,
+    "Name": "Chernivetska",
+    "IDPs": 3425
+  },
+  {
+    "id": 24,
+    "KOATUU": 7400000000,
+    "Name": "Chernihivska",
+    "IDPs": 9593
+  },
+  {
+    "id": 25,
+    "KOATUU": 8000000000,
+    "Name": "Kyiv",
+    "IDPs": 155787
+  }
+]

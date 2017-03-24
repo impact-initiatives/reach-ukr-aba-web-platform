@@ -1,0 +1,452 @@
+[
+ {
+   "KOATUU": 500000000,
+   "Name": "Vinnytska",
+   "Period": "15.12.2016",
+   "IDPs": 14283
+ },
+ {
+   "KOATUU": 700000000,
+   "Name": "Volynska",
+   "Period": "15.12.2016",
+   "IDPs": 4729
+ },
+ {
+   "KOATUU": 1200000000,
+   "Name": "Dnipropetrovska",
+   "Period": "15.12.2016",
+   "IDPs": 77156
+ },
+ {
+   "KOATUU": 1400000000,
+   "Name": "Donetska",
+   "Period": "15.12.2016",
+   "IDPs": 566779
+ },
+ {
+   "KOATUU": 1800000000,
+   "Name": "Zhytomyrska",
+   "Period": "15.12.2016",
+   "IDPs": 12013
+ },
+ {
+   "KOATUU": 2100000000,
+   "Name": "Zakarpatska",
+   "Period": "15.12.2016",
+   "IDPs": 3508
+ },
+ {
+   "KOATUU": 2300000000,
+   "Name": "Zaporizska",
+   "Period": "15.12.2016",
+   "IDPs": 95734
+ },
+ {
+   "KOATUU": 2600000000,
+   "Name": "Ivano-Frankivska",
+   "Period": "15.12.2016",
+   "IDPs": 4760
+ },
+ {
+   "KOATUU": 3200000000,
+   "Name": "Kyivska",
+   "Period": "15.12.2016",
+   "IDPs": 56743
+ },
+ {
+   "KOATUU": 3500000000,
+   "Name": "Kirovohradska",
+   "Period": "15.12.2016",
+   "IDPs": 14892
+ },
+ {
+   "KOATUU": 4400000000,
+   "Name": "Luhanska",
+   "Period": "15.12.2016",
+   "IDPs": 293416
+ },
+ {
+   "KOATUU": 4600000000,
+   "Name": "Lvivska",
+   "Period": "15.12.2016",
+   "IDPs": 12114
+ },
+ {
+   "KOATUU": 4800000000,
+   "Name": "Mykolaivska",
+   "Period": "15.12.2016",
+   "IDPs": 8544
+ },
+ {
+   "KOATUU": 5100000000,
+   "Name": "Odeska",
+   "Period": "15.12.2016",
+   "IDPs": 42075
+ },
+ {
+   "KOATUU": 5300000000,
+   "Name": "Poltavska",
+   "Period": "15.12.2016",
+   "IDPs": 29895
+ },
+ {
+   "KOATUU": 5600000000,
+   "Name": "Rivnenska",
+   "Period": "15.12.2016",
+   "IDPs": 3244
+ },
+ {
+   "KOATUU": 5900000000,
+   "Name": "Sumska",
+   "Period": "15.12.2016",
+   "IDPs": 16263
+ },
+ {
+   "KOATUU": 6100000000,
+   "Name": "Ternopilska",
+   "Period": "15.12.2016",
+   "IDPs": 2506
+ },
+ {
+   "KOATUU": 6300000000,
+   "Name": "Kharkivska",
+   "Period": "15.12.2016",
+   "IDPs": 193429
+ },
+ {
+   "KOATUU": 6500000000,
+   "Name": "Khersonska",
+   "Period": "15.12.2016",
+   "IDPs": 16565
+ },
+ {
+   "KOATUU": 6800000000,
+   "Name": "Khmelnytska",
+   "Period": "15.12.2016",
+   "IDPs": 6891
+ },
+ {
+   "KOATUU": 7100000000,
+   "Name": "Cherkaska",
+   "Period": "15.12.2016",
+   "IDPs": 13862
+ },
+ {
+   "KOATUU": 7300000000,
+   "Name": "Chernivetska",
+   "Period": "15.12.2016",
+   "IDPs": 3425
+ },
+ {
+   "KOATUU": 7400000000,
+   "Name": "Chernihivska",
+   "Period": "15.12.2016",
+   "IDPs": 9593
+ },
+ {
+   "KOATUU": 8000000000,
+   "Name": "Kyiv",
+   "Period": "15.12.2016",
+   "IDPs": 155787
+ },
+ {
+   "KOATUU": 500000000,
+   "Name": "Vinnytska",
+   "Period": "16.03.2015",
+   "IDPs": 10924
+ },
+ {
+   "KOATUU": 700000000,
+   "Name": "Volynska",
+   "Period": "16.03.2015",
+   "IDPs": 3166
+ },
+ {
+   "KOATUU": 1200000000,
+   "Name": "Dnipropetrovska",
+   "Period": "16.03.2015",
+   "IDPs": 71575
+ },
+ {
+   "KOATUU": 1400000000,
+   "Name": "Donetska",
+   "Period": "16.03.2015",
+   "IDPs": 416778
+ },
+ {
+   "KOATUU": 1800000000,
+   "Name": "Zhytomyrska",
+   "Period": "16.03.2015",
+   "IDPs": 8448
+ },
+ {
+   "KOATUU": 2100000000,
+   "Name": "Zakarpatska",
+   "Period": "16.03.2015",
+   "IDPs": 3059
+ },
+ {
+   "KOATUU": 2300000000,
+   "Name": "Zaporizska",
+   "Period": "16.03.2015",
+   "IDPs": 82366
+ },
+ {
+   "KOATUU": 2600000000,
+   "Name": "Ivano-Frankivska",
+   "Period": "16.03.2015",
+   "IDPs": 3484
+ },
+ {
+   "KOATUU": 3200000000,
+   "Name": "Kyivska",
+   "Period": "16.03.2015",
+   "IDPs": 36372
+ },
+ {
+   "KOATUU": 3500000000,
+   "Name": "Kirovohradska",
+   "Period": "16.03.2015",
+   "IDPs": 8540
+ },
+ {
+   "KOATUU": 4400000000,
+   "Name": "Luhanska",
+   "Period": "16.03.2015",
+   "IDPs": 146831
+ },
+ {
+   "KOATUU": 4600000000,
+   "Name": "Lvivska",
+   "Period": "16.03.2015",
+   "IDPs": 8494
+ },
+ {
+   "KOATUU": 4800000000,
+   "Name": "Mykolaivska",
+   "Period": "16.03.2015",
+   "IDPs": 8618
+ },
+ {
+   "KOATUU": 5100000000,
+   "Name": "Odeska",
+   "Period": "16.03.2015",
+   "IDPs": 23356
+ },
+ {
+   "KOATUU": 5300000000,
+   "Name": "Poltavska",
+   "Period": "16.03.2015",
+   "IDPs": 25909
+ },
+ {
+   "KOATUU": 5600000000,
+   "Name": "Rivnenska",
+   "Period": "16.03.2015",
+   "IDPs": 3212
+ },
+ {
+   "KOATUU": 5900000000,
+   "Name": "Sumska",
+   "Period": "16.03.2015",
+   "IDPs": 13651
+ },
+ {
+   "KOATUU": 6100000000,
+   "Name": "Ternopilska",
+   "Period": "16.03.2015",
+   "IDPs": 2442
+ },
+ {
+   "KOATUU": 6300000000,
+   "Name": "Kharkivska",
+   "Period": "16.03.2015",
+   "IDPs": 151974
+ },
+ {
+   "KOATUU": 6500000000,
+   "Name": "Khersonska",
+   "Period": "16.03.2015",
+   "IDPs": 10771
+ },
+ {
+   "KOATUU": 6800000000,
+   "Name": "Khmelnytska",
+   "Period": "16.03.2015",
+   "IDPs": 6822
+ },
+ {
+   "KOATUU": 7100000000,
+   "Name": "Cherkaska",
+   "Period": "16.03.2015",
+   "IDPs": 11845
+ },
+ {
+   "KOATUU": 7300000000,
+   "Name": "Chernivetska",
+   "Period": "16.03.2015",
+   "IDPs": 2405
+ },
+ {
+   "KOATUU": 7400000000,
+   "Name": "Chernihivska",
+   "Period": "16.03.2015",
+   "IDPs": 8170
+ },
+ {
+   "KOATUU": 8000000000,
+   "Name": "Kyiv",
+   "Period": "16.03.2015",
+   "IDPs": 82369
+ },
+ {
+   "KOATUU": 500000000,
+   "Name": "Vinnytska",
+   "Period": "25.02.2016",
+   "IDPs": 13481
+ },
+ {
+   "KOATUU": 700000000,
+   "Name": "Volynska",
+   "Period": "25.02.2016",
+   "IDPs": 4067
+ },
+ {
+   "KOATUU": 1200000000,
+   "Name": "Dnipropetrovska",
+   "Period": "25.02.2016",
+   "IDPs": 75297
+ },
+ {
+   "KOATUU": 1400000000,
+   "Name": "Donetska",
+   "Period": "25.02.2016",
+   "IDPs": 693484
+ },
+ {
+   "KOATUU": 1800000000,
+   "Name": "Zhytomyrska",
+   "Period": "25.02.2016",
+   "IDPs": 10580
+ },
+ {
+   "KOATUU": 2100000000,
+   "Name": "Zakarpatska",
+   "Period": "25.02.2016",
+   "IDPs": 3457
+ },
+ {
+   "KOATUU": 2300000000,
+   "Name": "Zaporizska",
+   "Period": "25.02.2016",
+   "IDPs": 121525
+ },
+ {
+   "KOATUU": 2600000000,
+   "Name": "Ivano-Frankivska",
+   "Period": "25.02.2016",
+   "IDPs": 4126
+ },
+ {
+   "KOATUU": 3200000000,
+   "Name": "Kyivska",
+   "Period": "25.02.2016",
+   "IDPs": 48975
+ },
+ {
+   "KOATUU": 3500000000,
+   "Name": "Kirovohradska",
+   "Period": "25.02.2016",
+   "IDPs": 13133
+ },
+ {
+   "KOATUU": 4400000000,
+   "Name": "Luhanska",
+   "Period": "25.02.2016",
+   "IDPs": 255537
+ },
+ {
+   "KOATUU": 4600000000,
+   "Name": "Lvivska",
+   "Period": "25.02.2016",
+   "IDPs": 11401
+ },
+ {
+   "KOATUU": 4800000000,
+   "Name": "Mykolaivska",
+   "Period": "25.02.2016",
+   "IDPs": 8666
+ },
+ {
+   "KOATUU": 5100000000,
+   "Name": "Odeska",
+   "Period": "25.02.2016",
+   "IDPs": 35703
+ },
+ {
+   "KOATUU": 5300000000,
+   "Name": "Poltavska",
+   "Period": "25.02.2016",
+   "IDPs": 30841
+ },
+ {
+   "KOATUU": 5600000000,
+   "Name": "Rivnenska",
+   "Period": "25.02.2016",
+   "IDPs": 3193
+ },
+ {
+   "KOATUU": 5900000000,
+   "Name": "Sumska",
+   "Period": "25.02.2016",
+   "IDPs": 15339
+ },
+ {
+   "KOATUU": 6100000000,
+   "Name": "Ternopilska",
+   "Period": "25.02.2016",
+   "IDPs": 2712
+ },
+ {
+   "KOATUU": 6300000000,
+   "Name": "Kharkivska",
+   "Period": "25.02.2016",
+   "IDPs": 216352
+ },
+ {
+   "KOATUU": 6500000000,
+   "Name": "Khersonska",
+   "Period": "25.02.2016",
+   "IDPs": 14439
+ },
+ {
+   "KOATUU": 6800000000,
+   "Name": "Khmelnytska",
+   "Period": "25.02.2016",
+   "IDPs": 6721
+ },
+ {
+   "KOATUU": 7100000000,
+   "Name": "Cherkaska",
+   "Period": "25.02.2016",
+   "IDPs": 14405
+ },
+ {
+   "KOATUU": 7300000000,
+   "Name": "Chernivetska",
+   "Period": "25.02.2016",
+   "IDPs": 3177
+ },
+ {
+   "KOATUU": 7400000000,
+   "Name": "Chernihivska",
+   "Period": "25.02.2016",
+   "IDPs": 10074
+ },
+ {
+   "KOATUU": 8000000000,
+   "Name": "Kyiv",
+   "Period": "25.02.2016",
+   "IDPs": 129314
+ }
+]
