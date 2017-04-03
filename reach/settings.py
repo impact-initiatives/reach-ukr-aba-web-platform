@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '172.31.7.209',
-    '.elasticbeanstalk.com'
+    '.elasticbeanstalk.com',
+    '.reach-info.org'
 ]
 
 
