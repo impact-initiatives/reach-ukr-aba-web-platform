@@ -8,6 +8,7 @@ djangocms-googlemap>=0.5
 djangocms-snippet>=1.9
 djangocms-video>=2.0
 djangocms-column>=1.6
+psycopg2==2.6.2
 easy_thumbnails
 django-filer>=1.2
 cmsplugin-filer>=1.1
