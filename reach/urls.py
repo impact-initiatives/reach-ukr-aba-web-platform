@@ -9,14 +9,21 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from .views import *
+from .views import *
+
 
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^draw/$', draw),
+    url(r'^points/$', points),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^aba/', include('aba.urls', namespace='aba', app_name='aba')),
     url(r'^', include('cms.urls')),
+
 ]
 
 # i18n_

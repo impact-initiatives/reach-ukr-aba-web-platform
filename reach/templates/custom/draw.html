@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block libs %}
+    <script src='{% static 'js/mapbox-gl.js' %}'></script>
+    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { top:0; bottom:0; width:100%; }
+        button { cursor: pointer; }
+    </style>
+
+    <style>
+
+        .calculation-box {
+            min-height: 140px;
+            width: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, .9);
+            padding: 15px;
+            text-align: center;
+        }
+
+        #calculate {
+            min-height: 20px;
+            background-color: #3887be;
+            color: #fff;
+            font-family: 'Open Sans';
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        p {
+            font-family: 'Open Sans';
+            margin: 0;
+            font-size: 13px;
+        }
+    </style>
+
+    <script src='{% static 'js/turf.min.js' %}'></script>
+
+
+    <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css' />
+
+    <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
+{% endblock libs %}
+
+
+{% block content %}
+
+<div style="top: 0; bottom: 0">
+    <div id='map'>
+
+
+    </div>
+
+    <div class='calculation-box'>
+        <p>Draw a polygon using the draw tools.</p>
+        <div id='calculate' class='button button'>Calculate area</div>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Enter data
+        </button>
+
+        <div id='calculated-area'></div>
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="city" class="form-control-label">City:</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="form-control-label">Text:</label>
+                            <textarea class="form-control" id="text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block libs2 %}
+
+    <script src="{% static 'data/schools-points.js' %}"></script>
+    <script>
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGVueXNib2lrbyIsImEiOiJjaXpxdzlxMGswMHMzMnFxbzdpYjJoZDN1In0.O3O4iBtTiODWN0C8oGOBwg';
+
+        /* eslint-disable */
+
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/satellite-streets-v10', //hosted style id
+            center: [38.713, 48.040], // starting position
+            zoom: 8 // starting zoom
+        });
+
+        var draw = new MapboxDraw({
+            displayControlsDefault: false,
+            controls: {
+                polygon: true,
+                trash: true
+            }
+        });
+
+        map.addControl(draw);
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+        }));
+
+        var calcButton = document.getElementById('calculate');
+
+        calcButton.onclick = function() {
+            var data = draw.getAll();
+            if (data.features.length > 0) {
+                var area = turf.area(data);
+                // restrict to area to 2 decimal points
+                var rounded_area = Math.round(area*100)/100;
+                var answer = document.getElementById('calculated-area');
+                answer.innerHTML = '<p><strong>' + rounded_area + '</strong></p><p>square meters</p>';
+            } else {
+                alert("Use the draw tools to draw a polygon!");
+            }
+        };
+
+        saveButton = document.getElementById('save');
+        saveButton.onclick= function(){
+            var data = draw.getAll();
+
+            data.features[0].properties['City'] = $('#city').val();
+            data.features[0].properties['Text'] = $('#text').val();
+
+            var features = data.features;
+
+            $('#myModal .modal-body').html('<pre><code class="html">' + JSON.stringify(data, null, 2) + '</code></pre>');
+        };
+
+
+
+
+        //     map.on('click', function (e) {
+        //         console.log(draw.getMode())
+        //     });
+
+    </script>
+    <script src="{% static 'js/schools.js' %}"></script>
+{% endblock libs2 %}

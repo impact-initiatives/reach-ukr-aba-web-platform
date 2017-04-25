@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block libs %}
+    <script src='{% static 'js/mapbox-gl.js' %}'></script>
+    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
+
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}' />
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}' />
+{% endblock libs %}
+
+
+{% block content %}
+
+<div id='map'>
+
+
+    <a href="http://mapbox.com/about/maps" class='mapbox-wordmark' target="_blank">Mapbox</a>
+    <div class="mapbox-attribution-container">
+        <a href="https://www.mapbox.com/map-feedback/">© Mapbox | </a>
+        <a href="http://www.openstreetmap.org/copyright">© OpenStreetMap | </a>
+        <a href="https://www.mapbox.com/map-feedback/" target="_blank"><strong>Improve this map</strong></a>
+    </div>
+</div>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+        <div class="filter">
+            <a href="#" id="reset" class="btn btn-secondary">Reset Filters</a>
+            <button type="button"
+                    class="btn btn-secondary"
+                    title="Controls"
+                    data-html="true"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                    data-content="<code class='highlighter-rouge'>Right Click</code> + <code class='highlighter-rouge'>Move mouse</code> - Rotate Map<br>
+                                          <code class='highlighter-rouge'>Shift</code> + <code class='highlighter-rouge'>Selection</code> - Zoom In">
+                Controls
+            </button>
+        </div>
+
+        <div class="filter">
+            <label for="oblasts">Oblasts:</label>
+            <select multiple id="oblasts" style="display: none"></select>
+        </div>
+
+        <div class="filter">
+            <label for="settlements">Settlements:</label>
+            <select multiple id="settlements" style="display: none"></select>
+        </div>
+
+        <div class="filter">
+            <nav id='filter-group' class='filter-group'></nav>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock content %}
+
+{% block libs2 %}
+
+<script src="{% static 'js/d3.min.js' %}"></script>
+<script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
+<script src='{% static 'js/selectize.min.js' %}'></script>
+
+<!--Loading Data-->
+{#<script src='{% static 'data/schools-points.js' %}'></script>#}
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+<script src="{% static 'js/map-points.js' %}"></script>
+
+
+<script>
+
+
+    var filteredData = [];
+    var settlement = {};
+
+    d3.json("{% static 'data/s.JSON' %}", function(error, data) {
+        var featureCount = data.features.length;
+        var cf = crossfilter(data.features);
+
+
+        var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
+        var type = cf.dimension(function(d) { return d.properties['TYPE_ENG']; });
+        var settlement = cf.dimension(function(d) { return d.properties['ADMIN_4_EN']; });
+
+        var result = type.top(Infinity);
+
+//        console.log(result);
+
+        var oblasts = oblast.group().all().map(function(d) { return d.key });
+
+        $oblasts = d3.select('#oblasts');
+
+        $oblasts.selectAll('li')
+            .data(
+                oblast.group().all().map(function(d) { return d.key })
+            )
+            .enter()
+            .append('option')
+            .attr({ 'value': function(datum) { return datum } })
+            .text(function(datum) { return datum });
+
+        $settlements = d3.select('#settlements');
+
+        $settlements.selectAll('li')
+            .data(
+                settlement.group().all().map(function(d) { return d.key })
+            )
+            .enter()
+            .append('option')
+            .attr({ 'value': function(datum) { return datum } })
+            .text(function(datum) { return datum });
+
+
+        var resetSettlement = function() {
+            settlement.filterAll();
+            filteredData = settlement.top(Infinity);
+            pointsLayer(filteredData);
+        };
+
+        $('#reset').on('click', function(){
+            resetSettlement();
+        });
+
+
+
+        var Selectize = $("#settlements").selectize({
+            plugins: ['remove_button'],
+            delimiter: ',',
+            persist: false,
+            create: function(input) {
+                return {
+                    value: input,
+                    text: input
+                }
+            },
+            sortField: 'text'
+        });
+
+        Selectize.on('change', function (e) {
+            var filters = [];
+            $("#settlements option").each(function() {
+                var value = $(this).val();
+                filters.push(value);
+
+            });
+            resetSettlement();
+            if (filters.length != 0) {
+                settlement.filterFunction(function(d) { return filters.indexOf(d) != -1 });
+                filteredData = settlement.top(Infinity);
+                pointsLayer(filteredData);
+            }
+        });
+
+
+        $('#oblasts').selectize({
+            create: false,
+            sortField: 'text'
+        }).on('change', function(e) {
+            var values = $(this).val();
+
+
+                $(oblasts).each(function (key, value) {
+                    var layer = 'obl-' + value;
+                    if (values.length == 0) {
+                        map.setLayoutProperty(layer, 'visibility', 'visible');
+                    } else {
+                        map.setLayoutProperty(layer, 'visibility',
+                            values.indexOf(value) == -1 ? 'none' : 'visible');
+                    }
+                });
+
+        });
+    });
+
+
+</script>
+
+{% endblock libs2 %}

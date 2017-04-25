@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block libs %}
+    <script src='{% static 'js/mapbox-gl.js' %}'></script>
+    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
+
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}' />
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}' />
+
+
+    <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css' />
+
+    <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
+
+    <style>
+        #menu {
+            background: #fff;
+{#            position: relative;#}
+{#            z-index: 1;#}
+{#            top: 10px;#}
+{#            right: 10px;#}
+            border-radius: 3px;
+            width: 120px;
+            border: 1px solid rgba(0,0,0,0.4);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #menu a {
+            font-size: 13px;
+            color: #404040;
+            display: block;
+            margin: 0;
+            padding: 0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        #menu a:last-child {
+            border: none;
+        }
+
+        #menu a:hover {
+            background-color: #f8f8f8;
+            color: #404040;
+        }
+
+        #menu a.active {
+            background-color: #3887be;
+            color: #ffffff;
+        }
+
+        #menu a.active:hover {
+            background: #3074a4;
+        }
+    </style>
+
+{% endblock libs %}
+
+
+{% block content %}
+    <div id='map'></div>
+    <div>
+
+    </div>
+
+        <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+        <div class="filter">
+            <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+            <button type="button"
+                    class="btn btn-secondary"
+                    title="Controls"
+                    data-html="true"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                    data-content="<code class='highlighter-rouge'>Right Click</code> + <code class='highlighter-rouge'>Move mouse</code> - Rotate Map<br>
+                                          <code class='highlighter-rouge'>Shift</code> + <code class='highlighter-rouge'>Selection</code> - Zoom In">
+                Controls
+            </button>
+        </div>
+
+        <div class="filter">
+            <label for="oblasts">Oblasts:</label>
+            <select multiple id="oblasts" style="display: none"></select>
+        </div>
+
+        <div class="filter">
+            <label for="settlements">Settlements:</label>
+            <select multiple id="settlements" style="display: none"></select>
+        </div>
+
+        <div class="filter">
+            <nav id='filter-group' class='filter-group'></nav>
+            <nav id="menu"></nav>
+
+            <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Enter data
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="">{% csrf_token %}
+                    <div class="modal-body">
+
+                        {{ form }}
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="save">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block libs2 %}
+
+    <script src="{% static 'js/d3.min.js' %}"></script>
+    <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
+    <script src='{% static 'js/selectize.min.js' %}'></script>
+
+    <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
+    <script src="{% static 'js/map-points.js' %}"></script>
+    <script>
+
+
+    var filteredData = [];
+    var settlement = {};
+
+
+    d3.queue()
+      .defer(d3.json, "{% static 'data/aba/avdiivka_schools.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/avdiivka_ca.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/avdiivka_transport.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
+      .await(loadData);
+
+    function loadData(error, data, ca, ca2, settlements) {
+
+        MapInit(data, ca, ca2, settlements);
+
+        var featureCount = data.features.length;
+        var cf = crossfilter(data.features);
+
+
+        var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
+        var type = cf.dimension(function(d) { return d.properties['TYPE_ENG']; });
+        var settlement = cf.dimension(function(d) { return d.properties['ADMIN_4_EN']; });
+
+        var result = type.top(Infinity);
+
+//        console.log(result);
+
+        var oblasts = oblast.group().all().map(function(d) { return d.key });
+
+        $oblasts = d3.select('#oblasts');
+
+        $oblasts.selectAll('li')
+            .data(
+                oblast.group().all().map(function(d) { return d.key })
+            )
+            .enter()
+            .append('option')
+            .attr({ 'value': function(datum) { return datum } })
+            .text(function(datum) { return datum });
+
+        $settlements = d3.select('#settlements');
+
+        $settlements.selectAll('li')
+            .data(
+                settlement.group().all().map(function(d) { return d.key })
+            )
+            .enter()
+            .append('option')
+            .attr({ 'value': function(datum) { return datum } })
+            .text(function(datum) { return datum });
+
+
+        var resetSettlement = function() {
+            settlement.filterAll();
+            filteredData = settlement.top(Infinity);
+            pointsLayer(filteredData);
+        };
+
+        $('#reset').on('click', function(){
+            resetSettlement();
+        });
+
+
+
+        var Selectize = $("#settlements").selectize({
+            plugins: ['remove_button'],
+            delimiter: ',',
+            persist: false,
+            create: function(input) {
+                return {
+                    value: input,
+                    text: input
+                }
+            },
+            sortField: 'text'
+        });
+
+        Selectize.on('change', function (e) {
+            var filters = [];
+            $("#settlements option").each(function() {
+                var value = $(this).val();
+                filters.push(value);
+
+            });
+            resetSettlement();
+            if (filters.length != 0) {
+                settlement.filterFunction(function(d) { return filters.indexOf(d) != -1 });
+                filteredData = settlement.top(Infinity);
+                pointsLayer(filteredData);
+            }
+        });
+
+
+        $('#oblasts').selectize({
+            create: false,
+            sortField: 'text'
+        }).on('change', function(e) {
+            var values = $(this).val();
+
+
+                $(oblasts).each(function (key, value) {
+                    var layer = 'obl-' + value;
+                    if (values.length == 0) {
+                        map.setLayoutProperty(layer, 'visibility', 'visible');
+                    } else {
+                        map.setLayoutProperty(layer, 'visibility',
+                            values.indexOf(value) == -1 ? 'none' : 'visible');
+                    }
+                });
+
+        });
+    }
+
+
+</script>
+<script>
+
+    $('document').ready(function(){
+        $('#modal-toggle').on('click', function(){
+            console.log(2);
+            var data = draw.getAll();
+            $('#id_polygon').val(JSON.stringify(data, null, 2));
+        });
+    });
+
+
+
+</script>
+
+{% endblock libs2 %}
