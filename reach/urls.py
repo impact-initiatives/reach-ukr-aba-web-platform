@@ -17,7 +17,6 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^draw/$', draw),
-    url(r'^points/$', points),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
