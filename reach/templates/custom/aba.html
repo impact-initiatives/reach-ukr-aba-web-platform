@@ -17,6 +17,7 @@
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
 
     <style>
+
         #menu {
             background: #fff;
 {#            position: relative;#}
@@ -24,7 +25,6 @@
 {#            top: 10px;#}
 {#            right: 10px;#}
             border-radius: 3px;
-            width: 120px;
             border: 1px solid rgba(0,0,0,0.4);
             font-family: 'Open Sans', sans-serif;
         }
@@ -73,21 +73,6 @@
     <div id="sidebar-wrapper">
 
         <div class="filter">
-            <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-            <button type="button"
-                    class="btn btn-secondary"
-                    title="Controls"
-                    data-html="true"
-                    data-container="body"
-                    data-toggle="popover"
-                    data-placement="bottom"
-                    data-content="<code class='highlighter-rouge'>Right Click</code> + <code class='highlighter-rouge'>Move mouse</code> - Rotate Map<br>
-                                          <code class='highlighter-rouge'>Shift</code> + <code class='highlighter-rouge'>Selection</code> - Zoom In">
-                Controls
-            </button>
-        </div>
-
-        <div class="filter">
             <label for="oblasts">Oblasts:</label>
             <select multiple id="oblasts" style="display: none"></select>
         </div>
@@ -98,13 +83,19 @@
         </div>
 
         <div class="filter">
-            <nav id='filter-group' class='filter-group'></nav>
-            <nav id="menu"></nav>
+            <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+        </div>
 
+
+        <div class="filter">
+            <label>Layers:</label>
+            <nav id="menu"></nav>
+        </div>
+
+        <div class="filter">
             <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Enter data
             </button>
-
         </div>
 
 
@@ -148,7 +139,9 @@
     <script src='{% static 'js/selectize.min.js' %}'></script>
 
     <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
+
     <script src="{% static 'js/map-points.js' %}"></script>
+
     <script>
 
 
@@ -265,19 +258,16 @@
         });
     }
 
-
 </script>
+
 <script>
 
     $('document').ready(function(){
         $('#modal-toggle').on('click', function(){
-            console.log(2);
             var data = draw.getAll();
             $('#id_polygon').val(JSON.stringify(data, null, 2));
         });
     });
-
-
 
 </script>
 
