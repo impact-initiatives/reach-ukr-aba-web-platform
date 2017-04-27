@@ -3,7 +3,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGVueXNib2lrbyIsImEiOiJjaXpxdzlxMGswMHMzMnFxbzdpYjJoZDN1In0.O3O4iBtTiODWN0C8oGOBwg';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v10', //stylesheet location
+    style: 'mapbox://styles/denysboiko/cj1xa26yq003y2spcbctgp7v0', //stylesheet location
     center: [38.713, 48.040], // starting position
     zoom: 8 // starting zoom
 });
@@ -57,19 +57,7 @@ var pointsLayer = function(source) {
                 'minzoom': 10,
                 'paint': {
                     'circle-radius': 6,
-                    // 'circle-color': 'rgba(255,0,0,1)',
-                // color circles by ethnicity, using data-driven styles
-                    'circle-color': {
-                        property: 'SECTOR',
-                        type: 'categorical',
-                        stops: [
-                            ['Education', '#fbb03b'],
-                            ['Transport', '#223b53'],
-                            ['Health', '#e55e5e'],
-                            ['Government', '#3bb2d0']]
-                            // ,
-                            // ['Other', '#ccc']]
-                    },
+                    'circle-color': 'rgba(255,0,0,1)',
                     'circle-stroke-color': '#000000',
                     'circle-stroke-width': 1,
                     "circle-opacity": 1
@@ -84,14 +72,9 @@ var pointsLayer = function(source) {
 };
 
 
-function MapInit(schools, buffer, community_areas, ca2, settlements){
+function MapInit(schools, community_areas, ca2, settlements){
 
     map.on('load', function () {
-
-        map.addSource('buffer', {
-            type: 'geojson',
-            data: buffer
-        });
 
         map.addSource('settlements', {
             type: 'geojson',
@@ -107,19 +90,6 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
             data: ca2
         });
 
-        map.addLayer({
-            "id": "buffer",
-            "type": "fill",
-            "source": "buffer",
-            "layout": {
-                'visibility': 'visible'
-            },
-            'paint': {
-                'fill-color': '#d575ef',
-                'fill-opacity': 0.75,
-                'fill-outline-color': '#000000'
-            }
-        });
 
         map.addLayer({
             "id": "settlements",
@@ -200,13 +170,13 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
                 +feature.properties['ADMIN_1_EN']
                 +'<br>'
                 +'<b>Full name:</b> '
-                +feature.properties['NAME']
+                +feature.properties['FULL_NAM_1']
             )
             .addTo(map);
         } else if (feature.layer.source == 'transport') {
             var popup = new mapboxgl.Popup()
             .setLngLat(feature.geometry.coordinates)
-            .setHTML(feature.properties['NAME'])
+            .setHTML(feature.properties.name)
             .addTo(map);
 
         } else if (feature.layer.source == 'settlements') {
@@ -225,7 +195,7 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
 
     });
 
-    var toggleableLayerIds = [ 'settlements', 'community_areas', 'transport', 'Donetska-schools', 'Luhanska-schools', 'buffer'];
+    var toggleableLayerIds = [ 'settlements', 'community_areas', 'transport', 'Donetska-schools', 'Luhanska-schools', ];
 
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];

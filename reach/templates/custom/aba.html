@@ -150,15 +150,16 @@
 
 
     d3.queue()
-      .defer(d3.json, "{% static 'data/aba/avdiivka_schools.geojson' %}")
-      .defer(d3.json, "{% static 'data/aba/avdiivka_ca.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/5km_buffer.geojson' %}")
+      .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")
       .defer(d3.json, "{% static 'data/aba/avdiivka_transport.geojson' %}")
       .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
       .await(loadData);
 
-    function loadData(error, data, ca, ca2, settlements) {
+    function loadData(error, data, buffer, community_areas, ca2, settlements) {
 
-        MapInit(data, ca, ca2, settlements);
+        MapInit(data, buffer, community_areas, ca2, settlements);
 
         var featureCount = data.features.length;
         var cf = crossfilter(data.features);
@@ -239,6 +240,7 @@
 
 
         $('#oblasts').selectize({
+            plugins: ['remove_button'],
             create: false,
             sortField: 'text'
         }).on('change', function(e) {
@@ -246,7 +248,7 @@
 
 
                 $(oblasts).each(function (key, value) {
-                    var layer = 'obl-' + value;
+                    var layer = value+'-schools';
                     if (values.length == 0) {
                         map.setLayoutProperty(layer, 'visibility', 'visible');
                     } else {
