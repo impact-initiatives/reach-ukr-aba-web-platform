@@ -1,7 +1,7 @@
 body { margin:0; padding:0; }
 
 #map {
-    width:100%;
+    width: 80%;
     /*height: 800px*/
     position: absolute;
     top: 0;
@@ -87,8 +87,9 @@ button {
 
 #sidebar-wrapper {
     position: relative;
-    top: 0;
-    left: 0;
+    /*top: 0;*/
+    /*left: 0;*/
+
     z-index: 1000;
     border: 1px solid #EAEAEA;
     background-color: #fff;

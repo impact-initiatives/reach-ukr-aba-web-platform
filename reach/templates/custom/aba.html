@@ -64,41 +64,55 @@
 
 
 {% block content %}
-    <div id='map'></div>
-    <div>
 
-    </div>
 
-        <!-- Sidebar -->
-    <div id="sidebar-wrapper">
 
-        <div class="filter">
-            <label for="oblasts">Oblasts:</label>
-            <select multiple id="oblasts" style="display: none"></select>
+    <div class="row">
+        <div class="wrappers" style="height: 100%; width: 20%">
+            <!-- Sidebar -->
+            <div>
+
+                <div class="filter">
+                    <label for="oblasts">Oblasts:</label>
+                    <select multiple id="oblasts" style="display: none"></select>
+                </div>
+
+                <div class="filter">
+                    <label for="settlements">Settlements:</label>
+                    <select multiple id="settlements" style="display: none"></select>
+                </div>
+
+                <div class="filter">
+                    <label for="types">Types:</label>
+                    <select multiple id="types" style="display: none"></select>
+                </div>
+
+                <div class="filter">
+                    <label for="sectors">Sector:</label>
+                    <select multiple id="sectors" style="display: none"></select>
+                </div>
+
+                <div class="filter">
+                    <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+                </div>
+
+
+                <div class="filter">
+                    <label>Layers:</label>
+                    <nav id="menu"></nav>
+                </div>
+
+                <div class="filter">
+                    <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Enter data
+                    </button>
+                </div>
+
+            </div>
         </div>
-
-        <div class="filter">
-            <label for="settlements">Settlements:</label>
-            <select multiple id="settlements" style="display: none"></select>
+        <div class="wrappers" style="width: 80%; float: left">
+            <div id='map'></div>
         </div>
-
-        <div class="filter">
-            <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-        </div>
-
-
-        <div class="filter">
-            <label>Layers:</label>
-            <nav id="menu"></nav>
-        </div>
-
-        <div class="filter">
-            <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Enter data
-            </button>
-        </div>
-
-
     </div>
 
 
@@ -144,123 +158,86 @@
 
     <script>
 
+        d3.queue()
+          .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
+          .defer(d3.json, "{% static 'data/aba/5km_buffer.geojson' %}")
+          .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")
+          .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
+          .await(loadData);
 
-    var filteredData = [];
-    var settlement = {};
+        function loadData(error, data, buffer, community_areas, settlements) {
 
+            MapInit(data, buffer, community_areas, settlements);
 
-    d3.queue()
-      .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
-      .defer(d3.json, "{% static 'data/aba/5km_buffer.geojson' %}")
-      .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")
-      .defer(d3.json, "{% static 'data/aba/avdiivka_transport.geojson' %}")
-      .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
-      .await(loadData);
-
-    function loadData(error, data, buffer, community_areas, ca2, settlements) {
-
-        MapInit(data, buffer, community_areas, ca2, settlements);
-
-        var featureCount = data.features.length;
-        var cf = crossfilter(data.features);
+            var filteredData = [];
+            var featureCount = data.features.length;
+            var cf = crossfilter(data.features);
 
 
-        var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
-        var type = cf.dimension(function(d) { return d.properties['TYPE_ENG']; });
-        var settlement = cf.dimension(function(d) { return d.properties['ADMIN_4_EN']; });
-
-        var result = type.top(Infinity);
-
-//        console.log(result);
-
-        var oblasts = oblast.group().all().map(function(d) { return d.key });
-
-        $oblasts = d3.select('#oblasts');
-
-        $oblasts.selectAll('li')
-            .data(
-                oblast.group().all().map(function(d) { return d.key })
-            )
-            .enter()
-            .append('option')
-            .attr({ 'value': function(datum) { return datum } })
-            .text(function(datum) { return datum });
-
-        $settlements = d3.select('#settlements');
-
-        $settlements.selectAll('li')
-            .data(
-                settlement.group().all().map(function(d) { return d.key })
-            )
-            .enter()
-            .append('option')
-            .attr({ 'value': function(datum) { return datum } })
-            .text(function(datum) { return datum });
+            var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
+            var type = cf.dimension(function(d) { return d.properties['Type']; });
+            var settlement = cf.dimension(function(d) { return d.properties['ADMIN4_EN']; });
+            var sector = cf.dimension(function(d) { return d.properties['Sector']; });
 
 
-        var resetSettlement = function() {
-            settlement.filterAll();
-            filteredData = settlement.top(Infinity);
-            pointsLayer(filteredData);
-        };
-
-        $('#reset').on('click', function(){
-            resetSettlement();
-        });
+        {#        $('#reset').on('click', function(){#}
+        {#            resetSettlement();#}
+        {#        });#}
 
 
 
-        var Selectize = $("#settlements").selectize({
-            plugins: ['remove_button'],
-            delimiter: ',',
-            persist: false,
-            create: function(input) {
-                return {
-                    value: input,
-                    text: input
-                }
-            },
-            sortField: 'text'
-        });
 
-        Selectize.on('change', function (e) {
-            var filters = [];
-            $("#settlements option").each(function() {
-                var value = $(this).val();
-                filters.push(value);
+            var createFilter = function (container, dim) {
 
-            });
-            resetSettlement();
-            if (filters.length != 0) {
-                settlement.filterFunction(function(d) { return filters.indexOf(d) != -1 });
-                filteredData = settlement.top(Infinity);
-                pointsLayer(filteredData);
-            }
-        });
+                var resetDim = function(dim) {
+                    dim.filterAll();
+                    filteredData = dim.top(Infinity);
+                    pointsLayer(filteredData);
+                };
 
+                d3.select(container).selectAll('li')
+                    .data(
+                        dim.group().all().map(function(d) { return d.key })
+                    )
+                    .enter()
+                    .append('option')
+                    .attr({ 'value': function(datum) { return datum } })
+                    .text(function(datum) { return datum });
 
-        $('#oblasts').selectize({
-            plugins: ['remove_button'],
-            create: false,
-            sortField: 'text'
-        }).on('change', function(e) {
-            var values = $(this).val();
+                $(container).selectize({
+                    plugins: ['remove_button'],
+                    delimiter: ',',
+                    persist: false,
+                    create: false,
+                    sortField: 'text'
+                }).on('change', function (e) {
 
+                    var filters = [];
 
-                $(oblasts).each(function (key, value) {
-                    var layer = value+'-schools';
-                    if (values.length == 0) {
-                        map.setLayoutProperty(layer, 'visibility', 'visible');
-                    } else {
-                        map.setLayoutProperty(layer, 'visibility',
-                            values.indexOf(value) == -1 ? 'none' : 'visible');
+                    $(container + " option").each(function() {
+                        var value = $(this).val();
+                        filters.push(value);
+
+                    });
+
+                    resetDim(dim);
+
+                    if (filters.length != 0) {
+                        dim.filterFunction(function(d) { return filters.indexOf(d) != -1 });
+                        filteredData = dim.top(Infinity);
+                        pointsLayer(filteredData);
                     }
                 });
+            };
 
-        });
-    }
+            createFilter('#oblasts', oblast);
+            createFilter('#settlements', settlement);
+            createFilter('#types', type);
+            createFilter('#sectors', sector);
 
-</script>
+        }
+
+    </script>
 
 <script>
 

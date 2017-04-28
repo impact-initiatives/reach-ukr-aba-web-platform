@@ -5,7 +5,11 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v10', //stylesheet location
     center: [38.713, 48.040], // starting position
-    zoom: 8 // starting zoom
+    zoom: 8, // starting zoom
+    maxBounds: [
+        [29.621, 45.537], // Southwest coordinates
+        [43.374, 50.986]  // Northeast coordinates
+    ]
 });
 
 
@@ -13,6 +17,7 @@ var draw = new MapboxDraw({
     displayControlsDefault: false,
     controls: {
         polygon: true,
+        line: true,
         trash: true
     }
 });
@@ -38,53 +43,40 @@ var pointsLayer = function(source) {
         });
     }
 
-    source.forEach(function(feature) {
-        var oblast = feature.properties['ADMIN_1_EN'];
 
-        var type = feature.properties['TYPE_ENG'];
-
-        var layerID = oblast+'-schools';
-
-        // Add a layer for this symbol type if it hasn't been added already.
-        if (!map.getLayer(layerID)) {
-            map.addLayer({
-                "id": layerID,
-                "type": "circle",
-                "source": "schools",
-                "layout": {
-                    'visibility': 'visible'
+    if (!map.getLayer("services")) {
+        map.addLayer({
+            "id": "services",
+            "type": "circle",
+            "source": "schools",
+            "layout": {
+                'visibility': 'visible'
+            },
+            'minzoom': 10,
+            'paint': {
+                'circle-radius': 6,
+                'circle-color': {
+                    property: 'Sector',
+                    type: 'categorical',
+                    stops: [
+                        ['Education', '#fbb03b'],
+                        ['Transport', '#223b53'],
+                        ['Health', '#e55e5e'],
+                        ['Government', '#3bb2d0']
+                    ]
                 },
-                'minzoom': 10,
-                'paint': {
-                    'circle-radius': 6,
-                    // 'circle-color': 'rgba(255,0,0,1)',
-                // color circles by ethnicity, using data-driven styles
-                    'circle-color': {
-                        property: 'SECTOR',
-                        type: 'categorical',
-                        stops: [
-                            ['Education', '#fbb03b'],
-                            ['Transport', '#223b53'],
-                            ['Health', '#e55e5e'],
-                            ['Government', '#3bb2d0']]
-                            // ,
-                            // ['Other', '#ccc']]
-                    },
-                    'circle-stroke-color': '#000000',
-                    'circle-stroke-width': 1,
-                    "circle-opacity": 1
-                }
-                , "filter": ["==", "ADMIN_1_EN", oblast]
-            });
+                'circle-stroke-color': '#000000',
+                'circle-stroke-width': 1,
+                "circle-opacity": 1
+            }
+        });
+    }
 
-        }
-
-    });
 
 };
 
 
-function MapInit(schools, buffer, community_areas, ca2, settlements){
+function MapInit(schools, buffer, community_areas, settlements){
 
     map.on('load', function () {
 
@@ -101,10 +93,6 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
         map.addSource('community_areas', {
             type: 'geojson',
             data: community_areas
-        });
-        map.addSource('transport', {
-            type: 'geojson',
-            data: ca2
         });
 
         map.addLayer({
@@ -148,22 +136,7 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
                 'fill-outline-color': '#000000'
             }
         });
-        map.addLayer({
-            "id": 'transport',
-            "type": "circle",
-            "source": "transport",
-            "layout": {
-                'visibility': 'visible'
-            },
-            'minzoom': 10,
-            'paint': {
-                'circle-radius': 6,
-                'circle-color': '#b6f666',
-                'circle-stroke-color': '#000000',
-                'circle-stroke-width': 1,
-                "circle-opacity": 1
-            }
-        });
+        //'circle-color': '#b6f666',
 
         // console.log(schools);
 
@@ -213,10 +186,11 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
             var popup = new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(
-                '<b>Назва:</b> ' + feature.properties['TYPE'] + '. ' + feature.properties['NAME_UA'] +'<br>'+
-                '<b>Район:</b> ' + feature.properties['NAME_RAY'] +'<br>'+
-                '<b>Область:</b> ' + feature.properties['NAME_OBL'] +'<br>'+
-                '<b>Населення:</b> ' + feature.properties['POPULATION']
+                '<b>Name:</b> ' + feature.properties['TYPE'] + '. ' + feature.properties['NAME_UA'] +'<br>'+
+                '<b>Name (en):</b> ' + feature.properties['NAME_LAT'] +'<br>'+
+                '<b>Raion:</b> ' + feature.properties['NAME_RAY'] +'<br>'+
+                '<b>Oblast:</b> ' + feature.properties['NAME_OBL'] +'<br>'+
+                '<b>Population:</b> ' + feature.properties['POPULATION']
             )
             .addTo(map);
 
@@ -225,7 +199,7 @@ function MapInit(schools, buffer, community_areas, ca2, settlements){
 
     });
 
-    var toggleableLayerIds = [ 'settlements', 'community_areas', 'transport', 'Donetska-schools', 'Luhanska-schools', 'buffer'];
+    var toggleableLayerIds = [ 'settlements', 'community_areas', 'services', 'buffer'];
 
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
