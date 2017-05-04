@@ -16,49 +16,6 @@
     <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
 
-    <style>
-
-        #menu {
-            background: #fff;
-{#            position: relative;#}
-{#            z-index: 1;#}
-{#            top: 10px;#}
-{#            right: 10px;#}
-            border-radius: 3px;
-            border: 1px solid rgba(0,0,0,0.4);
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        #menu a {
-            font-size: 13px;
-            color: #404040;
-            display: block;
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0,0,0,0.25);
-            text-align: center;
-        }
-
-        #menu a:last-child {
-            border: none;
-        }
-
-        #menu a:hover {
-            background-color: #f8f8f8;
-            color: #404040;
-        }
-
-        #menu a.active {
-            background-color: #3887be;
-            color: #ffffff;
-        }
-
-        #menu a.active:hover {
-            background: #3074a4;
-        }
-    </style>
 
 {% endblock libs %}
 
@@ -67,53 +24,29 @@
 
 
 
-    <div class="">
-        <div class="wrappers" style="height: 500px; width: 20%; float: left; overflow: auto">
-            <!-- Sidebar -->
-            <div style="height: 100%; overflow: auto;">
 
-                <div class="filter">
-                    <label for="oblasts">Oblasts:</label>
-                    <select multiple id="oblasts" style="display: none"></select>
-                </div>
+    <div class="wrappers" style="width:20%; overflow:auto">
+        <!-- Sidebar -->
+        <div class="filters" style="height: 100%; overflow: auto;">
 
-                <div class="filter">
-                    <label for="settlements">Settlements:</label>
-                    <select multiple id="settlements" style="display: none"></select>
-                </div>
-
-                <div class="filter">
-                    <label for="types">Types:</label>
-                    <select multiple id="types" style="display: none"></select>
-                </div>
-
-                <div class="filter">
-                    <label for="sectors">Sector:</label>
-                    <select multiple id="sectors" style="display: none"></select>
-                </div>
-
-                <div class="filter">
-                    <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-                </div>
-
-
-                <div class="filter">
-                    <label>Layers:</label>
-                    <nav id="menu"></nav>
-                </div>
-
-                <div class="filter">
-                    <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        Enter data
-                    </button>
-                </div>
-
+            <div class="filter">
+                <label>Layers:</label>
+                <nav id="menu"></nav>
             </div>
-        </div>
-        <div class="wrappers" style="width: 80%; float: left">
-            <div id='map'></div>
+
+            <div class="filter">
+                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+                <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Enter data
+                </button>
+            </div>
+
         </div>
     </div>
+    <div class="wrappers" style="width:80%">
+        <div id='map-container'></div>
+    </div>
+
 
 
     <!-- Modal -->
@@ -155,6 +88,7 @@
     <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
 
     <script src="{% static 'js/map-points.js' %}"></script>
+    <script src="{% static 'js/filters.js' %}"></script>
 
     <script>
 
@@ -169,10 +103,8 @@
 
             MapInit(data, buffer, community_areas, settlements);
 
-            var filteredData = [];
             var featureCount = data.features.length;
             var cf = crossfilter(data.features);
-
 
             var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
             var type = cf.dimension(function(d) { return d.properties['Type']; });
@@ -186,54 +118,28 @@
 
 
 
+            var filtersList = [
+                {id: 'oblasts',
+                 dimension: oblast,
+                 label: 'Oblasts'},
+                {id: 'settlements',
+                 dimension: settlement,
+                 label: 'Settlements'},
+                {id: 'sectors',
+                 dimension: sector,
+                 label: 'Sector'},
+                {id: 'types',
+                 dimension: type,
+                 label: 'Types'}
+            ];
 
-            var createFilter = function (container, dim) {
+            filerContainers(filtersList);
 
-                var resetDim = function(dim) {
-                    dim.filterAll();
-                    filteredData = dim.top(Infinity);
-                    pointsLayer(filteredData);
-                };
-
-                d3.select(container).selectAll('li')
-                    .data(
-                        dim.group().all().map(function(d) { return d.key })
-                    )
-                    .enter()
-                    .append('option')
-                    .attr({ 'value': function(datum) { return datum } })
-                    .text(function(datum) { return datum });
-
-                $(container).selectize({
-                    plugins: ['remove_button'],
-                    delimiter: ',',
-                    persist: false,
-                    create: false,
-                    sortField: 'text'
-                }).on('change', function (e) {
-
-                    var filters = [];
-
-                    $(container + " option").each(function() {
-                        var value = $(this).val();
-                        filters.push(value);
-
-                    });
-
-                    resetDim(dim);
-
-                    if (filters.length != 0) {
-                        dim.filterFunction(function(d) { return filters.indexOf(d) != -1 });
-                        filteredData = dim.top(Infinity);
-                        pointsLayer(filteredData);
-                    }
-                });
-            };
-
-            createFilter('#oblasts', oblast);
-            createFilter('#settlements', settlement);
-            createFilter('#types', type);
-            createFilter('#sectors', sector);
+            for (var i = 0; i < filtersList.length; i++) {
+                var filter = filtersList[i];
+                var container = '#' + filter.id;
+                createFilter(filter.id, filter.dimension)
+            }
 
         }
 
