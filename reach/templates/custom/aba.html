@@ -45,6 +45,9 @@
     </div>
     <div class="wrappers" style="width:80%">
         <div id='map-container'></div>
+    <div id='sectors-legend' class='legend'>
+        <h4>Sectors</h4>
+    </div>
     </div>
 
 
@@ -132,6 +135,37 @@
                  dimension: type,
                  label: 'Types'}
             ];
+
+            var sectors = [
+                ['Bank', '#fbb03b'],
+                ['Post', '#223b53'],
+                ['Health', '#e55e5e'],
+                ['Government', '#9b59b6'],
+                ['Education', '#8bc34a'],
+                ['Transport', '#bdc3c7'],
+                ['Market', '#3bb2d0']
+            ];
+
+
+{#            <div>#}
+{#                <span style='background-color: #723122'></span>25,000,000#}
+{#            </div>#}
+
+            var legend = d3.select(".legend")
+                .selectAll(".legend")
+                .data(sectors)
+                .enter()
+                .append("div");
+
+            legend.append("span")
+                .attr('style', function (d) {
+                    return "background-color: " + d[1];
+                }).attr('class', 'marker');
+
+            legend.append("span").text(function (d) {
+                    return d[0];
+                });
+
 
             filerContainers(filtersList);
 

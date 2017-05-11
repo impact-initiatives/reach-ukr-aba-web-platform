@@ -13,6 +13,8 @@ var map = new mapboxgl.Map({
 });
 
 
+
+
 var draw = new MapboxDraw({
     displayControlsDefault: false,
     controls: {
@@ -36,6 +38,16 @@ var pointsLayer = function(source) {
         features: source
     };
 
+    var sectors = [
+        ['Bank', '#fbb03b'],
+        ['Post', '#223b53'],
+        ['Health', '#e55e5e'],
+        ['Government', '#9b59b6'],
+        ['Education', '#8bc34a'],
+        ['Transport', '#bdc3c7'],
+        ['Market', '#3bb2d0']
+    ];
+
     if (map.getSource('schools')) {
         map.getSource('schools').setData({
             type: "FeatureCollection",
@@ -58,12 +70,7 @@ var pointsLayer = function(source) {
                 'circle-color': {
                     property: 'Sector',
                     type: 'categorical',
-                    stops: [
-                        ['Education', '#fbb03b'],
-                        ['Transport', '#223b53'],
-                        ['Health', '#e55e5e'],
-                        ['Government', '#3bb2d0']
-                    ]
+                    stops: sectors
                 },
                 'circle-stroke-color': '#000000',
                 'circle-stroke-width': 1,
