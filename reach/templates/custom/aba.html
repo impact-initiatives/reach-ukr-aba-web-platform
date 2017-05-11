@@ -147,11 +147,9 @@
 
 <script>
 
-    $('document').ready(function(){
-        $('#modal-toggle').on('click', function(){
-            var data = draw.getAll();
-            $('#id_polygon').val(JSON.stringify(data, null, 2));
-        });
+    $('#modal-toggle').on('click', function(){
+        var data = draw.getAll();
+        $('#id_polygon').val(JSON.stringify(data, null, 2));
     });
 
 </script>

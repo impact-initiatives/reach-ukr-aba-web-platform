@@ -6,8 +6,8 @@ from django.contrib.postgres.fields import JSONField
 
 class Polygon(models.Model):
 
-    name = models.CharField(max_length=10, blank=True, null=True)
-    info = models.CharField(max_length=200, blank=True, null=True)
+    name = models.CharField(max_length=80, blank=True, null=True)
+    info = models.CharField(max_length=280, blank=True, null=True)
     polygon = JSONField()
 
     def __unicode__(self):
