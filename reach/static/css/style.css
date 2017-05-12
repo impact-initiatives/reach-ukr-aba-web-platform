@@ -198,7 +198,6 @@ html, body, .page-content-wrapper {
     position: absolute;
     right: 20px;
     z-index: 1;
-    width: 150px;
 }
 
 .legend h4 {
