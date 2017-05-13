@@ -10,10 +10,9 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 from .views import *
-from .views import *
-
 
 admin.autodiscover()
+
 
 urlpatterns = [
     url(r'^draw/$', draw),
@@ -21,6 +20,7 @@ urlpatterns = [
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^aba/', include('aba.urls', namespace='aba', app_name='aba')),
+    url(r'^questionnaire/', include('questionnaire.urls', namespace='questionnaire', app_name='questionnaire')),
     url(r'^', include('cms.urls')),
 
 ]
