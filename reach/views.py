@@ -11,6 +11,12 @@ def draw(request):
         'custom/draw.html'
     )
 
+def submission(request):
+    return render(
+        request,
+        'custom/submission.html'
+    )
+
 @csrf_protect
 def points(request):
 

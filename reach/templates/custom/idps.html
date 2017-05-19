@@ -7,6 +7,9 @@
         <link rel="stylesheet" href='{% static 'css/selectize/selectize.min.css' %}' />
         <link rel="stylesheet" href='{% static 'css/selectize/selectize.default.min.css' %}' />
         {% comment %}<link rel="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />{% endcomment %}
+        <style>
+
+        </style>
     {% endblock libs %}
 
 
@@ -16,10 +19,7 @@
 
         <div class="row">
 
-
             <div class='col-md-8'>
-
-
 
                 <div class="card">
                     <div class="card-header">
@@ -30,11 +30,11 @@
                                     <!--<option>Number of IDPs/Total population</option>-->
                                     <!--<option>% change in number of IDPs</option>-->
                                 <!--</select>-->
-
                             </div>
 
                         <!--<label for="indicator">by Oblast</label>-->
                     </div>
+
                     <div class="card-block">
                         <div class="row">
 
@@ -47,7 +47,6 @@
                             <div class="col-md-3">
                                 <button type="button" id="reset" class="btn btn-secondary">Reset</button>
                             </div>
-
 
                         </div>
                         <div class="row">
@@ -114,7 +113,10 @@
 {% block libs2 %}
     <script src="{% static 'js/d3.min.js' %}"></script>
     <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
-    <script src="{% static 'js/dc.min.js' %}"></script>
+
+
+    <script src="{% static 'js/lib/dc.min.js' %}"></script>
+{#    <script src="{% static 'js/dc.min.js' %}"></script>#}
     <script src="{% static 'js/d3-legend.min.js' %}"></script>
     <script src='{% static 'js/selectize.min.js' %}'></script>
     <script src="{% static 'js/moment.min.js' %}"></script>
@@ -128,317 +130,13 @@
             width: 860px;
             height: 450px;
         }
+
+        .dc-table-column._1 {
+            text-align: right;
+        }
+
     </style>
-    <script>
-
-        var projection = d3.geo.mercator().center([36,48]).scale(1900);
-
-        var mapChart = dc.geoChoroplethChart("#map"),
-            dataTable = dc.dataTable("#table"),
-            oblastChart = dc.barChart('#oblasts');
-    //    var periodsChart = dc.barChart('#periods');
-
-        d3.json('{% static 'data/idps.json' %}', function(error, data) {
-
-            var cf = crossfilter(data);
-            var oblast = cf.dimension(function(d) { return d['Name']; });
-
-
-            var dateParse = d3.time.format('%d.%m.%Y');
-
-    //        var testDate = dateParse.parse('18.05.2017')
-    //        console.log(dateParse(testDate));
-
-
-            var period = cf.dimension(function(d) { return dateParse.parse(d['Period']); });
-            var numberidp = cf.dimension(function(d) { return d['IDPs']; });
-
-            var idps = numberidp.group().all().map(function(d) { return d.key });
-
-    //    console.log(idps);
-    //        , dateFormat: d3.time.format('%e %b %Y')
-    //            , dateFormatString: '%e %b %Y'
-    //            , dateFormatShort: d3.time.format('%b %y')
-    //            , dateFormatShortString: '%b %y'
-    //            , dateParse: d3.time.format('%Y-%m-%d')
-
-
-            var oblasts = oblast.group()
-                .reduceSum(function(d) { return d['IDPs']; });
-
-            var oblastList = oblast.group().all().map(function(d) { return d.key });
-
-    //        var periods = period.group()
-    //            .reduceSum(function(d) { return d['IDPs']; });
-
-
-    //        console.log(oblastList)
-            var periods = period.group().all().map(function(d) { return dateParse(d.key) });
-    //        $periods = d3.select('#periods');
-    //
-    //        $periods.selectAll('option')
-    //            .data(
-    //                periods
-    //            )
-    //            .enter()
-    //            .append('option')
-    //            .attr({ 'value': function(datum) { return datum } })
-    //            .text(function(datum) { return datum });
-            console.log(periods);
-            var quantile = d3.scale.threshold ()
-    //            .domain([15000,50000,150000,300000])
-                .domain([1,5000,10000,150000,20000,25000,50000,100000,150000,300000])
-                    .range([
-                        '#ffffff',
-    //                '#fef8f8',
-    //                '#fce6e7',
-                    '#fbd5d5',
-    //                '#f9c3c3',
-                        '#f7b1b1',
-    //                '#f59fa0',
-                        '#f38d8e',
-    //                '#f27c7c',
-                        '#f06a6b',
-    //                '#ee5859',
-                        '#ec4647',
-    //                '#ea3436',
-                        '#e92324',
-    //                '#e21718',
-                        '#d01516',
-    //                '#be1314',
-                    '#ac1112',
-    //                '#9a0f10',
-                    '#890e0e',
-    //                '#770c0c',
-                    '#650a0b',
-    //                '#530809',
-    //                '#410707',
-    //                '#2f0505',
-    //                '#1e0303',
-    //                '#0c0101',
-    //                '#000000'
-
-                ]);
-
-
-
-
-            oblastChart.width(890)
-                .height(500)
-                .margins({top: 10, right: 10, bottom: 80, left: 40})
-                .dimension(oblast)
-                .group(oblasts)
-                .transitionDuration(500)
-                .centerBar(false)
-                .gap(5)
-                .colors('#ec4647')
-                .x(d3.scale.ordinal().domain(oblastList))
-                .xUnits(dc.units.ordinal)
-    //            .elasticX(true)
-    //            .xAxisLabel('Oblast')
-                .yAxisLabel(null)
-    //            .on('filtered', function(chart, filter) {
-    //                var filters = {}
-    ////                filters['Status'] = status_chart.filters()
-    ////                updateFilters(filters)
-    //            })
-                .xAxis()
-                .ticks(10);
-
-            var margin = {top: 30, right: 40, bottom: 80, left: 50};
-
-            oblastChart.on("renderlet.oblastChart",function(chart){
-                    chart.selectAll(".x text")
-                        .style("text-anchor", "end")
-                        .attr("dx", "-.8em")
-                        .attr("dy", ".15em")
-                        .attr('transform', "rotate(-65)");
-                });
-
-            dataTable
-                .dimension(oblast)
-                .group(function(d) { return 'Total number:'})
-                .columns([
-    //                function(d) { return d.KOATUU; },
-                    function(d) { return d.Name; },
-                    function(d) { return d.IDPs; }
-                ]);
-
-
-
-
-
-            mapChart
-                .width(670)
-                .dimension(oblast)
-                .group(oblasts)
-                .colors(quantile)
-                .overlayGeoJson(
-                    adm1.features
-                    , "state"
-                    , function (d) {
-                        return d.properties.NAME_LAT;
-                    }
-                )
-                .projection(projection);
-    //            .on('filtered', function(chart, filter) {
-    //                var filters = {};
-    //                filters['map'] = mapChart.filters();
-    //                console.log(mapChart.filters())
-    ////                dataTable.filters = mapChart.filters();
-    //                oblast.filterAll(mapChart.filters());
-    //                dc.redrawAll();
-    ////                dataTable.render();
-    ////                console.log(filters)
-    //            });
-
-
-    //        mapChart.onClick = function(datum, layerIndex) {
-    //            dc.redrawAll();
-    //            mapChart.redrawGroup()
-    //        };
-
-
-
-    //        dataTable.render();
-    //        periodsChart.width(350)
-    ////            .height(160)
-    ////            .margins({top: 30, right: 10, bottom: 40, left: 40})
-    //            .dimension(period)
-    //            .group(periods)
-    //
-    //            .transitionDuration(500)
-    //            .centerBar(true)
-    //            .colors("#026CB6")
-    //            .gap(25)
-    //            .x(d3.scale.ordinal())
-    //            .xUnits(dc.units.ordinal)
-    //            .elasticY(true)
-    //            .xAxisLabel('Month')
-    //            .yAxisLabel('# of IDPs')
-    //            .on('filtered', function(chart, filter) {
-    //                var filters = {};
-    //                filters['Data As Of'] = periodsChart.filters();
-    //                console.log(filters);
-    ////                updateFilters(filters)
-    //            })
-    //            .xAxis().tickFormat();
-
-    //        $('#periods').selectize({
-    //            create: false,
-    ////            sortField: 'text'
-    //        }).on('change', function(e) {
-    //            var value = dateParse.parse($(this).val());
-    //            console.log(value);
-    //            period.filterExact(value);
-    //            dc.redrawAll();
-    //
-    //        });
-
-    //        $('#indicator').selectize({
-    //            create: false,
-    //            sortField: 'text'
-    //        }).on('change', function(e) {
-    //            var value = $(this).val();
-    //            console.log(value);
-    ////            period.filterExact(value);
-    ////            dc.redrawAll();
-    //        });
-
-    //        $('#indicator').on('change', function(e) {
-    //           var val = $(this).text();
-    //           console.log(val);
-    //        });
-
-            period.filterExact(dateParse.parse(periods[0]));
-            dc.renderAll();
-
-            $("#periodSlider").ionRangeSlider({
-                values: [+moment('16.03.2015','DD.MM.YYYY').format("X"), +moment('25.02.2016','DD.MM.YYYY').format("X"), +moment('15.12.2016','DD.MM.YYYY').format("X")],
-                grid: true,
-                force_edges: true,
-                keyboard: true,
-                prettify: function (num) {
-                    var m = moment(num, "X").locale("ru");
-                    return m.format("Do MMMM, YYYY");
-                },
-                onFinish: function (data) {
-
-                    var periodFilter = moment(data.from_value, "X").locale("ru").format("DD.MM.YYYY");
-                    period.filterExact(dateParse.parse(periodFilter));
-                    dc.redrawAll();
-    //                console.log(data);
-    //                console.log(periodFilter);
-                }
-            });
-
-    //        $(document).ready(function() {
-    //            $('#table').DataTable();
-    //        } );
-
-            {
-                // fix interactions between map and oblast charts
-
-                var all = dc.chartRegistry.list();
-
-                mapChart.onClick = function(datum, layerIndex) {
-                    var selectedRegion = mapChart.geoJsons()[layerIndex].keyAccessor(datum);
-                    oblastChart.filter(selectedRegion);
-                    mapChart.redrawGroup()
-                };
-
-                mapChart.hasFilter = function(filter) {
-                    var filters = oblastChart.filters();
-                    if(!filter) { return filters.length > 0}
-                    return filters.indexOf(filter) != -1
-                }
-            }
-
-            var svg = d3.select("#legend");
-
-            svg.append("g")
-                .attr("class", "legendQuant")
-                .attr("transform", "translate(20,20)");
-
-            var legend = d3.legend.color()
-                .labelFormat(d3.format(",.0f"))
-    //            .labels(d3.legend.helpers.threshold.labels)
-                .scale(quantile)
-    //            .shapePadding(100)
-    //            .orient('horizontal');
-
-            svg.select(".legendQuant")
-                .call(legend);
-
-            var ResetAll = function() {
-                dc.filterAll();
-                dc.redrawAll();
-                filters = {}
-            };
-
-
-            $('#reset').on('click', function(e) {
-                ResetAll();
-            });
-    //        var labelG = d3.select("svg")
-    //            .append("svg:g")
-    //            .attr("id", "labelG")
-    //            .attr("class", "Title");
-    //
-    //            console.log(adm1)
-    ////        adm1.features
-    //        labelG.selectAll("text")
-    //            .data(adm1.features)
-    //            .enter().append("svg:text")
-    //            .text(function(d){return d.properties['KOATUU'];})
-    //            .attr("x", function(d){return 36;})
-    //            .attr("y", function(d){return 48;})
-    //            .attr("dx", "-1em");
-        });
-
-
-
-    </script>
+    <script src="{% static 'js/idps.js' %}"></script>
 {% endblock libs2 %}
 
 

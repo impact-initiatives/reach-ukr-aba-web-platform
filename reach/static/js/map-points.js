@@ -153,6 +153,8 @@ function MapInit(schools, buffer, community_areas, settlements){
             data: schools
         });
 
+        console.log(schools)
+
         pointsLayer(schools.features)
 
     });
