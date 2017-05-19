@@ -20,4 +20,5 @@ Pillow>=3.0
 django-sekizai>=0.9
 pyexcel-xlsx
 djangorestframework
+django_excel
 six
