@@ -34,6 +34,7 @@
                 <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     View data
                 </button>
+                <span id="counter"></span> entries
             </div>
 
         </div>
@@ -144,6 +145,7 @@
 
 {#        renderTable(fields[0], data[0])#}
         loadResponses(fields[0], data)
+        d3.select("#counter").html(data.length)
 
     }
 
