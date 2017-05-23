@@ -31,12 +31,14 @@
 
             <div class="filter">
 {#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
-                <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    View data
+                <button type="button" id="change-color" class="btn btn-primary">
+                    Change color
                 </button>
                 <span id="counter"></span> entries
             </div>
-
+            <div class="filter">
+                <select id="questions"></select>
+            </div>
         </div>
     </div>
     <div class="wrappers" style="width:80%">
@@ -105,20 +107,18 @@
 
 
 
-    function newFeature(lon, lat, id) {
+    function newFeature(lon, lat, id, data) {
 
+        data['id'] = id;
 
-        var feature = {
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [lon, lat]
-                        },
-                        "properties": {
-                            "id": id
-                        }
-                    };
-        return feature;
+        return {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [lon, lat]
+            },
+            "properties": data
+        };
     }
 
 
@@ -146,6 +146,32 @@
 {#        renderTable(fields[0], data[0])#}
         loadResponses(fields[0], data)
         d3.select("#counter").html(data.length)
+
+        var qkeys = Object.keys(fields[0]);
+        var qlabels = [];
+
+        qkeys.forEach(function (e, i) {
+            qlabels.push(fields[0][e])
+        });
+
+        d3.select("#questions")
+            .selectAll('#questions')
+            .data(qlabels)
+            .enter()
+            .append("option")
+            .text(function (d) {
+                return d;
+            });
+
+        $("#questions").selectize({
+            persist: false,
+            create: false,
+            sortField: 'text'
+        })
+        .on('change', function (e) {
+
+        });
+
 
     }
 
@@ -182,6 +208,10 @@
 
 
     </script>
+    <script>
 
+
+
+    </script>
 
 {% endblock libs2 %}

@@ -19,7 +19,7 @@ function loadResponses(fields, data) {
         data.forEach(function (e, id) {
             var lat = e['_gpslocation_latitude'],
                 lon = e['_gpslocation_longitude'];
-            var feature = newFeature(lon, lat, id);
+            var feature = newFeature(lon, lat, id, e);
             features.push(feature);
         });
 
@@ -27,7 +27,7 @@ function loadResponses(fields, data) {
             type: "FeatureCollection",
             features: features
         };
-
+        console.log(geoData)
         map.addSource('responses', {
             type: "geojson",
             data: geoData
@@ -46,11 +46,7 @@ function loadResponses(fields, data) {
                     'circle-radius': 6,
                     'circle-color': 'rgb(238,88,89)',
 
-                    // 'circle-color': {
-                    //     property: 'Sector',
-                    //     type: 'categorical',
-                    //     stops: sectors
-                    // },
+
 
                     'circle-stroke-color': '#000000',
                     'circle-stroke-width': 1,
@@ -82,4 +78,22 @@ function loadResponses(fields, data) {
 
     });
 
+
+    $('#change-color').on('click', function () {
+
+            field = 'gender_KI';
+
+            color_list = [
+                ['male','rgb(88,88,90)'],
+                ['female','rgb(238,88,89)']
+            ];
+
+            color = {
+                property: field,
+                type: 'categorical',
+                stops: color_list
+            };
+
+            map.setPaintProperty('responses', 'circle-color', color);
+        })
 }
