@@ -16,21 +16,22 @@ function loadResponses(fields, data) {
     map.on('load', function () {
 
         var features = [];
+
         data.forEach(function (e, id) {
             var lat = e['_gpslocation_latitude'],
                 lon = e['_gpslocation_longitude'];
             var feature = newFeature(lon, lat, id, e);
+
             features.push(feature);
         });
 
-        var geoData = {
-            type: "FeatureCollection",
-            features: features
-        };
-        console.log(geoData)
+
         map.addSource('responses', {
             type: "geojson",
-            data: geoData
+            data: {
+                type: "FeatureCollection",
+                features: features
+            }
         });
 
 
@@ -78,15 +79,20 @@ function loadResponses(fields, data) {
 
     });
 
-
-    $('#change-color').on('click', function () {
-
-            field = 'gender_KI';
-
-            color_list = [
-                ['male','rgb(88,88,90)'],
-                ['female','rgb(238,88,89)']
+    function changeColors(field, choices) {
+        var colors = [
+                'rgb(88,88,90)',
+                'rgb(209,211,212)',
+                'rgb(238,88,89)',
+                'rgb(210,203,184)',
+                'rgb(246,158,97)'
             ];
+
+            var color_list = [];
+
+            choices.forEach(function (e,i) {
+                color_list.push([e,colors[i]])
+            });
 
             color = {
                 property: field,
@@ -95,5 +101,10 @@ function loadResponses(fields, data) {
             };
 
             map.setPaintProperty('responses', 'circle-color', color);
-        })
+
+    }
+
+    $('#change-color').on('click', function(){
+        changeColors('gender_KI', ['male', 'female'])
+    })
 }
