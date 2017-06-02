@@ -41,13 +41,23 @@ var createFilter = function (container, dim) {
         .attr({ 'value': function(datum) { return datum } })
         .text(function(datum) { return datum });
 
-    $(container).selectize({
+    var SelectObj = $(container).selectize({
         plugins: ['remove_button'],
         delimiter: ',',
         persist: false,
         create: false,
         sortField: 'text'
-    }).on('change', function (e) {
+    });
+
+    SelectObj.on('change', function (e) {
+
+        if (container == '#settlements') {
+            console.log(e.currentTarget.lastChild.value)
+        }
+
+    });
+
+    SelectObj.on('change', function (val) {
 
         var filters = [];
 
@@ -56,6 +66,11 @@ var createFilter = function (container, dim) {
             var value = d3.select(this).text();
             filters.push(value);
         });
+
+
+        // if (container == '#settlements') {
+        //     console.log(val)
+        // }
 
         resetDim(dim);
 

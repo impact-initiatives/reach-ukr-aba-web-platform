@@ -1,0 +1,1166 @@
+[{
+   "gender": [
+      {
+         "name": "male",
+         "label_english": "male"
+      },
+      {
+         "name": "female",
+         "label_english": "female"
+      }
+   ],
+   "yes_no_dn": [
+      {
+         "name": "yes",
+         "label_english": "Yes"
+      },
+      {
+         "name": "no",
+         "label_english": "No"
+      },
+      {
+         "name": "dont_know",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q1_options": [
+      {
+         "name": "comm_q1_option1",
+         "label_english": "Yes, functioning"
+      },
+      {
+         "name": "comm_q1_option2",
+         "label_english": "Yes, non-functioning"
+      },
+      {
+         "name": "comm_q1_option3",
+         "label_english": "No"
+      },
+      {
+         "name": "comm_q1_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q3_options": [
+      {
+         "name": "comm_q3_option1",
+         "label_english": "Yes, functioning"
+      },
+      {
+         "name": "comm_q3_option2",
+         "label_english": "Yes, non-functioning"
+      },
+      {
+         "name": "comm_q3_option3",
+         "label_english": "No"
+      },
+      {
+         "name": "comm_q3_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q11_options": [
+      {
+         "name": "comm_q11_option1",
+         "label_english": "0-250"
+      },
+      {
+         "name": "comm_q11_option2",
+         "label_english": "251-500"
+      },
+      {
+         "name": "comm_q11_option3",
+         "label_english": "501-750"
+      },
+      {
+         "name": "comm_q11_option4",
+         "label_english": "751-1000"
+      },
+      {
+         "name": "comm_q11_option5",
+         "label_english": "1000-1500"
+      },
+      {
+         "name": "comm_q11_option6",
+         "label_english": "1500-2000"
+      },
+      {
+         "name": "comm_q11_option7",
+         "label_english": ">2000"
+      },
+      {
+         "name": "comm_q11_option8",
+         "label_english": "don’t know"
+      }
+   ],
+   "comm_q12_options": [
+      {
+         "name": "comm_q12_option1",
+         "label_english": "Yes, daily"
+      },
+      {
+         "name": "comm_q12_option2",
+         "label_english": "Yes, weekly"
+      },
+      {
+         "name": "comm_q12_option3",
+         "label_english": "Yes, infrequently"
+      },
+      {
+         "name": "comm_q12_option4",
+         "label_english": "no"
+      },
+      {
+         "name": "comm_q12_option5",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q13_options": [
+      {
+         "name": "comm_q13_option1",
+         "label_english": "Yes, daily"
+      },
+      {
+         "name": "comm_q13_option2",
+         "label_english": "Yes, weekly"
+      },
+      {
+         "name": "comm_q13_option3",
+         "label_english": "Yes, infrequently"
+      },
+      {
+         "name": "comm_q13_option4",
+         "label_english": "no"
+      },
+      {
+         "name": "comm_q13_option5",
+         "label_english": "Don't know"
+      },
+      {
+         "name": "comm_q13_option6",
+         "label_english": "The community does not use gas"
+      }
+   ],
+   "comm_q14_options": [
+      {
+         "name": "comm_q14_option1",
+         "label_english": "Yes, daily"
+      },
+      {
+         "name": "comm_q14_option2",
+         "label_english": "Yes, weekly"
+      },
+      {
+         "name": "comm_q14_option3",
+         "label_english": "Yes, infrequently"
+      },
+      {
+         "name": "comm_q14_option4",
+         "label_english": "no"
+      },
+      {
+         "name": "comm_q14_option5",
+         "label_english": "Don't know"
+      },
+      {
+         "name": "comm_q14_option6",
+         "label_english": "The community has no water supply"
+      }
+   ],
+   "comm_q15_options": [
+      {
+         "name": "comm_q15_option1",
+         "label_english": "Yes, daily"
+      },
+      {
+         "name": "comm_q15_option2",
+         "label_english": "Yes, weekly"
+      },
+      {
+         "name": "comm_q15_option3",
+         "label_english": "Yes, infrequently"
+      },
+      {
+         "name": "comm_q15_option4",
+         "label_english": "no"
+      },
+      {
+         "name": "comm_q15_option5",
+         "label_english": "No centralized heating in the community"
+      },
+      {
+         "name": "comm_q15_option6",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q17_options": [
+      {
+         "name": "comm_q17_option1",
+         "label_english": "Fully available"
+      },
+      {
+         "name": "comm_q17_option2",
+         "label_english": "Limited availability"
+      },
+      {
+         "name": "comm_q17_option3",
+         "label_english": "Not available"
+      },
+      {
+         "name": "comm_q17_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q55_options": [
+      {
+         "name": "comm_q55_option1",
+         "label_english": "Fully available"
+      },
+      {
+         "name": "comm_q55_option2",
+         "label_english": "Limited availability"
+      },
+      {
+         "name": "comm_q55_option3",
+         "label_english": "Not available"
+      },
+      {
+         "name": "comm_q55_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q56_options": [
+      {
+         "name": "comm_q56_option1",
+         "label_english": "Fully available"
+      },
+      {
+         "name": "comm_q56_option2",
+         "label_english": "Limited availability"
+      },
+      {
+         "name": "comm_q56_option3",
+         "label_english": "Not available"
+      },
+      {
+         "name": "comm_q56_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q57_options": [
+      {
+         "name": "comm_q57_option1",
+         "label_english": "Fully available"
+      },
+      {
+         "name": "comm_q57_option2",
+         "label_english": "Limited availability"
+      },
+      {
+         "name": "comm_q57_option3",
+         "label_english": "Not available"
+      },
+      {
+         "name": "comm_q57_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q66_options": [
+      {
+         "name": "comm_q66_option1",
+         "label_english": "Landmines\\ERW are present;"
+      },
+      {
+         "name": "comm_q66_option2",
+         "label_english": "Landmines\\ERW are not present"
+      },
+      {
+         "name": "comm_q66_option3",
+         "label_english": "Not sure\\don't know"
+      },
+      {
+         "name": "comm_q66_option4",
+         "label_english": "other (specify)"
+      }
+   ],
+   "comm_q68_options": [
+      {
+         "name": "comm_q68_option1",
+         "label_english": "Yes, all known areas"
+      },
+      {
+         "name": "comm_q68_option2",
+         "label_english": "None of the known areas"
+      },
+      {
+         "name": "comm_q68_option3",
+         "label_english": "Don't know"
+      },
+      {
+         "name": "comm_q68_option4",
+         "label_english": "Some of the known areas"
+      }
+   ],
+   "comm_q71_options": [
+      {
+         "name": "comm_q71_option1",
+         "label_english": "Yes, sufficient"
+      },
+      {
+         "name": "comm_q71_option2",
+         "label_english": "Yes, insufficient"
+      },
+      {
+         "name": "comm_q71_option3",
+         "label_english": "No, required"
+      },
+      {
+         "name": "comm_q71_option4",
+         "label_english": "No, not required"
+      },
+      {
+         "name": "comm_q71_option5",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q72_options": [
+      {
+         "name": "comm_q72_option1",
+         "label_english": "Daily"
+      },
+      {
+         "name": "comm_q72_option2",
+         "label_english": "Weekly"
+      },
+      {
+         "name": "comm_q72_option3",
+         "label_english": "Montly"
+      },
+      {
+         "name": "comm_q72_option4",
+         "label_english": "infrequently"
+      },
+      {
+         "name": "comm_q72_option5",
+         "label_english": "Not in last three months but has happened"
+      },
+      {
+         "name": "comm_q72_option6",
+         "label_english": "never happened"
+      },
+      {
+         "name": "comm_q72_option7",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q73_options": [
+      {
+         "name": "comm_q73_option1",
+         "label_english": "bottled"
+      },
+      {
+         "name": "comm_q73_option2",
+         "label_english": "piped drinking water"
+      },
+      {
+         "name": "comm_q73_option3",
+         "label_english": "water trucking"
+      },
+      {
+         "name": "comm_q73_option4",
+         "label_english": "well"
+      },
+      {
+         "name": "comm_q73_option5",
+         "label_english": "Other (specify)"
+      }
+   ],
+   "comm_q74_options": [
+      {
+         "name": "comm_q74_option1",
+         "label_english": "Yes"
+      },
+      {
+         "name": "comm_q74_option2",
+         "label_english": "No"
+      },
+      {
+         "name": "comm_q74_option3",
+         "label_english": "other (specify)"
+      },
+      {
+         "name": "comm_q74_option4",
+         "label_english": "I don't know"
+      }
+   ],
+   "comm_q67_options": [
+      {
+         "name": "comm_q67_option1",
+         "label_english": "Yes, sufficient"
+      },
+      {
+         "name": "comm_q67_option2",
+         "label_english": "Yes, insufficient"
+      },
+      {
+         "name": "comm_q67_option3",
+         "label_english": "No"
+      },
+      {
+         "name": "comm_q67_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "comm_q69_options": [
+      {
+         "name": "comm_q69_option1",
+         "label_english": "Yes, sufficient"
+      },
+      {
+         "name": "comm_q69_option2",
+         "label_english": "Yes, insufficient"
+      },
+      {
+         "name": "comm_q69_option3",
+         "label_english": "No"
+      },
+      {
+         "name": "comm_q69_option4",
+         "label_english": "Don't know"
+      }
+   ],
+   "oblast_current": [
+      {
+         "name": "4400000000",
+         "label_english": "Luhanska"
+      },
+      {
+         "name": "1400000000",
+         "label_english": "Donetska"
+      }
+   ],
+   "raion_current": [
+      {
+         "name": "1410200000",
+         "label_english": "Avdiivska"
+      },
+      {
+         "name": "1410300000",
+         "label_english": "Bakhmutska"
+      },
+      {
+         "name": "1420900000",
+         "label_english": "Bakhmutskyi"
+      },
+      {
+         "name": "1421500000",
+         "label_english": "Volnovaskyi"
+      },
+      {
+         "name": "1421700000",
+         "label_english": "Volodarskyi"
+      },
+      {
+         "name": "1414800000",
+         "label_english": "Vuhledarska"
+      },
+      {
+         "name": "1412600000",
+         "label_english": "Kostiantynivska"
+      },
+      {
+         "name": "1422400000",
+         "label_english": "Kostiantynivskyi"
+      },
+      {
+         "name": "4411800000",
+         "label_english": "Lysychanska"
+      },
+      {
+         "name": "1412300000",
+         "label_english": "Mariupolska"
+      },
+      {
+         "name": "1423300000",
+         "label_english": "Marinskyi"
+      },
+      {
+         "name": "4423100000",
+         "label_english": "Novoaidarskyi"
+      },
+      {
+         "name": "4423800000",
+         "label_english": "Popasnianskyi"
+      },
+      {
+         "name": "4412900000",
+         "label_english": "Sievierodonetska"
+      },
+      {
+         "name": "1413800000",
+         "label_english": "Selydivska"
+      },
+      {
+         "name": "4424800000",
+         "label_english": "Stanychno-Luhanskyi"
+      },
+      {
+         "name": "1411200000",
+         "label_english": "Dzerzhynska"
+      },
+      {
+         "name": "1425500000",
+         "label_english": "Yasynuvatskyi"
+      }
+   ],
+   "settlement_current": [
+      {
+         "name": "1410200000",
+         "label_english": "Avdiivka"
+      },
+      {
+         "name": "1420985502",
+         "label_english": "Andriivka"
+      },
+      {
+         "name": "4424883502",
+         "label_english": "Artema"
+      },
+      {
+         "name": "1411270300",
+         "label_english": "Artemove"
+      },
+      {
+         "name": "1421588402",
+         "label_english": "Berdianske"
+      },
+      {
+         "name": "1423387402",
+         "label_english": "Berezove"
+      },
+      {
+         "name": "4412945201",
+         "label_english": "Bobrove"
+      },
+      {
+         "name": "1421584002",
+         "label_english": "Bohdanivka"
+      },
+      {
+         "name": "4424880502",
+         "label_english": "Bolotene"
+      },
+      {
+         "name": "1421583601",
+         "label_english": "Buhas"
+      },
+      {
+         "name": "1411246501",
+         "label_english": "Valentynivka"
+      },
+      {
+         "name": "4424880501",
+         "label_english": "Valuiske"
+      },
+      {
+         "name": "1421587203",
+         "label_english": "Vasylivka"
+      },
+      {
+         "name": "1425555200",
+         "label_english": "Verkhnotoretske"
+      },
+      {
+         "name": "1425582102",
+         "label_english": "Vesele"
+      },
+      {
+         "name": "4423856901",
+         "label_english": "Vyskryva"
+      },
+      {
+         "name": "4423856902",
+         "label_english": "Viktorivka"
+      },
+      {
+         "name": "4424880503",
+         "label_english": "Vilkhove"
+      },
+      {
+         "name": "1421589002",
+         "label_english": "Vodiane"
+      },
+      {
+         "name": "1421781602",
+         "label_english": "Vodiane"
+      },
+      {
+         "name": "1425585602",
+         "label_english": "Vodiane"
+      },
+      {
+         "name": "1420955401",
+         "label_english": "Vozdvyzhenka"
+      },
+      {
+         "name": "4423856200",
+         "label_english": "Vrubivka"
+      },
+      {
+         "name": "4424885002",
+         "label_english": "Heivka"
+      },
+      {
+         "name": "1423385002",
+         "label_english": "Heorhiivka"
+      },
+      {
+         "name": "4423810500",
+         "label_english": "Hirske"
+      },
+      {
+         "name": "1410665301",
+         "label_english": "Hladosove"
+      },
+      {
+         "name": "4423856903",
+         "label_english": "Hlynokarier"
+      },
+      {
+         "name": "1412365801",
+         "label_english": "Hnutove"
+      },
+      {
+         "name": "1413846200",
+         "label_english": "Hostre"
+      },
+      {
+         "name": "1421588801",
+         "label_english": "Hranitne"
+      },
+      {
+         "name": "1420985002",
+         "label_english": "Dacha"
+      },
+      {
+         "name": "1411245301",
+         "label_english": "Dachne"
+      },
+      {
+         "name": "1411245303",
+         "label_english": "Dyliivka"
+      },
+      {
+         "name": "1422482503",
+         "label_english": "Dyliivka"
+      },
+      {
+         "name": "1420986202",
+         "label_english": "Dolomitne"
+      },
+      {
+         "name": "1411245305",
+         "label_english": "Druzhba"
+      },
+      {
+         "name": "4423856904",
+         "label_english": "Druzhba"
+      },
+      {
+         "name": "1410665600",
+         "label_english": "Zaitseve"
+      },
+      {
+         "name": "1420986503",
+         "label_english": "Zelenopillia"
+      },
+      {
+         "name": "4423810800",
+         "label_english": "Zolote"
+      },
+      {
+         "name": "1421583702",
+         "label_english": "Kalynivka"
+      },
+      {
+         "name": "1425582103",
+         "label_english": "Kamianka"
+      },
+      {
+         "name": "4423184502",
+         "label_english": "Kapitanove"
+      },
+      {
+         "name": "4423881102",
+         "label_english": "Katerynivka"
+      },
+      {
+         "name": "1421782202",
+         "label_english": "Kyrylivka"
+      },
+      {
+         "name": "1411245300",
+         "label_english": "Kirove"
+      },
+      {
+         "name": "1420985001",
+         "label_english": "Kodema"
+      },
+      {
+         "name": "4424882502",
+         "label_english": "Kolesnykivka"
+      },
+      {
+         "name": "4423856900",
+         "label_english": "Komyshuvakha"
+      },
+      {
+         "name": "1423310400",
+         "label_english": "Krasnohorivka"
+      },
+      {
+         "name": "1425582101",
+         "label_english": "Krasnohorivka"
+      },
+      {
+         "name": "1411290001",
+         "label_english": "Krymske"
+      },
+      {
+         "name": "4423183601",
+         "label_english": "Krymske"
+      },
+      {
+         "name": "1420955402",
+         "label_english": "Krynychne"
+      },
+      {
+         "name": "4423187702",
+         "label_english": "Kriakivka"
+      },
+      {
+         "name": "1411245600",
+         "label_english": "Kurdiumivka"
+      },
+      {
+         "name": "1425584303",
+         "label_english": "Lastochkyne"
+      },
+      {
+         "name": "1421583701",
+         "label_english": "Lebedynske"
+      },
+      {
+         "name": "1411245900",
+         "label_english": "Leninske"
+      },
+      {
+         "name": "1411246503",
+         "label_english": "Leonidivka"
+      },
+      {
+         "name": "1421557201",
+         "label_english": "Lisne"
+      },
+      {
+         "name": "4423187705",
+         "label_english": "Lobacheve"
+      },
+      {
+         "name": "1412365803",
+         "label_english": "Lomakyne"
+      },
+      {
+         "name": "4423187704",
+         "label_english": "Lopaskyne"
+      },
+      {
+         "name": "1420955400",
+         "label_english": "Luhanske"
+      },
+      {
+         "name": "4424880504",
+         "label_english": "Makarove"
+      },
+      {
+         "name": "1423385001",
+         "label_english": "Maksymilianivka"
+      },
+      {
+         "name": "4424884503",
+         "label_english": "Malynove"
+      },
+      {
+         "name": "1423310100",
+         "label_english": "Marinka"
+      },
+      {
+         "name": "1420985003",
+         "label_english": "Mykolaivka"
+      },
+      {
+         "name": "1421584001",
+         "label_english": "Mykolaivka"
+      },
+      {
+         "name": "1420985004",
+         "label_english": "Mykolaivka Druha"
+      },
+      {
+         "name": "1421556600",
+         "label_english": "Myrne"
+      },
+      {
+         "name": "1420955404",
+         "label_english": "Myronivka"
+      },
+      {
+         "name": "1420955500",
+         "label_english": "Myronivskyi"
+      },
+      {
+         "name": "4424886002",
+         "label_english": "Mykhailivka"
+      },
+      {
+         "name": "4423184501",
+         "label_english": "Muratove"
+      },
+      {
+         "name": "1425585402",
+         "label_english": "Nevelske"
+      },
+      {
+         "name": "1411246200",
+         "label_english": "Nelipivka"
+      },
+      {
+         "name": "1425585403",
+         "label_english": "Netailove"
+      },
+      {
+         "name": "4423857700",
+         "label_english": "Nyzhnie"
+      },
+      {
+         "name": "4424883501",
+         "label_english": "Nyzhnoteple"
+      },
+      {
+         "name": "1411246500",
+         "label_english": "Novhorodske"
+      },
+      {
+         "name": "1425583101",
+         "label_english": "Novobakhmutivka"
+      },
+      {
+         "name": "1421584004",
+         "label_english": "Novohnativka"
+      },
+      {
+         "name": "1421587702",
+         "label_english": "Novohryhorivka"
+      },
+      {
+         "name": "4423885202",
+         "label_english": "Novozvanivka"
+      },
+      {
+         "name": "4423856202",
+         "label_english": "Novoivanivka"
+      },
+      {
+         "name": "1425587307",
+         "label_english": "Novokalynove"
+      },
+      {
+         "name": "1420986201",
+         "label_english": "Novoluhanske"
+      },
+      {
+         "name": "1423385201",
+         "label_english": "Novomykhailivka"
+      },
+      {
+         "name": "4423856502",
+         "label_english": "Novooleksandrivka"
+      },
+      {
+         "name": "1421589201",
+         "label_english": "Novoselivka"
+      },
+      {
+         "name": "1425586503",
+         "label_english": "Novoselivka"
+      },
+      {
+         "name": "1421589205",
+         "label_english": "Novoselivka Druha"
+      },
+      {
+         "name": "1425582104",
+         "label_english": "Novoselivka Druha"
+      },
+      {
+         "name": "4423857900",
+         "label_english": "Novotoshkivske"
+      },
+      {
+         "name": "1421556800",
+         "label_english": "Novotroitske"
+      },
+      {
+         "name": "1421555103",
+         "label_english": "Obilne"
+      },
+      {
+         "name": "1420985005",
+         "label_english": "Odradivka"
+      },
+      {
+         "name": "1411245307",
+         "label_english": "Ozarianivka"
+      },
+      {
+         "name": "4423856906",
+         "label_english": "Oleksandropillia"
+      },
+      {
+         "name": "1421557200",
+         "label_english": "Olhynka"
+      },
+      {
+         "name": "1425587606",
+         "label_english": "Opytne"
+      },
+      {
+         "name": "4423881502",
+         "label_english": "Orikhove"
+      },
+      {
+         "name": "4423187703",
+         "label_english": "Orikhove-Donetske"
+      },
+      {
+         "name": "1425584301",
+         "label_english": "Orlivka"
+      },
+      {
+         "name": "1421588202",
+         "label_english": "Orlovske"
+      },
+      {
+         "name": "1421585801",
+         "label_english": "Pavlopil"
+      },
+      {
+         "name": "1425586504",
+         "label_english": "Panteleimonivka"
+      },
+      {
+         "name": "1423385202",
+         "label_english": "Paraskoviivka"
+      },
+      {
+         "name": "1425585401",
+         "label_english": "Pervomaiske"
+      },
+      {
+         "name": "4424885001",
+         "label_english": "Peredilske"
+      },
+      {
+         "name": "4424855400",
+         "label_english": "Petrivka"
+      },
+      {
+         "name": "1425584304",
+         "label_english": "Petrivske"
+      },
+      {
+         "name": "1421585802",
+         "label_english": "Pyshchevyk"
+      },
+      {
+         "name": "1421557202",
+         "label_english": "Pilne"
+      },
+      {
+         "name": "1425585601",
+         "label_english": "Pisky"
+      },
+      {
+         "name": "4424883503",
+         "label_english": "Pishchane"
+      },
+      {
+         "name": "4424884504",
+         "label_english": "Plotyna"
+      },
+      {
+         "name": "1423310101",
+         "label_english": "Pobieda"
+      },
+      {
+         "name": "4423810100",
+         "label_english": "Popasna"
+      },
+      {
+         "name": "4423183602",
+         "label_english": "Prychepylivka"
+      },
+      {
+         "name": "4423181204",
+         "label_english": "Putylyne"
+      },
+      {
+         "name": "4424884505",
+         "label_english": "Pshenychne"
+      },
+      {
+         "name": "4423186701",
+         "label_english": "Raihorodka"
+      },
+      {
+         "name": "1425586501",
+         "label_english": "Rozivka"
+      },
+      {
+         "name": "1420955405",
+         "label_english": "Rozsadky"
+      },
+      {
+         "name": "1412365300",
+         "label_english": "Sartana"
+      },
+      {
+         "name": "1420910600",
+         "label_english": "Svitlodarsk"
+      },
+      {
+         "name": "1420986203",
+         "label_english": "Semyhiria"
+      },
+      {
+         "name": "4424883504",
+         "label_english": "Serednoteple"
+      },
+      {
+         "name": "1425585604",
+         "label_english": "Sieverne"
+      },
+      {
+         "name": "4424880505",
+         "label_english": "Syze"
+      },
+      {
+         "name": "1423384504",
+         "label_english": "Slavne"
+      },
+      {
+         "name": "1423387404",
+         "label_english": "Solodke"
+      },
+      {
+         "name": "1421583703",
+         "label_english": "Sopyne"
+      },
+      {
+         "name": "4424855100",
+         "label_english": "Stanytsia Luhanska"
+      },
+      {
+         "name": "4424885003",
+         "label_english": "Staryi Aidar"
+      },
+      {
+         "name": "1421587701",
+         "label_english": "Starohnativka"
+      },
+      {
+         "name": "1423387401",
+         "label_english": "Stepne"
+      },
+      {
+         "name": "1411246505",
+         "label_english": "Sukha Balka"
+      },
+      {
+         "name": "1412365800",
+         "label_english": "Talakivka"
+      },
+      {
+         "name": "1423387405",
+         "label_english": "Taramchuk"
+      },
+      {
+         "name": "4424885501",
+         "label_english": "Teple"
+      },
+      {
+         "name": "1425584306",
+         "label_english": "Tonenke"
+      },
+      {
+         "name": "1411200000",
+         "label_english": "Toretsk"
+      },
+      {
+         "name": "4423858200",
+         "label_english": "Toshkivka"
+      },
+      {
+         "name": "1420986204",
+         "label_english": "Travneve"
+      },
+      {
+         "name": "4423885201",
+         "label_english": "Troitske"
+      },
+      {
+         "name": "1425555203",
+         "label_english": "Troitske"
+      },
+      {
+         "name": "4423187701",
+         "label_english": "Trokhizbenka"
+      },
+      {
+         "name": "1421588203",
+         "label_english": "Fedorivka"
+      },
+      {
+         "name": "1421588201",
+         "label_english": "Chermalyk"
+      },
+      {
+         "name": "1421585803",
+         "label_english": "Chernenko"
+      },
+      {
+         "name": "1421588401",
+         "label_english": "Shyrokyne"
+      },
+      {
+         "name": "1411245309",
+         "label_english": "Shumy"
+      },
+      {
+         "name": "4423110100",
+         "label_english": "Shchastia"
+      },
+      {
+         "name": "4424882503",
+         "label_english": "Yuhanivka"
+      },
+      {
+         "name": "1411246507",
+         "label_english": "Yurivka"
+      },
+      {
+         "name": "999",
+         "label_english": "Settlement is not on the list"
+      }
+   ]
+}]

@@ -15,6 +15,8 @@
 
     <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
 {% endblock libs %}
 
 
@@ -31,21 +33,24 @@
 
             <div class="filter">
 {#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
-                <button type="button" id="change-color" class="btn btn-primary">
-                    Change color
-                </button>
+{#                <button type="button" id="change-color" class="btn btn-primary">#}
+{#                    Change color#}
+{#                </button>#}
                 <span id="counter"></span> entries
             </div>
             <div class="filter">
+                <label for="questions">Color points by</label>
                 <select id="questions"></select>
             </div>
         </div>
     </div>
     <div class="wrappers" style="width:80%">
+
         <div id='map-container'></div>
-{#    <div id='sectors-legend' class='legend'>#}
-{#        <h6>Sectors</h6>#}
-{#    </div>#}
+        <div id='responses-legend' class='legend'>
+            <h6>Responses</h6>
+        </div>
+
     </div>
 
 
@@ -138,39 +143,20 @@
     d3.queue()
           .defer(d3.tsv, "{% static 'data/header.txt' %}")
           .defer(d3.tsv, "{% static 'data/Community_KI.txt' %}")
+        .defer(d3.json, "{% static 'data/Single Choices.json' %}")
+        .defer(d3.json, "{% static 'data/quest.json' %}")
           .await(loadData);
 
 
-    function loadData(err, fields, data) {
+    function loadData(err, fields, data, choices, quest) {
 
 {#        renderTable(fields[0], data[0])#}
-        loadResponses(fields[0], data)
-        d3.select("#counter").html(data.length)
 
-        var qkeys = Object.keys(fields[0]);
-        var qlabels = [];
+        loadResponses(fields[0], data, choices[0], quest[0]);
 
-        qkeys.forEach(function (e, i) {
-            qlabels.push(fields[0][e])
-        });
+        d3.select("#counter").html(data.length);
 
-        d3.select("#questions")
-            .selectAll('#questions')
-            .data(qlabels)
-            .enter()
-            .append("option")
-            .text(function (d) {
-                return d;
-            });
 
-        $("#questions").selectize({
-            persist: false,
-            create: false,
-            sortField: 'text'
-        })
-        .on('change', function (e) {
-
-        });
 
 
     }
@@ -178,40 +164,43 @@
     function renderTable(fields, data) {
 
         var questions = Object.keys(data);
-            var Qs = [];
-            questions.forEach(function (e, i) {
-                var obj = {};
-                obj['question'] = fields[e];
-                obj['response'] = data[e];
-                Qs.push(obj)
+
+        var Qs = questions.map(function (key) {
+            return {
+                'question': fields[key],
+                'response': data[key]
+            };
+        });
+
+
+
+        d3.select("#quest > tbody").html("");
+
+        var row = d3.select("#quest > tbody")
+            .selectAll("#quest > tbody")
+            .data(Qs)
+            .enter()
+            .append("tr");
+
+            row.append("td")
+            .text(function (d) {
+                return d['question']
             });
 
-
-            d3.select("#quest > tbody").html("")
-
-            var row = d3.select("#quest > tbody")
-                .selectAll("#quest > tbody")
-                .data(Qs)
-                .enter()
-                .append("tr");
-
-                row.append("td")
-                .text(function (d) {
-                    return d['question']
-                });
-
-                row.append("td")
-                .text(function (d) {
-                    return d['response'];
-                });
+            row.append("td")
+            .text(function (d) {
+                return d['response'];
+            });
+{#                $('#quest').DataTable();#}
     }
 
 
     </script>
-    <script>
 
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.css"/>
 
-    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.js"></script>
 
 {% endblock libs2 %}
