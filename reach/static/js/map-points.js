@@ -55,6 +55,22 @@ var pointsLayer = function(source) {
         });
     }
 
+    if (!map.getLayer("settlements")) {
+        map.addLayer({
+            "id": "settlements",
+            "type": "fill",
+            "source": "schools",
+            "layout": {
+                'visibility': 'visible'
+            },
+            'paint': {
+                'fill-color': 'green',
+                'fill-opacity': 0.5,
+                'fill-outline-color': '#000000'
+            },
+            "filter": ["==", "$type", "Polygon"]
+        });
+    }
 
     if (!map.getLayer("services")) {
         map.addLayer({
@@ -64,7 +80,7 @@ var pointsLayer = function(source) {
             "layout": {
                 'visibility': 'visible'
             },
-            'minzoom': 10,
+            // 'minzoom': 10,
             'paint': {
                 'circle-radius': 6,
                 'circle-color': {
@@ -75,7 +91,8 @@ var pointsLayer = function(source) {
                 'circle-stroke-color': '#000000',
                 'circle-stroke-width': 1,
                 "circle-opacity": 1
-            }
+            },
+            "filter": ["==", "$type", "Point"]
         });
     }
 
@@ -83,23 +100,13 @@ var pointsLayer = function(source) {
 };
 
 
-function MapInit(schools, buffer, community_areas, settlements){
+function MapInit(schools, buffer, settlements){
 
     map.on('load', function () {
 
         map.addSource('buffer', {
             type: 'geojson',
             data: buffer
-        });
-
-        map.addSource('settlements', {
-            type: 'geojson',
-            data: settlements
-        });
-
-        map.addSource('community_areas', {
-            type: 'geojson',
-            data: community_areas
         });
 
         map.addLayer({
@@ -116,44 +123,11 @@ function MapInit(schools, buffer, community_areas, settlements){
             }
         });
 
-        map.addLayer({
-            "id": "settlements",
-            "type": "fill",
-            "source": "settlements",
-            "layout": {
-                'visibility': 'visible'
-            },
-            'paint': {
-                'fill-color': 'green',
-                'fill-opacity': 0.5,
-                'fill-outline-color': '#000000'
-            }
-        });
-        map.addLayer({
-            "id": "community_areas",
-            "type": "fill",
-            "source": "community_areas",
-            "layout": {
-                'visibility': 'visible'
-            },
-            'minzoom': 10,
-            'paint': {
-                'fill-color': 'green',
-                'fill-opacity': 0.8,
-                'fill-outline-color': '#000000'
-            }
-        });
-        //'circle-color': '#b6f666',
-
-        // console.log(schools);
-
         map.addSource('schools', {
             type: 'geojson',
-            clusterMaxZoom: 10,
+            // clusterMaxZoom: 10,
             data: schools
         });
-
-        // console.log(schools)
 
         pointsLayer(schools.features)
 
@@ -166,15 +140,16 @@ function MapInit(schools, buffer, community_areas, settlements){
 
         var features = map.queryRenderedFeatures(e.point);
 
+
         var feature = features[0];
         // Populate the popup and set its coordinates
         // based on the feature found.
-
+        console.log(feature)
         if (!features.length) {
             return;
         }
 
-        if (feature.layer.source == 'schools') {
+        if (feature.layer.id == 'services') {
             var popup = new mapboxgl.Popup()
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
@@ -191,7 +166,7 @@ function MapInit(schools, buffer, community_areas, settlements){
             .setHTML(feature.properties['NAME'])
             .addTo(map);
 
-        } else if (feature.layer.source == 'settlements') {
+        } else if (feature.layer.id == 'settlements') {
             var popup = new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(
@@ -208,7 +183,7 @@ function MapInit(schools, buffer, community_areas, settlements){
 
     });
 
-    var toggleableLayerIds = [ 'settlements', 'community_areas', 'services', 'buffer'];
+    var toggleableLayerIds = [ 'settlements', 'services', 'buffer'];
 
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];

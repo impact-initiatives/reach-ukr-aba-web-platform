@@ -4,7 +4,7 @@ var mapChart = dc.geoChoroplethChart("#map"),
     dataTable = dc.dataTable("#table"),
     oblastChart = dc.barChart('#oblasts');
 
-d3.json('http://127.0.0.1:8000/static/data/idps.json', function (error, data) {
+d3.json('../../static/data/idps.json', function (error, data) {
 
     var cf = crossfilter(data);
     var oblast = cf.dimension(function (d) {
@@ -163,20 +163,18 @@ d3.json('http://127.0.0.1:8000/static/data/idps.json', function (error, data) {
     //                var filters = {};
     //                filters['map'] = mapChart.filters();
     //                console.log(mapChart.filters())
-    ////                dataTable.filters = mapChart.filters();
+    //                dataTable.filters = mapChart.filters();
     //                oblast.filterAll(mapChart.filters());
     //                dc.redrawAll();
-    ////                dataTable.render();
-    ////                console.log(filters)
+    //                dataTable.render();
+    //                console.log(filters)
     //            });
 
     periods.forEach(function (e, i) {
-
         periods[i] = +moment(e, 'DD.MM.YYYY').format("X");
-
     });
 
-    /* period.filterExact(periods[0]);*/
+     period.filterExact(periods[0]);
 
     dc.renderAll();
 

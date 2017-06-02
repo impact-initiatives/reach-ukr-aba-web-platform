@@ -51,9 +51,9 @@ var createFilter = function (container, dim) {
 
     SelectObj.on('change', function (e) {
 
-        if (container == '#settlements') {
-            console.log(e.currentTarget.lastChild.value)
-        }
+        // if (container == '#settlements') {
+        //     console.log(e.currentTarget.lastChild.value)
+        // }
 
     });
 
@@ -67,7 +67,6 @@ var createFilter = function (container, dim) {
             filters.push(value);
         });
 
-
         // if (container == '#settlements') {
         //     console.log(val)
         // }
@@ -75,9 +74,14 @@ var createFilter = function (container, dim) {
         resetDim(dim);
 
         if (filters.length != 0) {
+
             dim.filterFunction(function(d) { return filters.indexOf(d) != -1 });
             filteredData = dim.top(Infinity);
             pointsLayer(filteredData);
+
         }
+
     });
+
+
 };

@@ -29,17 +29,32 @@
         <!-- Sidebar -->
         <div class="filters" style="height: 100%; overflow: auto;">
 
-            <div class="filter">
-                <label>Layers:</label>
-                <nav id="menu"></nav>
-            </div>
 
-            <div class="filter">
-                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-                <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Enter data
-                </button>
-            </div>
+                <div class="filter">
+                    <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+                    <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Enter data
+                    </button>
+                </div>
+
+                <div class="filter">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree">
+                            <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                   aria-expanded="false" aria-controls="collapseThree">
+                                    Layers
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <nav id="menu"></nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
         </div>
     </div>
@@ -98,21 +113,29 @@
         d3.queue()
           .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
           .defer(d3.json, "{% static 'data/aba/5km_buffer.geojson' %}")
-          .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")
+{#          .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")#}
           .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
           .await(loadData);
 
-        function loadData(error, data, buffer, community_areas, settlements) {
+        function loadData(error, data, buffer, settlements) {
 
-            MapInit(data, buffer, community_areas, settlements);
+{#            join(data, settlements)#}
+
+            MapInit(data, buffer, settlements);
 
             var featureCount = data.features.length;
             var cf = crossfilter(data.features);
 
-            var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN']; });
-            var type = cf.dimension(function(d) { return d.properties['Type']; });
-            var settlement = cf.dimension(function(d) { return d.properties['ADMIN4_EN']; });
-            var sector = cf.dimension(function(d) { return d.properties['Sector']; });
+
+
+            function dimensionFrom(d, field) {
+                return function(d) { return d.properties[field]; }
+            }
+
+            var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN'] });
+            var type = cf.dimension(function(d) { return d.properties['Type'] });
+            var settlement = cf.dimension(function(d) { return d.properties['ADMIN4_EN'] });
+            var sector = cf.dimension(function(d) { return d.properties['Sector'] });
 
             {#        $('#reset').on('click', function(){#}
             {#            resetSettlement();#}
