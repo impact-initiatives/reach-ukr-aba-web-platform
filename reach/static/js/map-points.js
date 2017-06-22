@@ -12,9 +12,6 @@ var map = new mapboxgl.Map({
     ]
 });
 
-
-
-
 var draw = new MapboxDraw({
     displayControlsDefault: false,
     controls: {
@@ -25,9 +22,9 @@ var draw = new MapboxDraw({
 });
 
 map.addControl(draw);
-map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-}));
+// map.addControl(new MapboxGeocoder({
+//     accessToken: mapboxgl.accessToken
+// }));
 
 var filterGroup = document.getElementById('filter-group');
 
@@ -100,7 +97,7 @@ var pointsLayer = function(source) {
 };
 
 
-function MapInit(schools, buffer, settlements){
+function MapInit(data, buffer, settlements){
 
     map.on('load', function () {
 
@@ -126,10 +123,10 @@ function MapInit(schools, buffer, settlements){
         map.addSource('schools', {
             type: 'geojson',
             // clusterMaxZoom: 10,
-            data: schools
+            data: data
         });
 
-        pointsLayer(schools.features)
+        pointsLayer(data.features)
 
     });
 
@@ -144,7 +141,6 @@ function MapInit(schools, buffer, settlements){
         var feature = features[0];
         // Populate the popup and set its coordinates
         // based on the feature found.
-        console.log(feature)
         if (!features.length) {
             return;
         }
@@ -167,23 +163,50 @@ function MapInit(schools, buffer, settlements){
             .addTo(map);
 
         } else if (feature.layer.id == 'settlements') {
-            var popup = new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(
-                '<b>Name:</b> ' + feature.properties['TYPE'] + '. ' + feature.properties['NAME_UA'] +'<br>'+
-                '<b>Name (en):</b> ' + feature.properties['NAME_LAT'] +'<br>'+
-                '<b>Raion:</b> ' + feature.properties['NAME_RAY'] +'<br>'+
-                '<b>Oblast:</b> ' + feature.properties['NAME_OBL'] +'<br>'+
-                '<b>Population:</b> ' + feature.properties['POPULATION']
-            )
-            .addTo(map);
+
+            var template = _.template("" +
+                "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
+                "<b>Name (en):</b> <%= name_en %><br>" +
+                "<b>Raion:</b> <%= name_ray %><br>" +
+                "<b>Oblast:</b> <%= name_obl %><br>" +
+                "<b>Population:</b> <%= population %><br>" +
+                "");
+
+
+
+            var compiled = template(
+                {
+                    type: feature.properties['TYPE'],
+                    name_ua: feature.properties['NAME_UA'],
+                    name_en: feature.properties['NAME_LAT'],
+                    name_ray: feature.properties['NAME_RAY'],
+                    name_obl: feature.properties['NAME_OBL'],
+                    population: feature.properties['POPULATION']
+                }
+            );
+
+            $('#myModal2 .modal-body').html(compiled)
+            $('#myModal2').modal('show');
+
+
+
+            // var popup = new mapboxgl.Popup()
+            // .setLngLat(e.lngLat)
+            // .setHTML(
+            //     '<b>Name:</b> ' + feature.properties['TYPE'] + '. ' + feature.properties['NAME_UA'] +'<br>'+
+            //     '<b>Name (en):</b> ' + feature.properties['NAME_LAT'] +'<br>'+
+            //     '<b>Raion:</b> ' + feature.properties['NAME_RAY'] +'<br>'+
+            //     '<b>Oblast:</b> ' + feature.properties['NAME_OBL'] +'<br>'+
+            //     '<b>Population:</b> ' + feature.properties['POPULATION']
+            // )
+            // .addTo(map);
 
         }
 
 
     });
 
-    var toggleableLayerIds = [ 'settlements', 'services', 'buffer'];
+    var toggleableLayerIds = [ 'settlements', 'services', 'buffer', 'responses'];
 
     for (var i = 0; i < toggleableLayerIds.length; i++) {
         var id = toggleableLayerIds[i];
@@ -232,6 +255,3 @@ function MapInit(schools, buffer, settlements){
         popup.remove();
     });
 }
-
-
-

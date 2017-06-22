@@ -4,14 +4,14 @@
 
 {% block libs %}
     <script src='{% static 'js/mapbox-gl.js' %}'></script>
-    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
+    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet'/>
 
-    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}' />
-    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}' />
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
 
 
     <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
-    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css' />
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css'/>
 
     <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
@@ -29,46 +29,60 @@
         <!-- Sidebar -->
         <div class="filters" style="height: 100%; overflow: auto;">
 
+            <div class="filter">
+                {#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
+                {#                <button type="button" id="change-color" class="btn btn-primary">#}
+                {#                    Change color#}
+                {#                </button>#}
+                <span id="counter"></span> entries
+            </div>
+            <div class="filter">
+                <label for="dataset">Choose dataset</label>
+                <select id="dataset" class="form-control"></select>
+            </div>
+            <div class="filter">
+                <label for="questions">Color points by</label>
+                <select id="questions" class="form-control"></select>
+            </div>
+            <div class="filter">
+                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
+                <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal"
+                        data-target="#myModal">
+                    Enter data
+                </button>
+            </div>
 
-                <div class="filter">
-                    <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-                    <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        Enter data
-                    </button>
-                </div>
-
-                <div class="filter">
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingThree">
-                            <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" href="#collapseThree"
-                                   aria-expanded="false" aria-controls="collapseThree">
-                                    Layers
-                                </a>
-                            </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <nav id="menu"></nav>
-                        </div>
+            <div class="filter">
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                               aria-expanded="false" aria-controls="collapseThree">
+                                Layers
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <nav id="menu"></nav>
                     </div>
                 </div>
-
-
+            </div>
 
 
         </div>
     </div>
     <div class="wrappers" style="width:80%">
         <div id='map-container'></div>
-    <div id='sectors-legend' class='legend'>
-        <h6>Sectors</h6>
-    </div>
+        <div id='sectors-legend' class='legend'>
+            <h6>Sectors</h6>
+        </div>
     </div>
 
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
 
             <div class="modal-content">
@@ -94,6 +108,73 @@
         </div>
     </div>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">Enter data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="">{% csrf_token %}
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="save">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel3">Enter data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="">{% csrf_token %}
+                    <div class="modal-body">
+
+                        <div class="container">
+                            <table id="quest" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Response</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="save">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}
 
 
@@ -102,24 +183,28 @@
     <script src="{% static 'js/d3.min.js' %}"></script>
     <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
     <script src='{% static 'js/selectize.min.js' %}'></script>
-
     <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
+    <script src="{% static 'js/underscore-min.js' %}"></script>
+
 
     <script src="{% static 'js/map-points.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
+    <script src="{% static 'js/responses/lib_functions.js' %}"></script>
+    <script src="{% static 'js/responses/responses.js' %}"></script>
+
 
     <script>
 
         d3.queue()
-          .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
-          .defer(d3.json, "{% static 'data/aba/5km_buffer.geojson' %}")
-{#          .defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")#}
-          .defer(d3.json, "{% static 'data/aba/5km_settlements.geojson' %}")
-          .await(loadData);
+            .defer(d3.json, "{% static 'data/aba/services.geojson' %}")
+            .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
+            {#.defer(d3.json, "{% static 'data/aba/community_areas.geojson' %}")#}
+            .defer(d3.json, "{% static 'data/aba/aba_110.json' %}")
+            .await(loadData);
 
         function loadData(error, data, buffer, settlements) {
 
-{#            join(data, settlements)#}
+            {#            join(data, settlements)#}
 
             MapInit(data, buffer, settlements);
 
@@ -127,15 +212,24 @@
             var cf = crossfilter(data.features);
 
 
-
             function dimensionFrom(d, field) {
-                return function(d) { return d.properties[field]; }
+                return function (d) {
+                    return d.properties[field];
+                }
             }
 
-            var oblast = cf.dimension(function(d) { return d.properties['ADMIN_1_EN'] });
-            var type = cf.dimension(function(d) { return d.properties['Type'] });
-            var settlement = cf.dimension(function(d) { return d.properties['ADMIN4_EN'] });
-            var sector = cf.dimension(function(d) { return d.properties['Sector'] });
+            var oblast = cf.dimension(function (d) {
+                return d.properties['ADMIN_1_EN']
+            });
+            var type = cf.dimension(function (d) {
+                return d.properties['Type']
+            });
+            var settlement = cf.dimension(function (d) {
+                return d.properties['ADMIN_4']//
+            });
+            var sector = cf.dimension(function (d) {
+                return d.properties['Sector']
+            });
 
             {#        $('#reset').on('click', function(){#}
             {#            resetSettlement();#}
@@ -174,9 +268,9 @@
                 ['Market', '#3bb2d0']
             ];
 
-{#            <div>#}
-{#                <span style='background-color: #723122'></span>25,000,000#}
-{#            </div>#}
+            {#            <div>#}
+            {#                <span style='background-color: #723122'></span>25,000,000#}
+            {#            </div>#}
 
             var legend = d3.select(".legend")
                 .selectAll(".legend")
@@ -190,8 +284,8 @@
                 }).attr('class', 'marker');
 
             legend.append("span").text(function (d) {
-                    return d[0];
-                });
+                return d[0];
+            });
 
 
             filerContainers(filtersList);
@@ -199,20 +293,156 @@
             for (var i = 0; i < filtersList.length; i++) {
                 var filter = filtersList[i];
                 var container = '#' + filter.id;
-                createFilter(container, filter.dimension)
+
+{#              console.log(settlements[1410200000]['C'])#}
+
+                createFilter(container, filter.dimension, settlements)
+
             }
 
         }
 
     </script>
+    <script>
 
-<script>
 
-    $('#modal-toggle').on('click', function(){
-        var data = draw.getAll();
-        $('#id_polygon').val(JSON.stringify(data, null, 2));
-    });
+        var datasets = {
 
-</script>
+            admin: [
+                'data/admin/Admin_header.json',
+                'data/admin/Admin.txt',
+                'data/admin/admin_options.json',
+                'data/admin/admin_questions.json'
+            ],
+            commmunity: [
+                'data/community/Community_header.json',
+                'data/community/Community_KI.txt',
+                'data/community/Single Choices.json',
+                'data/community/quest.json'
+            ],
+            facility: [
+                'data/Facility/Facility_header.json',
+                'data/Facility/Facility.txt',
+                'data/Facility/Facility_options.json',
+                'data/Facility/Facility_questions.json'
+            ],
+            health: [
+                'data/Health/Health_header.json',
+                'data/Health/Health.txt',
+                'data/Health/Health_options.json',
+                'data/Health/Health_questions.json'
+            ],
+            education: [
+                'data/Education/Education_header.json',
+                'data/Education/Education.txt',
+                'data/Education/Education_options.json',
+                'data/Education/Education_questions.json'
+            ]
+        };
+
+
+        {% static "" as baseUrl %}
+
+        function initSelect() {
+            d3.select("#dataset")
+                .selectAll('option')
+                .data(Object.keys(datasets))
+                .enter()
+                .append("option")
+                .text(function (d) {
+                    return d;
+                });
+        }
+
+        initSelect();
+
+
+        $('#dataset')
+        {#            .selectize({#}
+        {#                persist: false,#}
+        {#                create: false,#}
+        {#                sortField: 'text'#}
+        {#            })#}
+
+            .on('change', function (e) {
+                var val = $(this).val()
+                initDataLoading(val)
+            });
+
+        {#        var dataset = 'education';#}
+
+        function initDataLoading(dataset) {
+            d3.queue()
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][0])
+                .defer(d3.tsv, '{{ baseUrl }}' + datasets[dataset][1])
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][2])
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][3])
+                .await(loadResponsesData);
+        }
+
+
+        function loadResponsesData(err, fields, data, choices, quest) {
+
+            loadResponses(fields[0], data, choices[0], quest[0]);
+            d3.select("#counter").html(data.length);
+
+
+        }
+
+        function renderTable(fields, data) {
+
+            var question_names = Object.keys(data);
+            var data_entries = question_names.map(function (key) {
+                return {
+                    'question': fields[key],
+                    'response': data[key]
+                };
+            });
+
+
+            d3.select("#quest > tbody").html("");
+
+            var row = d3.select("#quest > tbody")
+                .selectAll("tr")
+                .data(data_entries)
+                .enter()
+                .append("tr");
+
+            row.append("td")
+                .text(function (d) {
+                    return d['question']
+                });
+
+            row.append("td")
+                .text(function (d) {
+                    return d['response'];
+                });
+            {#                $('#quest').DataTable();#}
+
+
+            $('#myModal3').modal('show');
+        }
+
+
+    </script>
+    <script>
+
+        $('#modal-toggle').on('click', function () {
+            var data = draw.getAll();
+            $('#id_polygon').val(JSON.stringify(data, null, 2));
+        });
+// _gpslocation_latitude	48.13371546123432
+// _gpslocation_longitude	37.74625915229367
+        $('#reset').on('click', function () {
+            map.flyTo({
+                center: [
+                    37.74625915229367,
+                    48.13371546123432
+                ],
+                zoom: 12
+            });
+        })
+
+    </script>
 
 {% endblock libs2 %}

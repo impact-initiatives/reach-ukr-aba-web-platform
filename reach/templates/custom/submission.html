@@ -4,14 +4,14 @@
 
 {% block libs %}
     <script src='{% static 'js/mapbox-gl.js' %}'></script>
-    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
+    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet'/>
 
-    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}' />
-    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}' />
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
+    <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
 
 
     <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
-    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css' />
+    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css'/>
 
     <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
@@ -26,21 +26,25 @@
         <!-- Sidebar -->
         <div class="filters" style="height: 100%; overflow: auto;">
 
-{#            <div class="filter">#}
-{#                <label>Layers:</label>#}
-{#                <nav id="menu"></nav>#}
-{#            </div>#}
+            {#            <div class="filter">#}
+            {#                <label>Layers:</label>#}
+            {#                <nav id="menu"></nav>#}
+            {#            </div>#}
 
             <div class="filter">
-{#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
-{#                <button type="button" id="change-color" class="btn btn-primary">#}
-{#                    Change color#}
-{#                </button>#}
+                {#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
+                {#                <button type="button" id="change-color" class="btn btn-primary">#}
+                {#                    Change color#}
+                {#                </button>#}
                 <span id="counter"></span> entries
             </div>
             <div class="filter">
+                <label for="dataset">Choose dataset</label>
+                <select id="dataset" class="form-control"></select>
+            </div>
+            <div class="filter">
                 <label for="questions">Color points by</label>
-                <select id="questions"></select>
+                <select id="questions" class="form-control"></select>
             </div>
         </div>
     </div>
@@ -56,7 +60,8 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
 
             <div class="modal-content">
@@ -72,10 +77,10 @@
                         <div class="container">
                             <table id="quest" class="table table-striped table-bordered">
                                 <thead>
-                                    <tr>
-                                        <th>Question</th>
-                                        <th>Response</th>
-                                    </tr>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Response</th>
+                                </tr>
                                 </thead>
                                 <tbody>
 
@@ -104,103 +109,158 @@
     <script src="{% static 'js/d3.min.js' %}"></script>
     <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
     <script src='{% static 'js/selectize.min.js' %}'></script>
-
     <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
 
 
+    <script src="{% static 'js/responses/lib_functions.js' %}"></script>
+
     <script>
-
-
-
-    function newFeature(lon, lat, id, data) {
-
-        data['id'] = id;
-
-        return {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [lon, lat]
-            },
-            "properties": data
-        };
-    }
-
-
-    </script>
-
-    <script src="{% static 'js/responses/responses.js' %}">
-
-
-
-
-
-
-    </script>
-    <script>
-
-
-    d3.queue()
-          .defer(d3.tsv, "{% static 'data/header.txt' %}")
-          .defer(d3.tsv, "{% static 'data/Community_KI.txt' %}")
-        .defer(d3.json, "{% static 'data/Single Choices.json' %}")
-        .defer(d3.json, "{% static 'data/quest.json' %}")
-          .await(loadData);
-
-
-    function loadData(err, fields, data, choices, quest) {
-
-{#        renderTable(fields[0], data[0])#}
-
-        loadResponses(fields[0], data, choices[0], quest[0]);
-
-        d3.select("#counter").html(data.length);
-
-
-
-
-    }
-
-    function renderTable(fields, data) {
-
-        var questions = Object.keys(data);
-
-        var Qs = questions.map(function (key) {
-            return {
-                'question': fields[key],
-                'response': data[key]
-            };
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGVueXNib2lrbyIsImEiOiJjaXpxdzlxMGswMHMzMnFxbzdpYjJoZDN1In0.O3O4iBtTiODWN0C8oGOBwg';
+        var map = new mapboxgl.Map({
+            container: 'map-container', // container id
+            style: 'mapbox://styles/mapbox/streets-v10', //stylesheet location
+            center: [38.713, 48.040], // starting position
+            zoom: 8, // starting zoom
+            maxBounds: [
+                [29.621, 45.537], // Southwest coordinates
+                [43.374, 50.986]  // Northeast coordinates
+            ]
         });
+    </script>
+    <script src="{% static 'js/responses/responses.js' %}"></script>
+
+    <script>
 
 
+        var datasets = {
 
-        d3.select("#quest > tbody").html("");
+            admin: [
+                'data/admin/Admin_header.json',
+                'data/admin/Admin.txt',
+                'data/admin/admin_options.json',
+                'data/admin/admin_questions.json'
+            ],
+            commmunity: [
+                'data/community/Community_header.json',
+                'data/community/Community_KI.txt',
+                'data/community/Single Choices.json',
+                'data/community/quest.json'
+            ],
+            facility: [
+                'data/Facility/Facility_header.json',
+                'data/Facility/Facility.txt',
+                'data/Facility/Facility_options.json',
+                'data/Facility/Facility_questions.json'
+            ],
+            health: [
+                'data/Health/Health_header.json',
+                'data/Health/Health.txt',
+                'data/Health/Health_options.json',
+                'data/Health/Health_questions.json'
+            ],
+            education: [
+                'data/Education/Education_header.json',
+                'data/Education/Education.txt',
+                'data/Education/Education_options.json',
+                'data/Education/Education_questions.json'
+            ]
+        };
 
-        var row = d3.select("#quest > tbody")
-            .selectAll("#quest > tbody")
-            .data(Qs)
-            .enter()
-            .append("tr");
 
-            row.append("td")
-            .text(function (d) {
-                return d['question']
+        {% static "" as baseUrl %}
+
+        function initSelect() {
+            d3.select("#dataset")
+                .selectAll('option')
+                .data(Object.keys(datasets))
+                .enter()
+                .append("option")
+                .text(function (d) {
+                    return d;
+                });
+        }
+
+        initSelect();
+
+
+        $('#dataset')
+        {#            .selectize({#}
+        {#                persist: false,#}
+        {#                create: false,#}
+        {#                sortField: 'text'#}
+        {#            })#}
+
+            .on('change', function (e) {
+                var dataset = $(this).val();
+                initDataLoading(dataset)
             });
 
-            row.append("td")
-            .text(function (d) {
-                return d['response'];
+        {#        var dataset = 'education';#}
+
+        function initDataLoading(dataset) {
+            d3.queue()
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][0])
+                .defer(d3.tsv, '{{ baseUrl }}' + datasets[dataset][1])
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][2])
+                .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][3])
+                .await(loadResponsesData);
+        }
+
+
+        function loadResponsesData(err, fields, data, choices, quest) {
+
+            loadResponses(fields[0], data, choices[0], quest[0]);
+            d3.select("#counter").html(data.length);
+
+
+        }
+
+        function renderTable(fields, data) {
+
+            var question_names = Object.keys(data);
+            var data_entries = question_names.map(function (key) {
+                return {
+                    'question': fields[key],
+                    'response': data[key]
+                };
             });
-{#                $('#quest').DataTable();#}
-    }
+
+
+            d3.select("#quest > tbody").html("");
+
+
+            {#            console.log('Fields in renderTable:');#}
+            {#            console.log(fields);#}
+            var row = d3.select("#quest > tbody")
+                .selectAll("tr")
+                .data(data_entries)
+                .enter()
+                .append("tr");
+
+            row.append("td")
+                .text(function (d) {
+                    return d['question']
+                });
+
+            row.append("td")
+                .text(function (d) {
+                    return d['response'];
+                });
+            {#                $('#quest').DataTable();#}
+
+
+            $('#myModal').modal('show');
+        }
 
 
     </script>
 
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.css"/>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/v/bs/dt-1.10.15/af-2.2.0/b-1.3.1/datatables.min.js"></script>
 
 {% endblock libs2 %}

@@ -31,8 +31,8 @@ var pointsLayer = function(source) {
         features: source
     };
 
-    if (map.getSource('schools')) {
-        map.getSource('schools').setData({
+    if (map.getSource('data')) {
+        map.getSource('data').setData({
             type: "FeatureCollection",
             features: source
         });
@@ -71,7 +71,7 @@ var pointsLayer = function(source) {
 };
 
 
-function MapInit(schools, ca, ca2, settlements){
+function MapInit(data, buffer, settlements){
 
     map.on('load', function () {
 
@@ -82,8 +82,9 @@ function MapInit(schools, ca, ca2, settlements){
 
         map.addSource('ca', {
             type: 'geojson',
-            data: ca
+            data: buffer
         });
+
         map.addSource('transport', {
             type: 'geojson',
             data: ca2
@@ -133,15 +134,15 @@ function MapInit(schools, ca, ca2, settlements){
             }
         });
 
-        // console.log(schools);
+        // console.log(data);
 
-        map.addSource('schools', {
+        map.addSource('data', {
             type: 'geojson',
             clusterMaxZoom: 10,
-            data: schools
+            data: data
         });
 
-        pointsLayer(schools.features)
+        pointsLayer(data.features)
 
     });
 
@@ -160,7 +161,7 @@ function MapInit(schools, ca, ca2, settlements){
             return;
         }
 
-        if (feature.layer.source == 'schools') {
+        if (feature.layer.source == 'data') {
             var popup = new mapboxgl.Popup()
             .setLngLat(feature.geometry.coordinates)
             .setHTML(
