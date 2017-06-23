@@ -11,7 +11,7 @@ function loadResponses(fields, data, choices, quest) {
     g_quest = quest;
 
 
-    var features = toPoints('_gpslocation_longitude', '_gpslocation_latitude', data);
+    var features = toPoints('Longitude', 'Latitude', data);
 
     if (map.getSource('responses')) {
         map.getSource('responses').setData({
