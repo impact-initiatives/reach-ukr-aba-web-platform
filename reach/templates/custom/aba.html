@@ -3,19 +3,15 @@
 
 
 {% block libs %}
+
     <script src='{% static 'js/mapbox-gl.js' %}'></script>
     <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet'/>
 
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
 
-
-    <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
-    <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css'/>
-
     <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
-
 
 {% endblock libs %}
 
@@ -26,6 +22,7 @@
 
 
     <div class="wrappers" style="width:20%; overflow:auto">
+
         <!-- Sidebar -->
         <div class="filters" style="height: 100%; overflow: auto;">
 
@@ -180,12 +177,15 @@
 
 {% block libs2 %}
 
+    {% comment %} Begin JS Libraries {% endcomment %}
+
     <script src="{% static 'js/d3.min.js' %}"></script>
     <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
     <script src='{% static 'js/selectize.min.js' %}'></script>
     <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
     <script src="{% static 'js/underscore-min.js' %}"></script>
 
+    {% comment %} End JS Libraries {% endcomment %}
 
     <script src="{% static 'js/map-points.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
@@ -294,7 +294,7 @@
                 var filter = filtersList[i];
                 var container = '#' + filter.id;
 
-{#              console.log(settlements[1410200000]['C'])#}
+                {#              console.log(settlements[1410200000]['C'])#}
 
                 createFilter(container, filter.dimension, settlements)
 
@@ -309,16 +309,16 @@
         var datasets = {
 
             admin: [
-                'data/admin/Admin_header.json',
-                'data/admin/Admin.txt',
-                'data/admin/admin_options.json',
-                'data/admin/admin_questions.json'
+                'data/admin/Administration_header.json',
+                'data/admin/Administration.txt',
+                'data/admin/Administration_options.json',
+                'data/admin/Administration_questions.json'
             ],
             commmunity: [
                 'data/community/Community_header.json',
-                'data/community/Community_KI.txt',
-                'data/community/Single Choices.json',
-                'data/community/quest.json'
+                'data/community/Community.txt',
+                'data/community/Community_options.json',
+                'data/community/Community_questions.json'
             ],
             facility: [
                 'data/facility/Facility_header.json',
@@ -356,16 +356,14 @@
 
         initSelect();
 
-
         $('#dataset')
         {#            .selectize({#}
         {#                persist: false,#}
         {#                create: false,#}
         {#                sortField: 'text'#}
         {#            })#}
-
             .on('change', function (e) {
-                var val = $(this).val()
+                var val = $(this).val();
                 initDataLoading(val)
             });
 
@@ -421,6 +419,7 @@
 
 
             $('#myModal3').modal('show');
+
         }
 
 
@@ -431,16 +430,9 @@
             var data = draw.getAll();
             $('#id_polygon').val(JSON.stringify(data, null, 2));
         });
-// _gpslocation_latitude	48.13371546123432
-// _gpslocation_longitude	37.74625915229367
+
         $('#reset').on('click', function () {
-            map.flyTo({
-                center: [
-                    37.74625915229367,
-                    48.13371546123432
-                ],
-                zoom: 12
-            });
+            console.log('Filters should be reseted')
         })
 
     </script>
