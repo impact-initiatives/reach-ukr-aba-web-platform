@@ -1,10 +1,1 @@
-[
-  {
-    "current_raion": "raion_current",
-    "current_village": "settlement_current",
-    "facility_type": "facility_type",
-    "facility_status": "facility_status",
-    "gps_work": "yes_no",
-    "current_oblast": "oblast_current"
-  }
-]
+[{"facility_status": "facility_status", "facility_type": "facility_type"}]

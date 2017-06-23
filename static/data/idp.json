@@ -1,902 +1,152 @@
 [
   {
+    "id": 1,
     "KOATUU": 500000000,
     "Name": "Vinnytska",
-    "Period": "16.03.2015",
-    "IDPs": 10924,
-    "Change": "",
-    "Population": "1606,40",
-    "IDPs/1000_Population": "6,80"
+    "IDPs": 14283
   },
   {
+    "id": 2,
     "KOATUU": 700000000,
     "Name": "Volynska",
-    "Period": "16.03.2015",
-    "IDPs": 3166,
-    "Change": "",
-    "Population": "1042,80",
-    "IDPs/1000_Population": "3,04"
+    "IDPs": 4729
   },
   {
+    "id": 3,
     "KOATUU": 1200000000,
     "Name": "Dnipropetrovska",
-    "Period": "16.03.2015",
-    "IDPs": 71575,
-    "Change": "",
-    "Population": "3265,80",
-    "IDPs/1000_Population": "21,92"
+    "IDPs": 77156
   },
   {
+    "id": 4,
     "KOATUU": 1400000000,
     "Name": "Donetska",
-    "Period": "16.03.2015",
-    "IDPs": 416778,
-    "Change": "",
-    "Population": "4281,20",
-    "IDPs/1000_Population": "97,35"
+    "IDPs": 566779
   },
   {
+    "id": 5,
     "KOATUU": 1800000000,
     "Name": "Zhytomyrska",
-    "Period": "16.03.2015",
-    "IDPs": 8448,
-    "Change": "",
-    "Population": "1251,70",
-    "IDPs/1000_Population": "6,75"
+    "IDPs": 12013
   },
   {
+    "id": 6,
     "KOATUU": 2100000000,
     "Name": "Zakarpatska",
-    "Period": "16.03.2015",
-    "IDPs": 3059,
-    "Change": "",
-    "Population": "1259,40",
-    "IDPs/1000_Population": "2,43"
+    "IDPs": 3508
   },
   {
+    "id": 7,
     "KOATUU": 2300000000,
     "Name": "Zaporizska",
-    "Period": "16.03.2015",
-    "IDPs": 82366,
-    "Change": "",
-    "Population": "1759,80",
-    "IDPs/1000_Population": "46,80"
+    "IDPs": 95734
   },
   {
+    "id": 8,
     "KOATUU": 2600000000,
     "Name": "Ivano-Frankivska",
-    "Period": "16.03.2015",
-    "IDPs": 3484,
-    "Change": "",
-    "Population": "1382,40",
-    "IDPs/1000_Population": "2,52"
+    "IDPs": 4760
   },
   {
+    "id": 9,
     "KOATUU": 3200000000,
     "Name": "Kyivska",
-    "Period": "16.03.2015",
-    "IDPs": 36372,
-    "Change": "",
-    "Population": "1730,70",
-    "IDPs/1000_Population": "21,02"
+    "IDPs": 56743
   },
   {
+    "id": 10,
     "KOATUU": 3500000000,
     "Name": "Kirovohradska",
-    "Period": "16.03.2015",
-    "IDPs": 8540,
-    "Change": "",
-    "Population": "976,90",
-    "IDPs/1000_Population": "8,74"
+    "IDPs": 14892
   },
   {
+    "id": 11,
     "KOATUU": 4400000000,
     "Name": "Luhanska",
-    "Period": "16.03.2015",
-    "IDPs": 146831,
-    "Change": "",
-    "Population": "2212,80",
-    "IDPs/1000_Population": "66,36"
+    "IDPs": 293416
   },
   {
+    "id": 12,
     "KOATUU": 4600000000,
     "Name": "Lvivska",
-    "Period": "16.03.2015",
-    "IDPs": 8494,
-    "Change": "",
-    "Population": "2536,00",
-    "IDPs/1000_Population": "3,35"
+    "IDPs": 12114
   },
   {
+    "id": 13,
     "KOATUU": 4800000000,
     "Name": "Mykolaivska",
-    "Period": "16.03.2015",
-    "IDPs": 8618,
-    "Change": "",
-    "Population": "1161,30",
-    "IDPs/1000_Population": "7,42"
+    "IDPs": 8544
   },
   {
+    "id": 14,
     "KOATUU": 5100000000,
     "Name": "Odeska",
-    "Period": "16.03.2015",
-    "IDPs": 23356,
-    "Change": "",
-    "Population": "2393,40",
-    "IDPs/1000_Population": "9,76"
+    "IDPs": 42075
   },
   {
+    "id": 15,
     "KOATUU": 5300000000,
     "Name": "Poltavska",
-    "Period": "16.03.2015",
-    "IDPs": 25909,
-    "Change": "",
-    "Population": "1444,00",
-    "IDPs/1000_Population": "17,94"
+    "IDPs": 29895
   },
   {
+    "id": 16,
     "KOATUU": 5600000000,
     "Name": "Rivnenska",
-    "Period": "16.03.2015",
-    "IDPs": 3212,
-    "Change": "",
-    "Population": "1161,50",
-    "IDPs/1000_Population": "2,77"
+    "IDPs": 3244
   },
   {
+    "id": 17,
     "KOATUU": 5900000000,
     "Name": "Sumska",
-    "Period": "16.03.2015",
-    "IDPs": 13651,
-    "Change": "",
-    "Population": "1118,30",
-    "IDPs/1000_Population": "12,21"
+    "IDPs": 16263
   },
   {
+    "id": 18,
     "KOATUU": 6100000000,
     "Name": "Ternopilska",
-    "Period": "16.03.2015",
-    "IDPs": 2442,
-    "Change": "",
-    "Population": "1067,80",
-    "IDPs/1000_Population": "2,29"
+    "IDPs": 2506
   },
   {
+    "id": 19,
     "KOATUU": 6300000000,
     "Name": "Kharkivska",
-    "Period": "16.03.2015",
-    "IDPs": 151974,
-    "Change": "",
-    "Population": "2724,90",
-    "IDPs/1000_Population": "55,77"
+    "IDPs": 193429
   },
   {
+    "id": 20,
     "KOATUU": 6500000000,
     "Name": "Khersonska",
-    "Period": "16.03.2015",
-    "IDPs": 10771,
-    "Change": "",
-    "Population": "1065,10",
-    "IDPs/1000_Population": "10,11"
+    "IDPs": 16565
   },
   {
+    "id": 21,
     "KOATUU": 6800000000,
     "Name": "Khmelnytska",
-    "Period": "16.03.2015",
-    "IDPs": 6822,
-    "Change": "",
-    "Population": "1297,80",
-    "IDPs/1000_Population": "5,26"
+    "IDPs": 6891
   },
   {
+    "id": 22,
     "KOATUU": 7100000000,
     "Name": "Cherkaska",
-    "Period": "16.03.2015",
-    "IDPs": 11845,
-    "Change": "",
-    "Population": "1247,40",
-    "IDPs/1000_Population": "9,50"
+    "IDPs": 13862
   },
   {
+    "id": 23,
     "KOATUU": 7300000000,
     "Name": "Chernivetska",
-    "Period": "16.03.2015",
-    "IDPs": 2405,
-    "Change": "",
-    "Population": "909,90",
-    "IDPs/1000_Population": "2,64"
+    "IDPs": 3425
   },
   {
+    "id": 24,
     "KOATUU": 7400000000,
     "Name": "Chernihivska",
-    "Period": "16.03.2015",
-    "IDPs": 8170,
-    "Change": "",
-    "Population": "1050,30",
-    "IDPs/1000_Population": "7,78"
+    "IDPs": 9593
   },
   {
+    "id": 25,
     "KOATUU": 8000000000,
     "Name": "Kyiv",
-    "Period": "16.03.2015",
-    "IDPs": 82369,
-    "Change": "",
-    "Population": "2897,30",
-    "IDPs/1000_Population": "28,43"
-  },
-  {
-    "KOATUU": 500000000,
-    "Name": "Vinnytska",
-    "Period": "25.02.2016",
-    "IDPs": 13481,
-    "Change": "23%",
-    "Population": "1601,29",
-    "IDPs/1000_Population": "8,42"
-  },
-  {
-    "KOATUU": 700000000,
-    "Name": "Volynska",
-    "Period": "25.02.2016",
-    "IDPs": 4067,
-    "Change": "28%",
-    "Population": "1042,56",
-    "IDPs/1000_Population": "3,90"
-  },
-  {
-    "KOATUU": 1200000000,
-    "Name": "Dnipropetrovska",
-    "Period": "25.02.2016",
-    "IDPs": 75297,
-    "Change": "5%",
-    "Population": "3252,49",
-    "IDPs/1000_Population": "23,15"
-  },
-  {
-    "KOATUU": 1400000000,
-    "Name": "Donetska",
-    "Period": "25.02.2016",
-    "IDPs": 693484,
-    "Change": "66%",
-    "Population": "4262,92",
-    "IDPs/1000_Population": "162,68"
-  },
-  {
-    "KOATUU": 1800000000,
-    "Name": "Zhytomyrska",
-    "Period": "25.02.2016",
-    "IDPs": 10580,
-    "Change": "25%",
-    "Population": "1246,74",
-    "IDPs/1000_Population": "8,49"
-  },
-  {
-    "KOATUU": 2100000000,
-    "Name": "Zakarpatska",
-    "Period": "25.02.2016",
-    "IDPs": 3457,
-    "Change": "13%",
-    "Population": "1259,00",
-    "IDPs/1000_Population": "2,75"
-  },
-  {
-    "KOATUU": 2300000000,
-    "Name": "Zaporizska",
-    "Period": "25.02.2016",
-    "IDPs": 121525,
-    "Change": "48%",
-    "Population": "1752,31",
-    "IDPs/1000_Population": "69,35"
-  },
-  {
-    "KOATUU": 2600000000,
-    "Name": "Ivano-Frankivska",
-    "Period": "25.02.2016",
-    "IDPs": 4126,
-    "Change": "18%",
-    "Population": "1382,04",
-    "IDPs/1000_Population": "2,99"
-  },
-  {
-    "KOATUU": 3200000000,
-    "Name": "Kyivska",
-    "Period": "25.02.2016",
-    "IDPs": 48975,
-    "Change": "35%",
-    "Population": "1732,26",
-    "IDPs/1000_Population": "28,27"
-  },
-  {
-    "KOATUU": 3500000000,
-    "Name": "Kirovohradska",
-    "Period": "25.02.2016",
-    "IDPs": 13133,
-    "Change": "54%",
-    "Population": "972,27",
-    "IDPs/1000_Population": "13,51"
-  },
-  {
-    "KOATUU": 4400000000,
-    "Name": "Luhanska",
-    "Period": "25.02.2016",
-    "IDPs": 255537,
-    "Change": "74%",
-    "Population": "2204,35",
-    "IDPs/1000_Population": "115,92"
-  },
-  {
-    "KOATUU": 4600000000,
-    "Name": "Lvivska",
-    "Period": "25.02.2016",
-    "IDPs": 11401,
-    "Change": "34%",
-    "Population": "2533,31",
-    "IDPs/1000_Population": "4,50"
-  },
-  {
-    "KOATUU": 4800000000,
-    "Name": "Mykolaivska",
-    "Period": "25.02.2016",
-    "IDPs": 8666,
-    "Change": "1%",
-    "Population": "1157,56",
-    "IDPs/1000_Population": "7,49"
-  },
-  {
-    "KOATUU": 5100000000,
-    "Name": "Odeska",
-    "Period": "25.02.2016",
-    "IDPs": 35703,
-    "Change": "53%",
-    "Population": "2389,37",
-    "IDPs/1000_Population": "14,94"
-  },
-  {
-    "KOATUU": 5300000000,
-    "Name": "Poltavska",
-    "Period": "25.02.2016",
-    "IDPs": 30841,
-    "Change": "19%",
-    "Population": "1437,81",
-    "IDPs/1000_Population": "21,45"
-  },
-  {
-    "KOATUU": 5600000000,
-    "Name": "Rivnenska",
-    "Period": "25.02.2016",
-    "IDPs": 3193,
-    "Change": "-1%",
-    "Population": "1161,68",
-    "IDPs/1000_Population": "2,75"
-  },
-  {
-    "KOATUU": 5900000000,
-    "Name": "Sumska",
-    "Period": "25.02.2016",
-    "IDPs": 15339,
-    "Change": "12%",
-    "Population": "1112,09",
-    "IDPs/1000_Population": "13,79"
-  },
-  {
-    "KOATUU": 6100000000,
-    "Name": "Ternopilska",
-    "Period": "25.02.2016",
-    "IDPs": 2712,
-    "Change": "11%",
-    "Population": "1065,16",
-    "IDPs/1000_Population": "2,55"
-  },
-  {
-    "KOATUU": 6300000000,
-    "Name": "Kharkivska",
-    "Period": "25.02.2016",
-    "IDPs": 216352,
-    "Change": "42%",
-    "Population": "2717,20",
-    "IDPs/1000_Population": "79,62"
-  },
-  {
-    "KOATUU": 6500000000,
-    "Name": "Khersonska",
-    "Period": "25.02.2016",
-    "IDPs": 14439,
-    "Change": "34%",
-    "Population": "1061,69",
-    "IDPs/1000_Population": "13,60"
-  },
-  {
-    "KOATUU": 6800000000,
-    "Name": "Khmelnytska",
-    "Period": "25.02.2016",
-    "IDPs": 6721,
-    "Change": "-1%",
-    "Population": "1293,72",
-    "IDPs/1000_Population": "5,20"
-  },
-  {
-    "KOATUU": 7100000000,
-    "Name": "Cherkaska",
-    "Period": "25.02.2016",
-    "IDPs": 14405,
-    "Change": "22%",
-    "Population": "1242,10",
-    "IDPs/1000_Population": "11,60"
-  },
-  {
-    "KOATUU": 7300000000,
-    "Name": "Chernivetska",
-    "Period": "25.02.2016",
-    "IDPs": 3177,
-    "Change": "32%",
-    "Population": "909,69",
-    "IDPs/1000_Population": "3,49"
-  },
-  {
-    "KOATUU": 7400000000,
-    "Name": "Chernihivska",
-    "Period": "25.02.2016",
-    "IDPs": 10074,
-    "Change": "23%",
-    "Population": "1044,02",
-    "IDPs/1000_Population": "9,65"
-  },
-  {
-    "KOATUU": 8000000000,
-    "Name": "Kyiv",
-    "Period": "25.02.2016",
-    "IDPs": 129314,
-    "Change": "57%",
-    "Population": "2907,59",
-    "IDPs/1000_Population": "44,47"
-  },
-  {
-    "KOATUU": 500000000,
-    "Name": "Vinnytska",
-    "Period": "15.12.2016",
-    "IDPs": 14283,
-    "Change": "6%",
-    "Population": "1596,30",
-    "IDPs/1000_Population": "8,95"
-  },
-  {
-    "KOATUU": 700000000,
-    "Name": "Volynska",
-    "Period": "15.12.2016",
-    "IDPs": 4729,
-    "Change": "16%",
-    "Population": "1041,80",
-    "IDPs/1000_Population": "4,54"
-  },
-  {
-    "KOATUU": 1200000000,
-    "Name": "Dnipropetrovska",
-    "Period": "15.12.2016",
-    "IDPs": 77156,
-    "Change": "2%",
-    "Population": "3242,60",
-    "IDPs/1000_Population": "23,79"
-  },
-  {
-    "KOATUU": 1400000000,
-    "Name": "Donetska",
-    "Period": "15.12.2016",
-    "IDPs": 566779,
-    "Change": "-18%",
-    "Population": "4254,60",
-    "IDPs/1000_Population": "133,22"
-  },
-  {
-    "KOATUU": 1800000000,
-    "Name": "Zhytomyrska",
-    "Period": "15.12.2016",
-    "IDPs": 12013,
-    "Change": "14%",
-    "Population": "1244,00",
-    "IDPs/1000_Population": "9,66"
-  },
-  {
-    "KOATUU": 2100000000,
-    "Name": "Zakarpatska",
-    "Period": "15.12.2016",
-    "IDPs": 3508,
-    "Change": "1%",
-    "Population": "1259,00",
-    "IDPs/1000_Population": "2,79"
-  },
-  {
-    "KOATUU": 2300000000,
-    "Name": "Zaporizska",
-    "Period": "15.12.2016",
-    "IDPs": 95734,
-    "Change": "-21%",
-    "Population": "1746,60",
-    "IDPs/1000_Population": "54,81"
-  },
-  {
-    "KOATUU": 2600000000,
-    "Name": "Ivano-Frankivska",
-    "Period": "15.12.2016",
-    "IDPs": 4760,
-    "Change": "15%",
-    "Population": "1381,10",
-    "IDPs/1000_Population": "3,45"
-  },
-  {
-    "KOATUU": 3200000000,
-    "Name": "Kyivska",
-    "Period": "15.12.2016",
-    "IDPs": 56743,
-    "Change": "16%",
-    "Population": "1733,30",
-    "IDPs/1000_Population": "32,74"
-  },
-  {
-    "KOATUU": 3500000000,
-    "Name": "Kirovohradska",
-    "Period": "15.12.2016",
-    "IDPs": 14892,
-    "Change": "13%",
-    "Population": "969,50",
-    "IDPs/1000_Population": "15,36"
-  },
-  {
-    "KOATUU": 4400000000,
-    "Name": "Luhanska",
-    "Period": "15.12.2016",
-    "IDPs": 293416,
-    "Change": "15%",
-    "Population": "2200,30",
-    "IDPs/1000_Population": "133,35"
-  },
-  {
-    "KOATUU": 4600000000,
-    "Name": "Lvivska",
-    "Period": "15.12.2016",
-    "IDPs": 12114,
-    "Change": "6%",
-    "Population": "2534,10",
-    "IDPs/1000_Population": "4,78"
-  },
-  {
-    "KOATUU": 4800000000,
-    "Name": "Mykolaivska",
-    "Period": "15.12.2016",
-    "IDPs": 8544,
-    "Change": "-1%",
-    "Population": "1154,20",
-    "IDPs/1000_Population": "7,40"
-  },
-  {
-    "KOATUU": 5100000000,
-    "Name": "Odeska",
-    "Period": "15.12.2016",
-    "IDPs": 42075,
-    "Change": "18%",
-    "Population": "2388,40",
-    "IDPs/1000_Population": "17,62"
-  },
-  {
-    "KOATUU": 5300000000,
-    "Name": "Poltavska",
-    "Period": "15.12.2016",
-    "IDPs": 29895,
-    "Change": "-3%",
-    "Population": "1432,90",
-    "IDPs/1000_Population": "20,86"
-  },
-  {
-    "KOATUU": 5600000000,
-    "Name": "Rivnenska",
-    "Period": "15.12.2016",
-    "IDPs": 3244,
-    "Change": "2%",
-    "Population": "1162,30",
-    "IDPs/1000_Population": "2,79"
-  },
-  {
-    "KOATUU": 5900000000,
-    "Name": "Sumska",
-    "Period": "15.12.2016",
-    "IDPs": 16263,
-    "Change": "6%",
-    "Population": "1108,90",
-    "IDPs/1000_Population": "14,67"
-  },
-  {
-    "KOATUU": 6100000000,
-    "Name": "Ternopilska",
-    "Period": "15.12.2016",
-    "IDPs": 2506,
-    "Change": "-8%",
-    "Population": "1062,40",
-    "IDPs/1000_Population": "2,36"
-  },
-  {
-    "KOATUU": 6300000000,
-    "Name": "Kharkivska",
-    "Period": "15.12.2016",
-    "IDPs": 193429,
-    "Change": "-11%",
-    "Population": "2709,90",
-    "IDPs/1000_Population": "71,38"
-  },
-  {
-    "KOATUU": 6500000000,
-    "Name": "Khersonska",
-    "Period": "15.12.2016",
-    "IDPs": 16565,
-    "Change": "15%",
-    "Population": "1059,00",
-    "IDPs/1000_Population": "15,64"
-  },
-  {
-    "KOATUU": 6800000000,
-    "Name": "Khmelnytska",
-    "Period": "15.12.2016",
-    "IDPs": 6891,
-    "Change": "3%",
-    "Population": "1289,80",
-    "IDPs/1000_Population": "5,34"
-  },
-  {
-    "KOATUU": 7100000000,
-    "Name": "Cherkaska",
-    "Period": "15.12.2016",
-    "IDPs": 13862,
-    "Change": "-4%",
-    "Population": "1237,10",
-    "IDPs/1000_Population": "11,21"
-  },
-  {
-    "KOATUU": 7300000000,
-    "Name": "Chernivetska",
-    "Period": "15.12.2016",
-    "IDPs": 3425,
-    "Change": "8%",
-    "Population": "909,00",
-    "IDPs/1000_Population": "3,77"
-  },
-  {
-    "KOATUU": 7400000000,
-    "Name": "Chernihivska",
-    "Period": "15.12.2016",
-    "IDPs": 9593,
-    "Change": "-5%",
-    "Population": "1039,20",
-    "IDPs/1000_Population": "9,23"
-  },
-  {
-    "KOATUU": 8000000000,
-    "Name": "Kyiv",
-    "Period": "15.12.2016",
-    "IDPs": 155787,
-    "Change": "20%",
-    "Population": "2916,20",
-    "IDPs/1000_Population": "53,42"
-  },
-  {
-    "KOATUU": 500000000,
-    "Name": "Vinnytska",
-    "Period": "06.04.2017",
-    "IDPs": 14523,
-    "Change": "2%",
-    "Population": "1587,73",
-    "IDPs/1000_Population": "9,15"
-  },
-  {
-    "KOATUU": 700000000,
-    "Name": "Volynska",
-    "Period": "06.04.2017",
-    "IDPs": 4891,
-    "Change": "3%",
-    "Population": "1040,12",
-    "IDPs/1000_Population": "4,70"
-  },
-  {
-    "KOATUU": 1200000000,
-    "Name": "Dnipropetrovska",
-    "Period": "06.04.2017",
-    "IDPs": 75001,
-    "Change": "-3%",
-    "Population": "3225,24",
-    "IDPs/1000_Population": "23,25"
-  },
-  {
-    "KOATUU": 1400000000,
-    "Name": "Donetska",
-    "Period": "06.04.2017",
-    "IDPs": 529730,
-    "Change": "-7%",
-    "Population": "4239,73",
-    "IDPs/1000_Population": "124,94"
-  },
-  {
-    "KOATUU": 1800000000,
-    "Name": "Zhytomyrska",
-    "Period": "06.04.2017",
-    "IDPs": 12452,
-    "Change": "4%",
-    "Population": "1238,87",
-    "IDPs/1000_Population": "10,05"
-  },
-  {
-    "KOATUU": 2100000000,
-    "Name": "Zakarpatska",
-    "Period": "06.04.2017",
-    "IDPs": 3549,
-    "Change": "1%",
-    "Population": "1258,22",
-    "IDPs/1000_Population": "2,82"
-  },
-  {
-    "KOATUU": 2300000000,
-    "Name": "Zaporizska",
-    "Period": "06.04.2017",
-    "IDPs": 59632,
-    "Change": "-38%",
-    "Population": "1736,44",
-    "IDPs/1000_Population": "34,34"
-  },
-  {
-    "KOATUU": 2600000000,
-    "Name": "Ivano-Frankivska",
-    "Period": "06.04.2017",
-    "IDPs": 5171,
-    "Change": "9%",
-    "Population": "1379,07",
-    "IDPs/1000_Population": "3,75"
-  },
-  {
-    "KOATUU": 3200000000,
-    "Name": "Kyivska",
-    "Period": "06.04.2017",
-    "IDPs": 59166,
-    "Change": "4%",
-    "Population": "1732,99",
-    "IDPs/1000_Population": "34,14"
-  },
-  {
-    "KOATUU": 3500000000,
-    "Name": "Kirovohradska",
-    "Period": "06.04.2017",
-    "IDPs": 9684,
-    "Change": "-35%",
-    "Population": "964,24",
-    "IDPs/1000_Population": "10,04"
-  },
-  {
-    "KOATUU": 4400000000,
-    "Name": "Luhanska",
-    "Period": "06.04.2017",
-    "IDPs": 291308,
-    "Change": "-1%",
-    "Population": "2193,28",
-    "IDPs/1000_Population": "132,82"
-  },
-  {
-    "KOATUU": 4600000000,
-    "Name": "Lvivska",
-    "Period": "06.04.2017",
-    "IDPs": 12194,
-    "Change": "1%",
-    "Population": "2532,24",
-    "IDPs/1000_Population": "4,82"
-  },
-  {
-    "KOATUU": 4800000000,
-    "Name": "Mykolaivska",
-    "Period": "06.04.2017",
-    "IDPs": 8623,
-    "Change": "1%",
-    "Population": "1148,10",
-    "IDPs/1000_Population": "7,51"
-  },
-  {
-    "KOATUU": 5100000000,
-    "Name": "Odeska",
-    "Period": "06.04.2017",
-    "IDPs": 42887,
-    "Change": "2%",
-    "Population": "2384,74",
-    "IDPs/1000_Population": "17,98"
-  },
-  {
-    "KOATUU": 5300000000,
-    "Name": "Poltavska",
-    "Period": "06.04.2017",
-    "IDPs": 28506,
-    "Change": "-5%",
-    "Population": "1424,51",
-    "IDPs/1000_Population": "20,01"
-  },
-  {
-    "KOATUU": 5600000000,
-    "Name": "Rivnenska",
-    "Period": "06.04.2017",
-    "IDPs": 3229,
-    "Change": "0%",
-    "Population": "1162,29",
-    "IDPs/1000_Population": "2,78"
-  },
-  {
-    "KOATUU": 5900000000,
-    "Name": "Sumska",
-    "Period": "06.04.2017",
-    "IDPs": 15227,
-    "Change": "-6%",
-    "Population": "1102,64",
-    "IDPs/1000_Population": "13,81"
-  },
-  {
-    "KOATUU": 6100000000,
-    "Name": "Ternopilska",
-    "Period": "06.04.2017",
-    "IDPs": 2513,
-    "Change": "0%",
-    "Population": "1057,85",
-    "IDPs/1000_Population": "2,38"
-  },
-  {
-    "KOATUU": 6300000000,
-    "Name": "Kharkivska",
-    "Period": "06.04.2017",
-    "IDPs": 195502,
-    "Change": "1%",
-    "Population": "2700,06",
-    "IDPs/1000_Population": "72,41"
-  },
-  {
-    "KOATUU": 6500000000,
-    "Name": "Khersonska",
-    "Period": "06.04.2017",
-    "IDPs": 16710,
-    "Change": "1%",
-    "Population": "1053,96",
-    "IDPs/1000_Population": "15,85"
-  },
-  {
-    "KOATUU": 6800000000,
-    "Name": "Khmelnytska",
-    "Period": "06.04.2017",
-    "IDPs": 6694,
-    "Change": "-3%",
-    "Population": "1283,31",
-    "IDPs/1000_Population": "5,22"
-  },
-  {
-    "KOATUU": 7100000000,
-    "Name": "Cherkaska",
-    "Period": "06.04.2017",
-    "IDPs": 13165,
-    "Change": "-5%",
-    "Population": "1229,46",
-    "IDPs/1000_Population": "10,71"
-  },
-  {
-    "KOATUU": 7300000000,
-    "Name": "Chernivetska",
-    "Period": "06.04.2017",
-    "IDPs": 3561,
-    "Change": "4%",
-    "Population": "907,43",
-    "IDPs/1000_Population": "3,92"
-  },
-  {
-    "KOATUU": 7400000000,
-    "Name": "Chernihivska",
-    "Period": "06.04.2017",
-    "IDPs": 9022,
-    "Change": "-6%",
-    "Population": "1030,95",
-    "IDPs/1000_Population": "8,75"
-  },
-  {
-    "KOATUU": 8000000000,
-    "Name": "Kyiv",
-    "Period": "06.04.2017",
-    "IDPs": 163784,
-    "Change": "5%",
-    "Population": "2928,19",
-    "IDPs/1000_Population": "55,93"
+    "IDPs": 155787
   }
 ]
