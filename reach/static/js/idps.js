@@ -4,12 +4,16 @@ var mapChart = dc.geoChoroplethChart("#map"),
     dataTable = dc.dataTable("#table"),
     oblastChart = dc.barChart('#oblasts');
 
+console.log(adm1.features);
+
 d3.json('../../static/data/idps.json', function (error, data) {
 
     var cf = crossfilter(data);
     var oblast = cf.dimension(function (d) {
         return d['Name'];
     });
+
+    console.log(oblast.group.all())
 
     var dateParse = d3.time.format('%d.%m.%Y');
 

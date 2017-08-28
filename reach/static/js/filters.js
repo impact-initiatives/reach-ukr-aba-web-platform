@@ -57,14 +57,6 @@ var createFilter = function (container, dim, settlements) {
         sortField: 'text'
     });
 
-    SelectObj.on('change', function (e) {
-
-        // if (container == '#settlements') {
-        //     console.log(e.currentTarget.lastChild.value)
-        // }
-
-    });
-
     SelectObj.on('change', function (val) {
 
         var filters = [];
@@ -101,6 +93,8 @@ var createFilter = function (container, dim, settlements) {
 
             }
         }
+
+        d3.select("#counter").html(dim.top(Infinity).length);
 
     });
 

@@ -3,17 +3,17 @@
 
 
 {% block libs %}
-    <script src='{% static 'js/mapbox-gl.js' %}'></script>
+    <script src='{% static 'js/lib/mapbox-gl.js' %}'></script>
     <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet'/>
 
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
 
 
-    <script src='{% static 'js/mapbox-gl-geocoder.js' %}'></script>
+    <script src='{% static 'js/lib/mapbox-gl-geocoder.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-geocoder.css' %}' type='text/css'/>
 
-    <script src='{% static 'js/mapbox-gl-draw.js' %}'></script>
+    <script src='{% static 'js/lib/mapbox-gl-draw.js' %}'></script>
     <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 
@@ -106,10 +106,10 @@
 
 
 {% block libs2 %}
-    <script src="{% static 'js/d3.min.js' %}"></script>
-    <script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
-    <script src='{% static 'js/selectize.min.js' %}'></script>
-    <script src="{% static 'js/d3-queue.v3.min.js' %}"></script>
+    <script src="{% static 'js/lib/d3.min.js' %}"></script>
+    <script src="{% static 'js/lib/crossfilter.v1.min.js' %}"></script>
+    <script src='{% static 'js/lib/selectize.min.js' %}'></script>
+    <script src="{% static 'js/lib/d3-queue.v3.min.js' %}"></script>
 
 
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
@@ -208,7 +208,7 @@
 
 
         function loadResponsesData(err, fields, data, choices, quest) {
-
+            console.log(data)
             loadResponses(fields[0], data, choices[0], quest[0]);
             d3.select("#counter").html(data.length);
 

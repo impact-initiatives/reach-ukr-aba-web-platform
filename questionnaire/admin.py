@@ -17,5 +17,6 @@ admin.site.register(ResearchQuestion,ResearchQuestionAdmin)
 
 admin.site.register([
     Question,
-    IndicatorType
+    IndicatorType,
+    Settlements
 ])

@@ -13,28 +13,32 @@ from .views import *
 
 admin.autodiscover()
 
-
 urlpatterns = [
-    url(r'^draw/$', draw),
-    url(r'^submission/$', submission),
+
     url(r'^sitemap\.xml$', sitemap,
-        {'sitemaps': {'cmspages': CMSSitemap}}),
+        {'sitemaps': {
+            'cmspages': CMSSitemap
+        }
+        }),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^aba/', include('aba.urls', namespace='aba', app_name='aba')),
-    url(r'^questionnaire/', include('questionnaire.urls', namespace='questionnaire', app_name='questionnaire')),
-    url(r'^', include('cms.urls')),
+    # url(r'^admin/', include(admin.site.urls)),  # NOQA
+    # url(r'^aba/', include('aba.urls', namespace='aba', app_name='aba')),
+    # url(r'^questionnaire/', include('questionnaire.urls', namespace='questionnaire', app_name='questionnaire')),
+    # url(r'^', include('cms.urls')),
 
 ]
 
-# i18n_
-# urlpatterns += patterns(
-#     url(r'^admin/', include(admin.site.urls)),  # NOQA
-#     url(r'^', include('cms.urls')),
-# )
+urlpatterns += i18n_patterns(
+    url(r'^draw/$', draw),
+    url(r'^submission/$', submission),
+    url(r'^aba/', include('aba.urls', namespace='aba', app_name='aba')),
+    url(r'^questionnaire/', include('questionnaire.urls', namespace='questionnaire', app_name='questionnaire')),
+    url(r'^', include('cms.urls')),
+)
 
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
+                      url(r'^media/(?P<path>.*)$', serve,
+                          {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+                  ] + staticfiles_urlpatterns() + urlpatterns

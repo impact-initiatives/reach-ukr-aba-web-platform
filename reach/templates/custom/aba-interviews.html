@@ -185,7 +185,7 @@
 
     {% comment %} End JS Libraries {% endcomment %}
 
-    <script src="{% static 'js/map-aba.js' %}"></script>
+    <script src="{% static 'js/map-interviews.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
     <script src="{% static 'js/responses/responses.js' %}"></script>
@@ -268,16 +268,15 @@
         {#            }, 250);#}
         {#        }#}
         d3.queue()
-{#            .defer(loadDatasets)#}
+            .defer(loadDatasets)
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
-            .defer(d3.json, "{% static 'data/aba/ABA Settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/aba_116.json' %}")
             .defer(d3.json, "{% static 'data/aba/BSUs.geojson' %}")
             .await(loadData);
 
 
-        function loadData(error, polygons, buffer, centroids, settlements, bsus) {
+        function loadData(error, data, polygons, buffer, settlements, bsus) {
 
             // at this stage in data we only have points collected (1033)
 
@@ -285,10 +284,10 @@
 
             // here we have it combined with settlement polygons +(110)
 
-            MapInit(polygons, buffer, centroids, settlements, bsus);
+            MapInit(data, buffer, settlements, bsus);
 
 
-{#            var featureCount = data.features.length;#}
+            var featureCount = data.features.length;
             var cf = crossfilter(data.features);
 
 

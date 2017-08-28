@@ -61,3 +61,42 @@ class Question(models.Model):
 
     class Meta:
         db_table = 'questions'
+
+
+class Settlements(models.Model):
+
+    admin4 = models.BigIntegerField(blank=True, null=True)
+    admin4_name = models.CharField(max_length=80, blank=True, null=True)
+    # admin4_prev_name = models.CharField(max_length=80, blank=True, null=True)
+    admin1_name = models.CharField(max_length=80, blank=True, null=True)
+    admin2_name = models.CharField(max_length=80, blank=True, null=True)
+    admin2_type = models.CharField(max_length=80, blank=True, null=True)
+
+    def __unicode__(self):
+        return '%s (%s %s)' % (self.admin4_name, self.admin2_name, self.admin2_type)
+
+    class Meta:
+        db_table = 'Settlements'
+
+
+class ABAEducation(models.Model):
+
+    admin4 = models.BigIntegerField(blank=True, null=True)
+    admin4_name = models.CharField(max_length=80, blank=True, null=True)
+    admin1_name = models.CharField(max_length=80, blank=True, null=True)
+    admin2_name = models.CharField(max_length=80, blank=True, null=True)
+
+    name_KI = models.CharField(max_length=80, blank=True, null=True)
+    phone = models.CharField(max_length=80, blank=True, null=True)
+
+    info = models.CharField(max_length=500, blank=True, null=True)
+
+    question = models.CharField(max_length=500, blank=True, null=True)
+
+
+
+    def __unicode__(self):
+        return '%s (%s %s)' % (self.admin4_name, self.admin2_name, self.admin2_type)
+
+    class Meta:
+        db_table = 'ABA_Education'

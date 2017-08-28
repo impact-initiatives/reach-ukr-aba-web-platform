@@ -3,7 +3,7 @@ from django import forms
 
 from django.http import HttpResponseBadRequest, HttpResponse
 import django_excel as excel
-from .models import ResearchQuestion
+from .models import *
 
 from .serializers import *
 
@@ -32,8 +32,8 @@ def import_sheet(request):
         if form.is_valid():
             request.FILES['file'].save_to_database(
                 name_columns_by_row=2,
-                model=ResearchQuestion,
-                mapdict=['rq_id', 'research_question'])
+                model=Settlements,
+                mapdict=['admin4', 'admin4_name', 'admin1_name', 'admin2_name', 'admin2_type'])
             return HttpResponse("OK")
         else:
             return HttpResponseBadRequest()

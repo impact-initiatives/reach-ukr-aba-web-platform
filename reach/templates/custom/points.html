@@ -3,7 +3,7 @@
 
 
 {% block libs %}
-    <script src='{% static 'js/mapbox-gl.js' %}'></script>
+    <script src='{% static 'js/lib/mapbox-gl.js' %}'></script>
     <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet' />
 
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}' />
@@ -65,9 +65,9 @@
 
 {% block libs2 %}
 
-<script src="{% static 'js/d3.min.js' %}"></script>
-<script src="{% static 'js/crossfilter.v1.min.js' %}"></script>
-<script src='{% static 'js/selectize.min.js' %}'></script>
+<script src="{% static 'js/lib/d3.min.js' %}"></script>
+<script src="{% static 'js/lib/crossfilter.v1.min.js' %}"></script>
+<script src='{% static 'js/lib/selectize.min.js' %}'></script>
 
 <!--Loading Data-->
 {#<script src='{% static 'data/schools-points.js' %}'></script>#}
@@ -81,7 +81,7 @@
         $('[data-toggle="popover"]').popover()
     })
 </script>
-<script src="{% static 'js/map-points.js' %}"></script>
+<script src="{% static 'js/map-interviews.js' %}"></script>
 
 
 <script>

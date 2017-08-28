@@ -13,6 +13,8 @@ function loadResponses(fields, data, choices, quest) {
 
     var features = toPoints('Longitude', 'Latitude', data);
 
+    console.log(features);
+
     if (map.getSource('responses')) {
         map.getSource('responses').setData({
             type: "FeatureCollection",
@@ -60,7 +62,7 @@ function updateSelect(quest, choices, fields) {
 
     var question_names = Object.keys(quest);
 // Accessing list of question names
-
+    console.log(fields)
 // Creating iterable array with question names and labels
     var question_labels = question_names.map(function (key) {
         return [
@@ -68,6 +70,8 @@ function updateSelect(quest, choices, fields) {
             fields[key]
         ]
     });
+    console.log(question_labels)
+
 
 
     var questions_select = d3.select("#questions");
@@ -103,8 +107,9 @@ function updateSelect(quest, choices, fields) {
     //     });
 
     $("#questions").on('change', function (e) {
+
         changeColors(map, $(this).val(), choices, quest);
-        console.log(quest)
+
     });
 
 }
@@ -119,7 +124,7 @@ map.on('click', function (e) {
         return;
     }
 
-    if (feature.layer.source === 'responses') {
+    if (feature.layer.id == 'responses') {
         renderTable(g_fields, feature.properties);
     }
 
@@ -133,11 +138,11 @@ map.on('click', function (e) {
 
 
 // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
-map.on('mouseenter', 'responses', function () {
-    map.getCanvas().style.cursor = 'pointer';
-});
-
-// Change it back to a pointer when it leaves.
-map.on('mouseleave', 'responses', function () {
-    map.getCanvas().style.cursor = '';
-});
+// map.on('mouseenter', 'responses', function () {
+//     map.getCanvas().style.cursor = 'pointer';
+// });
+//
+// // Change it back to a pointer when it leaves.
+// map.on('mouseleave', 'responses', function () {
+//     map.getCanvas().style.cursor = '';
+// });
