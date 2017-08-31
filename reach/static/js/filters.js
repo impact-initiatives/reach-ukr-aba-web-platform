@@ -1,12 +1,12 @@
 function filerContainers(filters) {
 
-    var filterContainer = d3.select(".filters")
+    var filterContainer = d3.select("#filters")
         .append("div")
         .selectAll("div")
         .data(filters)
         .enter()
         .append("div")
-        .attr("class", "filter");
+        .attr("class", "select-filter");
 
     filterContainer.append("label")
         .text(function (d) {

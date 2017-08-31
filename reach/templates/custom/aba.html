@@ -3,104 +3,50 @@
 
 
 {% block libs %}
-    <script src='{% static 'js/lib/mapbox-gl.js' %}'></script>
-    <link href='{% static 'css/mapbox-gl.css' %}' rel='stylesheet'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
-    <script src='{% static 'js/lib/mapbox-gl-draw.js' %}'></script>
-    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>
-    <style>
-        .leaflet-clickable {
-            cursor: pointer !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href='{% static 'css/dc.min.css' %}'/>
+    {#    <script src='{% static 'js/lib/mapbox-gl-draw.js' %}'></script>#}
+    {#    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>#}
 {% endblock libs %}
 
 
 {% block content %}
-
-    <div class="wrappers" style="width:20%; overflow:auto">
-
-        <!-- Sidebar -->
-        <div class="filters" style="height: 100%; overflow: auto;">
-
-            <div class="filter">
-                {#                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>#}
-                {#                <button type="button" id="change-color" class="btn btn-primary">#}
-                {#                    Change color#}
-                {#                </button>#}
-                <span id="counter"></span> entries
-            </div>
-            <div class="filter">
-                <label for="dataset">Choose dataset</label>
-                <select id="dataset" class="form-control"></select>
-            </div>
-            <div class="filter">
-                <label for="questions">Color points by</label>
-                <select id="questions" class="form-control"></select>
-            </div>
-            <div class="filter">
-                <button type="button" id="reset" class="btn btn-secondary">Reset Filters</button>
-                <button type="button" id="modal-toggle" class="btn btn-primary" data-toggle="modal"
-                        data-target="#myModal">
-                    Enter data
-                </button>
-            </div>
-
-            <div class="filter">
-                <div class="card">
-                    <div class="card-header" role="tab" id="headingThree">
-                        <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapseThree"
-                               aria-expanded="false" aria-controls="collapseThree">
-                                Layers
-                            </a>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                        <nav id="menu"></nav>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <div class="wrappers" style="width:80%">
+    <div class="wrappers" style="width:55%">
         <div id='map-container'></div>
         <div id='sectors-legend' class='legend'>
             <h6>Sectors</h6>
         </div>
     </div>
+    <div class="wrappers" style="width:45%; overflow:auto">
 
+        <!-- Sidebar -->
+        <div class="sidebar" style="height: 100%; overflow: auto">
 
+            <div class="row filter">
+                <div id="filters" class="col-10">
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="col-2">
+                    <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">
+                        Clear
                     </button>
                 </div>
-                <form method="post" action="">{% csrf_token %}
-                    <div class="modal-body">
-
-                        {{ form }}
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="save">Save</button>
-                    </div>
-                </form>
-
             </div>
+
+            <div class="filter row">
+                <div class="col-12" id="info">
+
+                </div>
+                <div class="col-12" id="chart">
+
+                </div>
+            </div>
+
         </div>
+
     </div>
 
 
@@ -182,48 +128,16 @@
     <script src='{% static 'js/lib/selectize.min.js' %}'></script>
     <script src="{% static 'js/lib/d3-queue.v3.min.js' %}"></script>
     <script src="{% static 'js/lib/underscore-min.js' %}"></script>
+    <script src="{% static 'js/lib/dc.min.js' %}"></script>
+
 
     {% comment %} End JS Libraries {% endcomment %}
 
     <script src="{% static 'js/map-aba.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
-    <script src="{% static 'js/responses/responses.js' %}"></script>
+    {#    <script src="{% static 'js/responses/responses.js' %}"></script>#}
     <script>
-
-        var datasets = {
-
-            Administration: [
-                'data/admin/Administration_header.json',
-                'data/admin/Administration.txt',
-                'data/admin/Administration_options.json',
-                'data/admin/Administration_questions.json'
-            ],
-            Community: [
-                'data/community/Community_header.json',
-                'data/community/Community.txt',
-                'data/community/Community_options.json',
-                'data/community/Community_questions.json'
-            ],
-            Facility: [
-                'data/facility/Facility_header.json',
-                'data/facility/Facility.txt',
-                'data/facility/Facility_options.json',
-                'data/facility/Facility_questions.json'
-            ],
-            Health: [
-                'data/health/Health_header.json',
-                'data/health/Health.txt',
-                'data/health/Health_options.json',
-                'data/health/Health_questions.json'
-            ],
-            Education: [
-                'data/education/Education_header.json',
-                'data/education/Education.txt',
-                'data/education/Education_options.json',
-                'data/education/Education_questions.json'
-            ]
-        };
 
         {% static "" as baseUrl %}
 
@@ -232,52 +146,17 @@
     <script>
 
 
-        function loadDatasets(callback) {
-
-            d3.queue()
-                .defer(d3.tsv, '{{ baseUrl }}' + datasets['Administration'][1])
-                .defer(d3.tsv, '{{ baseUrl }}' + datasets['Community'][1])
-                .defer(d3.tsv, '{{ baseUrl }}' + datasets['Facility'][1])
-                .defer(d3.tsv, '{{ baseUrl }}' + datasets['Health'][1])
-                .defer(d3.tsv, '{{ baseUrl }}' + datasets['Education'][1])
-                .awaitAll(convertToGeoJSON);
-
-
-            function convertToGeoJSON(err, datasets) {
-
-                var features = [].concat.apply([], datasets.map(function (dataset) {
-                    return toPoints('Longitude', 'Latitude', dataset)
-                }));
-
-                var geoData = {
-                    type: "FeatureCollection",
-                    features: features
-                };
-
-                callback(null, geoData);
-            }
-
-        }
-
-        // Passes an array of results to callback insted of arguments one by one
-
-
-        {#        function simpleTask(callback) {#}
-        {#            setTimeout(function () {#}
-        {#                callback(null, {answer: 42});#}
-        {#            }, 250);#}
-        {#        }#}
         d3.queue()
-{#            .defer(loadDatasets)#}
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/ABA Settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/aba_116.json' %}")
             .defer(d3.json, "{% static 'data/aba/BSUs.geojson' %}")
+            .defer(d3.tsv, "{% static 'data/community/Community.txt' %}")
             .await(loadData);
 
 
-        function loadData(error, polygons, buffer, centroids, settlements, bsus) {
+        function loadData(error, polygons, buffer, centroids, settlements, bsus, data) {
 
             // at this stage in data we only have points collected (1033)
 
@@ -285,11 +164,13 @@
 
             // here we have it combined with settlement polygons +(110)
 
-            MapInit(polygons, buffer, centroids, settlements, bsus);
+            MapInit(polygons, buffer, centroids, settlements, bsus, data);
 
 
-{#            var featureCount = data.features.length;#}
-            var cf = crossfilter(data.features);
+            {#            var featureCount = data.features.length;#}
+            var cf = crossfilter(polygons.features);
+
+
 
 
             function dimensionFrom(d, field) {
@@ -315,183 +196,28 @@
             {#            resetSettlement();#}
             {#        });#}
 
-
-            //console.log(type.group().all());
-
-
             var filtersList = [
-                {
-                    id: 'oblasts',
-                    dimension: oblast,
-                    label: 'Oblasts'
-                },
                 {
                     id: 'settlements',
                     dimension: settlement,
                     label: 'Settlements'
-                },
-                {
-                    id: 'sectors',
-                    dimension: sector,
-                    label: 'Sector'
-                },
-                {
-                    id: 'types',
-                    dimension: type,
-                    label: 'Types'
                 }
             ];
-
-            var sectors = [
-                ['Bank', '#fbb03b'],
-                ['Post', '#223b53'],
-                ['Health', '#e55e5e'],
-                ['Government', '#9b59b6'],
-                ['Education', '#8bc34a'],
-                ['Transport', '#bdc3c7'],
-                ['Market', '#3bb2d0']
-            ];
-
-            {#            <div>#}
-            {#                <span style='background-color: #723122'></span>25,000,000#}
-            {#            </div>#}
-
-            var legend = d3.select(".legend")
-                .selectAll(".legend")
-                .data(sectors)
-                .enter()
-                .append("div");
-
-            legend.append("span")
-                .attr('style', function (d) {
-                    return "background-color: " + d[1];
-                }).attr('class', 'marker');
-
-            legend.append("span").text(function (d) {
-                return d[0];
-            });
-
 
             filerContainers(filtersList);
 
             for (var i = 0; i < filtersList.length; i++) {
                 var filter = filtersList[i];
                 var container = '#' + filter.id;
-
-                {#              console.log(settlements[1410200000]['C'])#}
-
                 createFilter(container, filter.dimension, settlements)
-
             }
-            function initSelect() {
-                d3.select("#dataset")
-                    .selectAll('option')
-                    .data(Object.keys(datasets))
-                    .enter()
-                    .append("option")
-                    .text(function (d) {
-                        return d;
-                    });
-            }
-
-            initSelect();
-
-            $('#dataset')
-            {#            .selectize({#}
-            {#                persist: false,#}
-            {#                create: false,#}
-            {#                sortField: 'text'#}
-            {#            })#}
-                .on('change', function (e) {
-                    var val = $(this).val();
-
-
-                    {#                ;#}
-                    //pointsLayer();
-                    initDataLoading(val)
-                });
-
-
-            function filterDatasets(dataset, callback) {
-
-                type.filterAll();
-                type.filterExact(dataset);
-                callback(null, type.top(Infinity));
-
-            }
-
-            function initDataLoading(dataset) {
-                d3.queue()
-                    .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][0]) // field labels
-                    .defer(filterDatasets, dataset) // dataset
-                    .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][2]) // option labels
-                    .defer(d3.json, '{{ baseUrl }}' + datasets[dataset][3]) // option lists
-                    .await(loadResponsesData);
-            }
-
-            function loadResponsesData(err, fields, data, choices, quest) {
-
-                // Instead of plane data we have geojson object now which stores all attributes in properties
-
-                pointsLayer(data, quest[0], choices[0], fields[0]);
-                d3.select("#counter").html(data.length);
-
-
-            }
-        }
-
-    </script>
-    <script>
-
-
-        function renderTable(fields, data) {
-
-            var question_names = Object.keys(data);
-            var data_entries = question_names.map(function (key) {
-                return {
-                    'question': fields[key],
-                    'response': data[key]
-                };
-            });
-
-
-            d3.select("#quest > tbody").html("");
-
-            var row = d3.select("#quest > tbody")
-                .selectAll("tr")
-                .data(data_entries)
-                .enter()
-                .append("tr");
-
-            row.append("td")
-                .text(function (d) {
-                    return d['question']
-                });
-
-            row.append("td")
-                .text(function (d) {
-                    return d['response'];
-                });
-            {#                $('#quest').DataTable();#}
-
-
-            $('#myModal3').modal('show');
 
         }
 
     </script>
 
-    <script>
-
-        $('#modal-toggle').on('click', function () {
-            var data = draw.getAll();
-            $('#id_polygon').val(JSON.stringify(data, null, 2));
-        });
-
-        $('#reset').on('click', function () {
-            console.log('Filters should be reseted')
-        })
-
-    </script>
 
 {% endblock libs2 %}
+
+
+

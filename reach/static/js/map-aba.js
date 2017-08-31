@@ -13,16 +13,6 @@ var map = new mapboxgl.Map({
     ]
 });
 
-var draw = new MapboxDraw({
-    displayControlsDefault: false,
-    controls: {
-        polygon: true,
-        line: true,
-        trash: true
-    }
-});
-
-map.addControl(draw);
 // map.addControl(new MapboxGeocoder({
 //     accessToken: mapboxgl.accessToken
 // }));
@@ -253,119 +243,211 @@ var pointsLayer = function (source, quest, choices, fields) {
 };
 
 
-function MapInit(polygons, buffer, centroids, settlements, bsus) {
+function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
 
-    map.addSource('buffer', {
-        type: 'geojson',
-        data: buffer
+    var dt = crossfilter(data);
+    var chart = dc.rowChart("#chart");
+    var settlement = dt.dimension(function (d) {
+        return d['KOATUU'];
     });
 
-    map.addSource('BSUs', {
-        type: 'geojson',
-        data: bsus
+    // gender_KI
+
+    var gender = dt.dimension(function (d) {
+        return d['comm_q66'];
     });
 
-    map.addSource('polygons', {
-        type: 'geojson',
-        data: polygons
-    });
+    console.log();
+
+    map.on('load', function (e) {
+        map.addSource('buffer', {
+            type: 'geojson',
+            data: buffer
+        });
+
+        map.addSource('BSUs', {
+            type: 'geojson',
+            data: bsus
+        });
+
+        map.addSource('polygons', {
+            type: 'geojson',
+            data: polygons
+        });
 
 
-    map.addSource('centroids', {
-        type: 'geojson',
-        data: centroids
-    });
+        map.addSource('centroids', {
+            type: 'geojson',
+            data: centroids
+        });
 
 
-    map.addLayer({
-        "id": "buffer",
-        "type": "fill",
-        "source": "buffer",
-        "layout": {
-            'visibility': 'visible'
-        },
-        'paint': {
-            'fill-color': '#aaaaaa',
-            'fill-opacity': 0.75,
-            'fill-outline-color': '#000000'
-        }
-    });
-
-    map.addLayer({
-        "id": "BSUs",
-        "type": "fill",
-        "source": "BSUs",
-        "layout": {
-            'visibility': 'visible'
-        },
-        'paint': {
-            'fill-color': '#a5ef12',
-            'fill-opacity': 0.75,
-            'fill-outline-color': '#000000'
-        }
-    });
-
-
-    if (!map.getLayer("settlements")) {
         map.addLayer({
-            "id": "settlements",
+            "id": "buffer",
             "type": "fill",
-            "source": "polygons",
+            "source": "buffer",
             "layout": {
                 'visibility': 'visible'
             },
             'paint': {
-                'fill-color': 'rgb(255,246,122)',
-                'fill-opacity': 1,
+                'fill-color': '#aaaaaa',
+                'fill-opacity': 0.75,
                 'fill-outline-color': '#000000'
             }
-            // "filter": ["==", "$type", "Multi"]
         });
-    }
 
-
-    if (!map.getLayer('centroids')) {
         map.addLayer({
-            "id": "centroids",
-            "type": "circle",
-            // "type": "symbol",
-            "source": "centroids",
+            "id": "BSUs",
+            "type": "fill",
+            "source": "BSUs",
             "layout": {
                 'visibility': 'visible'
-                // "icon-image": "star-15",
-                // "icon-allow-overlap": true
             },
-            // 'minzoom': 10,
             'paint': {
-                'circle-radius': 6,
-                'circle-color': '#d575ef',
-                // {
-                //     property: 'Sector',
-                //     type: 'categorical',
-                //     stops: sectors
-                // },
-                'circle-stroke-color': '#000000',
-                'circle-stroke-width': 1,
-                "circle-opacity": 1
+                'fill-color': '#a5ef12',
+                'fill-opacity': 0.75,
+                'fill-outline-color': '#000000'
             }
-            , "filter": ["==", "$type", "Point"]
         });
-    }
 
 
-    map.on('mouseenter', 'buffer', function (e) {
-        console.log('moved');
-        map.getCanvas().style.cursor = 'pointer';
-    });
+        if (!map.getLayer("settlements")) {
+            map.addLayer({
+                "id": "settlements",
+                "type": "fill",
+                "source": "polygons",
+                "layout": {
+                    'visibility': 'visible'
+                },
+                'paint': {
+                    'fill-color': 'rgb(255,246,122)',
+                    'fill-opacity': 1,
+                    'fill-outline-color': '#000000'
+                }
+                // "filter": ["==", "$type", "Multi"]
+            });
+        }
 
 
-    // map.addSource('responses', {
-    //     type: 'geojson',
-    //     // clusterMaxZoom: 10,
-    //     data: data
-    // });
+        if (!map.getLayer('centroids')) {
+            map.addLayer({
+                "id": "centroids",
+                "type": "circle",
+                // "type": "symbol",
+                "source": "centroids",
+                "layout": {
+                    'visibility': 'visible'
+                    // "icon-image": "star-15",
+                    // "icon-allow-overlap": true
+                    // "icon-image": "star-15",
+                    // "icon-allow-overlap": true
+                }
+                // 'minzoom': 10,
+                , 'paint': {
+                    'circle-radius': 6,
+                    'circle-color': '#d575ef',
 
-    // pointsLayer(data.features);
+                    // {
+                    //     property: 'Sector',
+                    //     type: 'categorical',
+                    //     stops: sectors
+                    // },
+
+                    'circle-stroke-color': '#000000',
+                    'circle-stroke-width': 1,
+                    "circle-opacity": 1
+                }
+                , "filter": ["==", "$type", "Point"]
+            });
+        }
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+
+        map.on('mouseenter', 'centroids', function (e) {
+            map.getCanvas().style.cursor = 'pointer';
+            popup.setLngLat(e.features[0].geometry.coordinates)
+                .setHTML(e.features[0].properties.Admin_4_Level_NAME_UA)
+                .addTo(map);
+        });
+
+        map.on('mouseleave', 'centroids', function () {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+
+        map.on('click', function (e) {
+
+            var features = map.queryRenderedFeatures(e.point);
+            var feature = features[0];
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            if (!features.length) {
+                return;
+            }
+
+            if (feature.layer.id === 'centroids') {
+                popup.remove();
+                var template = _.template("" +
+                    "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
+                    "<b>Name (en):</b> <%= name_en %><br>" +
+                    "<b>Raion:</b> <%= name_ray %><br>" +
+                    "<b>Oblast:</b> <%= name_obl %><br>" +
+                    "<b>Population:</b> <%= population %><br>" +
+                    "");
+
+
+                var compiled = template(
+                    {
+                        type: feature.properties['Admin_4_Level_TYPE'],
+                        name_ua: feature.properties['Admin_4_Level_NAME_UA'],
+                        name_en: feature.properties['Admin_4_Level_NAME_LAT'],
+                        name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
+                        name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
+                        population: feature.properties['Admin_4_Level_pop_2015']
+                    }
+                );
+
+                $('#info').html(compiled)
+
+                var selected_settlement = feature.properties['Admin_4_Level_KOATUU']
+
+                console.log(settlement.filterExact(selected_settlement).top(Infinity))
+
+
+
+
+                console.log(settlement.group());
+
+                chart.width(250)
+                    // .height(120)
+                    .margins({top: 10, right: 40, bottom: 35, left: 40})
+                    .dimension(gender)
+                    .group(gender.group())
+                    // .data(settlement.filterExact(selected_settlement).top(Infinity))
+                    .ordering(function (d) {
+                        return -d.value;
+                    })
+                    .transitionDuration(500)
+                    // .xAxisLabel('Provinces')
+                    // .gap(10)
+                    .colors("#026CB6")
+                    .elasticX(true)
+                    .on('filtered', function (chart, filter) {
+                    })
+                    .xAxis()
+                    .tickFormat(d3.format("d"))
+                    // .ticks(5);
+
+                    dc.renderAll()
+
+                // $('#myModal2').modal('show');
+            }
+        });
+
+    })
 
 
 }
