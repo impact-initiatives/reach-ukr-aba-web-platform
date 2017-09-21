@@ -298,26 +298,27 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
     // });
 
     console.log('Map is about to start loading')
+
+    map.addSource('buffer', {
+        type: 'geojson',
+        data: buffer
+    });
+    map.addSource('BSUs', {
+        type: 'geojson',
+        data: bsus
+    });
+    map.addSource('polygons', {
+        type: 'geojson',
+        data: polygons
+    });
+    map.addSource('centroids', {
+        type: 'geojson',
+        data: centroids
+    });
+
     map.on('load', function (e) {
 
         console.log('Map loaded')
-
-        map.addSource('buffer', {
-            type: 'geojson',
-            data: buffer
-        });
-        map.addSource('BSUs', {
-            type: 'geojson',
-            data: bsus
-        });
-        map.addSource('polygons', {
-            type: 'geojson',
-            data: polygons
-        });
-        map.addSource('centroids', {
-            type: 'geojson',
-            data: centroids
-        });
 
         map.addLayer({
             "id": "buffer",
@@ -443,18 +444,18 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
     });
 
 }
-
-
-map.on('click', function (e) {
-
-    $('#all-info').css('display', '');
-
-    var features = map.queryRenderedFeatures(e.point);
-    var feature = features[0];
-    var selected_settlement = feature.properties['KOATUU'];
-
-    universeCharts(dataset, selected_settlement)
-
-});
+//
+//
+// map.on('click', function (e) {
+//
+//     $('#all-info').css('display', '');
+//
+//     var features = map.queryRenderedFeatures(e.point);
+//     var feature = features[0];
+//     var selected_settlement = feature.properties['KOATUU'];
+//
+//     universeCharts(dataset, selected_settlement)
+//
+// });
 
 
