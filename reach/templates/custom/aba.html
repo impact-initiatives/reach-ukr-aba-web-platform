@@ -23,17 +23,40 @@
             text-shadow: -1px 0 1px #fff, 0 1px 1px #fff, 1px 0 1px #fff, 0 -1px 1px #fff;
         }
 
+        .loader {
+            position: absolute;
+
+            top: 150px;
+            left: 50%;
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <script src="{% static 'lib/plotly-latest.min.js' %}"></script>
 {% endblock libs %}
 
 
 {% block content %}
+    <div class="loader" id="loader"></div>
     <div class="wrappers" style="width:50%">
+
         <div id='map-container'></div>
-{#        <div id='sectors-legend' class='legend'>#}
-{#            <h6>Sectors</h6>#}
-{#        </div>#}
+        {#        <div id='sectors-legend' class='legend'>#}
+        {#            <h6>Sectors</h6>#}
+        {#        </div>#}
     </div>
     <div class="wrappers" style="width:50%; overflow:auto">
 
@@ -315,6 +338,8 @@
 
         function loadData(error, polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
 
+
+            $('#loader').hide()
             // at this stage in data we only have points collected (1033)
 
             //data.features = [].concat(data.features, polygons.features);
