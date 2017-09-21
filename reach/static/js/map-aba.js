@@ -277,26 +277,11 @@ function compileInfo(e) {
     }
 }
 var dataset = []
-function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
+function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets, single_choice) {
     console.log('MapInit started')
     // var dt = crossfilter(data);
 
-    dataset = data;
-    // var sc = single_choice.filter(function (d, i) {
-    //     return d['KOATUU'] == selected_settlement;
-    // });
-    // var protection = dc.rowChart("#protection");
-    // var police = dc.rowChart('#police');
-    // var settlement = dt.dimension(function (d) {
-    //     return d['KOATUU'];
-    // });
-
-    // gender_KI
-
-    // var gender = dt.dimension(function (d) {
-    //     return d['comm_q66'];
-    // });
-
+    dataset = datasets;
     console.log('Map is about to start loading')
 
     map.addSource('buffer', {
