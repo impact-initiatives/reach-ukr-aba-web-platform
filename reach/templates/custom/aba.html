@@ -3,51 +3,205 @@
 
 
 {% block libs %}
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet'/>
+
+    <script src="{% static 'lib/mapbox/mapbox-gl.js' %}"></script>
+    <link href="{% static 'lib/mapbox/mapbox-gl.css' %}" rel='stylesheet'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/dc.min.css' %}'/>
+    <link rel="stylesheet" type="text/css" href='{% static 'css/font-awesome.min.css' %}'/>
+
     {#    <script src='{% static 'js/lib/mapbox-gl-draw.js' %}'></script>#}
     {#    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>#}
+    <script src="{% static 'lib/universe.min.js' %}"></script>
+
+    <script src="{% static 'data/aba/univers.js' %}"></script>
+    <style>
+
+        .dc-chart g.row text {
+            fill: #000;
+            text-shadow: -1px 0 1px #fff, 0 1px 1px #fff, 1px 0 1px #fff, 0 -1px 1px #fff;
+        }
+
+    </style>
+    <script src="{% static 'lib/plotly-latest.min.js' %}"></script>
 {% endblock libs %}
 
 
 {% block content %}
-    <div class="wrappers" style="width:55%">
+    <div class="wrappers" style="width:50%">
         <div id='map-container'></div>
-        <div id='sectors-legend' class='legend'>
-            <h6>Sectors</h6>
-        </div>
+{#        <div id='sectors-legend' class='legend'>#}
+{#            <h6>Sectors</h6>#}
+{#        </div>#}
     </div>
-    <div class="wrappers" style="width:45%; overflow:auto">
+    <div class="wrappers" style="width:50%; overflow:auto">
 
-        <!-- Sidebar -->
-        <div class="sidebar" style="height: 100%; overflow: auto">
+    <!-- Sidebar -->
+    <div class="sidebar" style="height: 100%; overflow: auto">
 
-            <div class="row filter">
-                <div id="filters" class="col-10">
-
-                </div>
-                <div class="col-2">
-                    <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">
-                        Clear
-                    </button>
-                </div>
-            </div>
-
-            <div class="filter row">
-                <div class="col-12" id="info">
-
-                </div>
-                <div class="col-12" id="chart">
-
-                </div>
-            </div>
+        <div id="filters" class="form-group row filter">
+            {#                <label for="example-week-input" class="col-2 col-form-label">Week</label>#}
+            {#            <div class="col-7">#}
+            {#                    <input class="form-control" type="week" value="2011-W33" id="example-week-input">#}
+            {#            </div>#}
+            {#            <div class="col-2">#}
+            {#                <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">#}
+            {#                    Clear#}
+            {#                </button>#}
+            {##}
+            {#            </div>#}
 
         </div>
 
+        {#                <div class="col-2">#}
+        {#                    <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">#}
+        {#                        Clear#}
+        {#                    </button>#}
+        {#                </div>#}
+
+
+        <div class="filter row">
+
+            <div class="col-12" id="info">
+
+
+            </div>
+
+
+        </div>
+        <div class="filter row" id="all-info" style="display: none">
+            <div class="col-12">
+                <h5>Availability of Basic Services</h5>
+
+                <table class="table table-sm">
+                    <thead>
+                    {#                    <tr>#}
+                    {#                        <th></th>#}
+                    {#                        <th></th>#}
+                    {#                    </tr>#}
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Police</th>
+                        <td>
+                            <i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"
+                               data-placement="top" title="Tooltip on top"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Court</th>
+                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hospital</th>
+                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pharmacy</th>
+                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6">
+                <h5>Key protection concerns</h5>
+                <div id="myDiv"></div>
+                {#                <div id="protection"></div>#}
+            </div>
+
+            <div class="col-6">
+                <h5>Key Education challenges</h5>
+                <div id="myDiv2"></div>
+            </div>
+            <div class="col-6">
+                <h5>Key challenges in accessing medical services</h5>
+                <div id="myDiv3"></div>
+                {#                <div id="protection"></div>#}
+            </div>
+
+            <div class="col-6">
+                <h5>Problems in accessing fuel for heating</h5>
+                <div id="myDiv4"></div>
+            </div>
+            <div class="col-12">
+
+
+                <div id='single-choice'></div>
+            </div>
+
+
+            {#                <div class="col-12">#}
+            {#                    <div id="accordion" role="tablist" aria-multiselectable="true">#}
+            {#                        <div class="card">#}
+            {#                            <div class="card-header" role="tab" id="headingOne">#}
+            {#                                <h5 class="mb-0">#}
+            {#                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"#}
+            {#                                       aria-expanded="true" aria-controls="collapseOne">#}
+            {#                                        Collapsible Group Item #1#}
+            {#                                    </a>#}
+            {#                                </h5>#}
+            {#                            </div>#}
+            {##}
+            {#                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">#}
+            {#                                <div class="card-block">#}
+            {##}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                        <div class="card">#}
+            {#                            <div class="card-header" role="tab" id="headingTwo">#}
+            {#                                <h5 class="mb-0">#}
+            {#                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"#}
+            {#                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">#}
+            {#                                        Collapsible Group Item #2#}
+            {#                                    </a>#}
+            {#                                </h5>#}
+            {#                            </div>#}
+            {#                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">#}
+            {#                                <div class="card-block">#}
+            {#                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry#}
+            {#                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor#}
+            {#                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt#}
+            {#                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.#}
+            {#                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente#}
+            {#                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer#}
+            {#                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them#}
+            {#                                    accusamus labore sustainable VHS.#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                        <div class="card">#}
+            {#                            <div class="card-header" role="tab" id="headingThree">#}
+            {#                                <h5 class="mb-0">#}
+            {#                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"#}
+            {#                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">#}
+            {#                                        Collapsible Group Item #3#}
+            {#                                    </a>#}
+            {#                                </h5>#}
+            {#                            </div>#}
+            {#                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">#}
+            {#                                <div class="card-block">#}
+            {#                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry#}
+            {#                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor#}
+            {#                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt#}
+            {#                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.#}
+            {#                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente#}
+            {#                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer#}
+            {#                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them#}
+            {#                                    accusamus labore sustainable VHS.#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+
+            {##}
+            {##}
+            {#                </div>#}
+
+        </div>
     </div>
+
 
 
     <!-- Modal -->
@@ -132,7 +286,7 @@
 
 
     {% comment %} End JS Libraries {% endcomment %}
-
+    <script src="{% static 'js/charting.js' %}"></script>
     <script src="{% static 'js/map-aba.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
@@ -149,14 +303,16 @@
         d3.queue()
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
-            .defer(d3.json, "{% static 'data/aba/ABA Settlements.geojson' %}")
+            .defer(d3.json, "{% static 'data/aba/ABA_Centroids.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/aba_116.json' %}")
             .defer(d3.json, "{% static 'data/aba/BSUs.geojson' %}")
             .defer(d3.tsv, "{% static 'data/community/Community.txt' %}")
+            .defer(d3.dsv(';'), "{% static 'data/aba/Initial Data Sample.csv' %}")
+            .defer(d3.dsv(';'), "{% static 'data/aba/SC_Community.csv' %}")
             .await(loadData);
 
 
-        function loadData(error, polygons, buffer, centroids, settlements, bsus, data) {
+        function loadData(error, polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
 
             // at this stage in data we only have points collected (1033)
 
@@ -164,33 +320,32 @@
 
             // here we have it combined with settlement polygons +(110)
 
-            MapInit(polygons, buffer, centroids, settlements, bsus, data);
+            MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice);
 
 
             {#            var featureCount = data.features.length;#}
             var cf = crossfilter(polygons.features);
 
+            {#            console.log(long)#}
 
-
-
-            function dimensionFrom(d, field) {
+            function dimensionFrom(field) {
                 return function (d) {
                     return d.properties[field];
                 }
             }
 
-            var oblast = cf.dimension(function (d) {
-                return d.properties['current_oblast']
-            });
-            var type = cf.dimension(function (d) {
-                return d.properties['QF_Type']
-            });
+            {#            var oblast = cf.dimension(function (d) {#}
+            {#                return d.properties['current_oblast']#}
+            {#            });#}
+            {#            var type = cf.dimension(function (d) {#}
+            {#                return d.properties['QF_Type']#}
+            {#            });#}
             var settlement = cf.dimension(function (d) {
                 return d.properties['KOATUU']
             });
-            var sector = cf.dimension(function (d) {
-                return d.properties['QF_Type']
-            });
+            {#            var sector = cf.dimension(function (d) {#}
+            {#                return d.properties['QF_Type']#}
+            {#            });#}
 
             {#        $('#reset').on('click', function(){#}
             {#            resetSettlement();#}
@@ -203,6 +358,7 @@
                     label: 'Settlements'
                 }
             ];
+
 
             filerContainers(filtersList);
 

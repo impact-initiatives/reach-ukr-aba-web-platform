@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-    {% block libs %}
-        <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/dc.min.css' %}">
-        <link rel="stylesheet" href='{% static 'css/selectize/selectize.min.css' %}' />
-        <link rel="stylesheet" href='{% static 'css/selectize/selectize.default.min.css' %}' />
-        {% comment %}<link rel="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />{% endcomment %}
-        <style>
+{% block libs %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/dc.min.css' %}">
+    <link rel="stylesheet" href='{% static 'css/selectize/selectize.min.css' %}'/>
+    <link rel="stylesheet" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
+    {% comment %}<link rel="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />{% endcomment %}
+    <style>
 
-        </style>
-    {% endblock libs %}
+    </style>
+{% endblock libs %}
 
 
 {% block content %}
@@ -23,14 +23,14 @@
 
                 <div class="card">
                     <div class="card-header">
-                            <div style="width: 300px; display: inline-block">
-                                Total number of IDPs
-                                <!--<select id="indicator">&lt;!&ndash;class="form-control" &ndash;&gt;-->
-                                    <!--<option>Total number of IDPs</option>-->
-                                    <!--<option>Number of IDPs/Total population</option>-->
-                                    <!--<option>% change in number of IDPs</option>-->
-                                <!--</select>-->
-                            </div>
+                        <div style="width: 300px; display: inline-block">
+                            Total number of IDPs
+                            <!--<select id="indicator">&lt;!&ndash;class="form-control" &ndash;&gt;-->
+                            <!--<option>Total number of IDPs</option>-->
+                            <!--<option>Number of IDPs/Total population</option>-->
+                            <!--<option>% change in number of IDPs</option>-->
+                            <!--</select>-->
+                        </div>
 
                         <!--<label for="indicator">by Oblast</label>-->
                     </div>
@@ -39,7 +39,7 @@
                         <div class="row">
 
                             <div class="col-md-9">
-                                <input type="text" id="periodSlider" value="" />
+                                <input type="text" id="periodSlider" value=""/>
                             </div>
 
                             <!--<select id="periods"></select>-->
@@ -50,13 +50,13 @@
 
                         </div>
                         <div class="row">
-                            <div class="col-md-9 card-block" id='map' >
+                            <div class="col-md-9 card-block" id='map'>
 
                             </div>
                             <!--<h4 class="card-title">Special title treatment</h4>-->
                             <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
                             <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-                            <div class="" ><!--col-md-3--><!--style="position: absolute; bottom: 0"-->
+                            <div class=""><!--col-md-3--><!--style="position: absolute; bottom: 0"-->
                                 <svg id="legend" width="200px" height="250px"></svg>
                             </div>
                         </div>
@@ -116,13 +116,15 @@
 
 
     <script src="{% static 'js/lib/dc.min.js' %}"></script>
-{#    <script src="{% static 'js/dc.min.js' %}"></script>#}
+    {#    <script src="{% static 'js/dc.min.js' %}"></script>#}
     <script src="{% static 'js/lib/d3-legend.min.js' %}"></script>
     <script src='{% static 'js/lib/selectize.min.js' %}'></script>
     <script src="{% static 'js/lib/moment.min.js' %}"></script>
     <script src="{% static 'ui/jquery-ui.min.js' %}"></script>
-    <link href="{% static 'css/ion.rangeSlider.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/ion.rangeSlider.skinFlat.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/ion.rangeSlider.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/ion.rangeSlider.skinNice.css' %}" rel="stylesheet"/>
+
+
     <script src="{% static 'js/lib/ion.rangeSlider.min.js' %}"></script>
     <script src="{% static 'data/ukr_adm1b.js' %}"></script>
     <style>
@@ -137,6 +139,9 @@
 
     </style>
     <script src="{% static 'js/idps.js' %}"></script>
+    <script>
+        d3.json('{% static 'data/idps.json' %}', createDashboard);
+    </script>
 {% endblock libs2 %}
 
 

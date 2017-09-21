@@ -4,7 +4,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGVueXNib2lrbyIsImEiOiJjaXpxdzlxMGswMHMzMnFxb
 
 var map = new mapboxgl.Map({
     container: 'map-container', // container id
-    style: 'mapbox://styles/mapbox/streets-v10', //stylesheet location
+    style: 'mapbox://styles/mapbox/streets-v10',
+    //stylesheet location
     center: [38.713, 48.040], // starting position
     zoom: 8, // starting zoom
     maxBounds: [
@@ -243,21 +244,24 @@ var pointsLayer = function (source, quest, choices, fields) {
 };
 
 
-function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
+function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
 
-    var dt = crossfilter(data);
-    var chart = dc.rowChart("#chart");
-    var settlement = dt.dimension(function (d) {
-        return d['KOATUU'];
-    });
+    // var dt = crossfilter(data);
+
+    var dataset = data;
+
+    // var protection = dc.rowChart("#protection");
+    // var police = dc.rowChart('#police');
+    // var settlement = dt.dimension(function (d) {
+    //     return d['KOATUU'];
+    // });
 
     // gender_KI
 
-    var gender = dt.dimension(function (d) {
-        return d['comm_q66'];
-    });
+    // var gender = dt.dimension(function (d) {
+    //     return d['comm_q66'];
+    // });
 
-    console.log();
 
     map.on('load', function (e) {
         map.addSource('buffer', {
@@ -304,12 +308,32 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
                 'visibility': 'visible'
             },
             'paint': {
-                'fill-color': '#a5ef12',
+                'fill-color': '#ffffff',
                 'fill-opacity': 0.75,
-                'fill-outline-color': '#000000'
+                'fill-outline-color': '#E2D8CA'
             }
         });
 
+        map.addLayer({
+            "id": "bsu-borders",
+            "type": "line",
+            "source": "BSUs",
+            "layout": {
+                'visibility': 'visible'
+            },
+            'paint': {
+                "line-color": "#E2D8CA",
+                "line-width": 3
+            }
+        });
+
+        // Mariupol: #A5C9A1
+        // Kurakhove: #56B3CD
+        // Ocheretyne: #806B68
+        // Toretsk: #F69E61
+        // Bakhmut: #EE5859
+        // Popasna: #0067A9
+        // Stanytsia Luhanska: #95A0A9
 
         if (!map.getLayer("settlements")) {
             map.addLayer({
@@ -320,7 +344,7 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
                     'visibility': 'visible'
                 },
                 'paint': {
-                    'fill-color': 'rgb(255,246,122)',
+                    'fill-color': '#fff67a',
                     'fill-opacity': 1,
                     'fill-outline-color': '#000000'
                 }
@@ -328,6 +352,15 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
             });
         }
 
+        var sectors = [
+            ['4', '#A5C9A1'], //Mariupol
+            ['5', '#56B3CD'], //Kurakhove
+            ['1', '#806B68'], //Ocheretyne
+            ['3', '#F69E61'], //Toretsk
+            ['2', '#EE5859'], //Bakhmut
+            ['7', '#0067A9'], //Popasna
+            ['6', '#95A0A9'] //Stanytsia Luhanska
+        ];
 
         if (!map.getLayer('centroids')) {
             map.addLayer({
@@ -345,7 +378,12 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
                 // 'minzoom': 10,
                 , 'paint': {
                     'circle-radius': 6,
-                    'circle-color': '#d575ef',
+                    // 'circle-color': '#56b3cd',
+                    'circle-color': {
+                        property: 'BSU_ID',
+                        type: 'categorical',
+                        stops: sectors
+                    },
 
                     // {
                     //     property: 'Sector',
@@ -360,6 +398,7 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
                 , "filter": ["==", "$type", "Point"]
             });
         }
+
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
@@ -368,7 +407,7 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
         map.on('mouseenter', 'centroids', function (e) {
             map.getCanvas().style.cursor = 'pointer';
             popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(e.features[0].properties.Admin_4_Level_NAME_UA)
+                .setHTML(e.features[0].properties.adm4NameLa)
                 .addTo(map);
         });
 
@@ -379,6 +418,8 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
 
         map.on('click', function (e) {
 
+            $('#all-info').css('display', '')
+
             var features = map.queryRenderedFeatures(e.point);
             var feature = features[0];
 
@@ -388,66 +429,230 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, data) {
                 return;
             }
 
-            if (feature.layer.id === 'centroids') {
-                popup.remove();
-                var template = _.template("" +
-                    "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
-                    "<b>Name (en):</b> <%= name_en %><br>" +
-                    "<b>Raion:</b> <%= name_ray %><br>" +
-                    "<b>Oblast:</b> <%= name_obl %><br>" +
-                    "<b>Population:</b> <%= population %><br>" +
-                    "");
+            // var template = _.template("" +
+            //     "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
+            //     "<b>Name (en):</b> <%= name_en %><br>" +
+            //     "<b>Raion:</b> <%= name_ray %><br>" +
+            //     "<b>Oblast:</b> <%= name_obl %><br>" +
+            //     "<b>Population:</b> <%= population %><br>" +
+            //     "");
+            //
+            // if (feature.layer.id === 'centroids') {
+            //     popup.remove();
+            //     var compiled = template(
+            //         {
+            //             type: feature.properties['Admin_4_Level_TYPE'],
+            //             name_ua: feature.properties['Admin_4_Level_NAME_UA'],
+            //             name_en: feature.properties['adm4NameLa'],
+            //             name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
+            //             name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
+            //             population: feature.properties['Admin_4_Level_pop_2015']
+            //         }
+            //     );
 
 
-                var compiled = template(
-                    {
-                        type: feature.properties['Admin_4_Level_TYPE'],
-                        name_ua: feature.properties['Admin_4_Level_NAME_UA'],
-                        name_en: feature.properties['Admin_4_Level_NAME_LAT'],
-                        name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
-                        name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
-                        population: feature.properties['Admin_4_Level_pop_2015']
+            // $('#info').html(compiled);
+
+
+            // settlement.filterExact(selected_settlement).top(Infinity);
+
+            // console.log(settlement.group());
+
+            // var options = dt.dimension(function (d) {
+            //     return d['option_label'];
+            // });
+            //
+            // var question = dt.dimension(function (d) {
+            //     return d['Column'];
+            // });
+            //
+            //
+            // var response = dt.dimension(function (d) {
+            //     return d['Value'];
+            // });
+            //
+            // options.group().reduceSum(function (p) {
+            //     return p['Value']
+            // });
+
+
+            var selected_settlement = feature.properties['KOATUU'];
+
+            var sc = single_choice.filter(function (d, i) {
+                return d['KOATUU'] == selected_settlement;
+            });
+
+            // singleChoices(sc)
+
+            universe(dataset).then(function (myUniverse) {
+                return myUniverse.filter('KOATUU', selected_settlement)
+            }).then(function (myUniverse) {
+                myUniverse.filter('related_question', 'comm_q63');
+                return myUniverse.query({
+                    groupBy: 'option_label',
+                    select: {
+                        $sum: 'Value' // Count the number of records
                     }
-                );
+                })
+            }).then(function (res) {
+                createChart(res.data.filter(function (d) {
+                    return d.value.sum > 0
+                }), 'myDiv', '#ee5859');
 
-                $('#info').html(compiled)
+                return res.universe;
 
-                var selected_settlement = feature.properties['Admin_4_Level_KOATUU']
+            }).then(function (myUniverse) {
+                myUniverse.filterAll();
+                return myUniverse.filterAll([
+                    {
+                        column: 'KOATUU',
+                        value: selected_settlement
+                    },
+                    {
+                        column: 'related_question',
+                        value: 'comm_q6'
+                    }
+                ])
+            }).then(function (myUniverse) {
 
-                console.log(settlement.filterExact(selected_settlement).top(Infinity))
 
+                return myUniverse.query({
+                    groupBy: 'option_label',
+                    select: {
+                        $sum: 'Value' // Count the number of records
+                    }
+                })
+            }).then(function (res) {
+                createChart(res.data.filter(function (d) {
+                    return d.value.sum > 0
+                }), 'myDiv2', '#a5c9a1');
 
+                return res.universe;
+            }).then(function (myUniverse) {
+                myUniverse.filterAll()
 
-
-                console.log(settlement.group());
-
-                chart.width(250)
-                    // .height(120)
-                    .margins({top: 10, right: 40, bottom: 35, left: 40})
-                    .dimension(gender)
-                    .group(gender.group())
-                    // .data(settlement.filterExact(selected_settlement).top(Infinity))
-                    .ordering(function (d) {
-                        return -d.value;
+                return myUniverse.filterAll([
+                    {
+                        column: 'KOATUU',
+                        value: selected_settlement
+                    },
+                    {
+                        column: 'related_question',
+                        value: 'comm_q9'
+                    }
+                ])
+            }).then(function (myUniverse) {
+                    return myUniverse.query({
+                        groupBy: 'option_label',
+                        select: {
+                            $sum: 'Value' // Count the number of records
+                        }
                     })
-                    .transitionDuration(500)
-                    // .xAxisLabel('Provinces')
-                    // .gap(10)
-                    .colors("#026CB6")
-                    .elasticX(true)
-                    .on('filtered', function (chart, filter) {
+                }).then(function (res) {
+                createChart(res.data.filter(function (d) {
+                    return d.value.sum > 0
+                }), 'myDiv3', '#58585a')
+
+                return res.universe;
+            }).then(function (myUniverse) {
+                myUniverse.filterAll()
+
+                return myUniverse.filterAll([
+                    {
+                        column: 'KOATUU',
+                        value: selected_settlement
+                    },
+                    {
+                        column: 'related_question',
+                        value: 'comm_q16'
+                    }
+                ])
+            }).then(function (myUniverse) {
+                    return myUniverse.query({
+                        groupBy: 'option_label',
+                        select: {
+                            $sum: 'Value' // Count the number of records
+                        }
                     })
-                    .xAxis()
-                    .tickFormat(d3.format("d"))
-                    // .ticks(5);
+                }).then(function (res) {
+                createChart(res.data.filter(function (d) {
+                    return d.value.sum > 0
+                }), 'myDiv4', '#d2cbb8')
 
-                    dc.renderAll()
+                return res.universe;
+            });
+// comm_q9
 
-                // $('#myModal2').modal('show');
-            }
+            // protection.width(250)
+            //     .height(300)
+            //     .margins({top: 10, right: 40, bottom: 35, left: 40})
+            //     .dimension(options)
+            //     // res.dimension
+            //     .group(options.group().reduceSum(function (d) {
+            //         return d["Value"];
+            //     }))
+            //     // res.group
+            //
+            //     .data(function (group) {
+            //         return group.all().filter(function (d) {
+            //             return d.value > 0;
+            //         });
+            //     })
+            //     .ordering(function (d) {
+            //         return d.key === 'Community tension' ? 1 : 9999;
+            //     })
+            //     .transitionDuration(500)
+            //     .colors('#a5c9a1')
+            //     .elasticX(true)
+            //     .on('filtered', function (chart, filter) {
+            //         return;
+            //     })
+            //     .xAxis()
+            //     .tickFormat(d3.format("d"));
+
+            // selected_settlement
+
+
+            // var multiple_options = options.group().reduceSum(function (d) {
+            //     return d["Value"];
+            // }).all().filter(function (d) {
+            //     return d.value > 0;
+            // });
+
+
+            // police.width(250)
+            //     .height(300)
+            //     .margins({top: 10, right: 40, bottom: 35, left: 40})
+            //     .dimension(question)
+            //     .data(function (group) {
+            //         return group.all().filter(function (d) {
+            //             return d.key === 'comm_q1';
+            //         });
+            //     })
+            //     .group(question.group())
+            //     // .data(settlement.filterExact(selected_settlement).top(Infinity))
+            //     .ordering(function (d) {
+            //         return d.value;
+            //     })
+            //     .transitionDuration(500)
+            //     // .xAxisLabel('Provinces')
+            //     // .gap(10)
+            //     .colors('#ee5859')
+            //     .elasticX(true)
+            //     .on('filtered', function (chart, filter) {
+            //     })
+            //     .xAxis()
+            //     .tickFormat(d3.format("d"));
+
+            // dc.renderAll()
+
+            // $('#myModal2').modal('show');
         });
 
-    })
-
+    });
 
 }
+
+
+
+

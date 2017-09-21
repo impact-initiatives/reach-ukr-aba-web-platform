@@ -4,16 +4,13 @@ var mapChart = dc.geoChoroplethChart("#map"),
     dataTable = dc.dataTable("#table"),
     oblastChart = dc.barChart('#oblasts');
 
-console.log(adm1.features);
-
-d3.json('../../static/data/idps.json', function (error, data) {
+function createDashboard(error, data) {
 
     var cf = crossfilter(data);
+
     var oblast = cf.dimension(function (d) {
         return d['Name'];
     });
-
-    console.log(oblast.group.all())
 
     var dateParse = d3.time.format('%d.%m.%Y');
 
@@ -85,7 +82,7 @@ d3.json('../../static/data/idps.json', function (error, data) {
     }
 
     oblastChart
-        .width(890)
+        .width(760)
         .height(500)
         .x(d3.scale.ordinal().domain(oblastslist))
         .xUnits(dc.units.ordinal)
@@ -96,12 +93,14 @@ d3.json('../../static/data/idps.json', function (error, data) {
         .brushOn(false)
         .clipPadding(10)
         .dimension(oblast)
-        .renderType('group')
         .group(IDPsSumGroup, periods[0], sel_stack(periods[0]))
+        .ordering(function (d){
+            return -d.value;
+        })
         .transitionDuration(500)
         .centerBar(true)
         /*                .gap(5)*/
-        .renderType('group')
+        // .renderType('group')
         .colors(d3.scale.ordinal().range(['rgb(88,88,90)', 'rgb(209,211,212)', 'rgb(238,88,89)', 'rgb(210,203,184)']))
         /*                .colors(['rgb(88,88,90)','#ec4647','rgb(209,211,212)','rgb(210,203,184)'])*/
         .xUnits(dc.units.ordinal)
@@ -150,7 +149,7 @@ d3.json('../../static/data/idps.json', function (error, data) {
 
 
     mapChart
-        .width(670)
+        .width(760)
         .dimension(oblast)
         .group(oblasts)
         .colors(quantile)
@@ -243,4 +242,4 @@ d3.json('../../static/data/idps.json', function (error, data) {
         ResetAll();
     });
 
-});
+}
