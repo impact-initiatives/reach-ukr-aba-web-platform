@@ -300,128 +300,128 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets,
         type: 'geojson',
         data: centroids
     });
+    console.log('Map loaded')
 
-    map.on('load', function (e) {
-
-        console.log('Map loaded')
-
+    map.addLayer({
+        "id": "buffer",
+        "type": "fill",
+        "source": "buffer",
+        "layout": {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'fill-color': '#aaaaaa',
+            'fill-opacity': 0.75,
+            'fill-outline-color': '#000000'
+        }
+    });
+    map.addLayer({
+        "id": "BSUs",
+        "type": "fill",
+        "source": "BSUs",
+        "layout": {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'fill-color': '#ffffff',
+            'fill-opacity': 0.75,
+            'fill-outline-color': '#E2D8CA'
+        }
+    });
+    map.addLayer({
+        "id": "bsu-borders",
+        "type": "line",
+        "source": "BSUs",
+        "layout": {
+            'visibility': 'visible'
+        },
+        'paint': {
+            "line-color": "#E2D8CA",
+            "line-width": 3
+        }
+    });
+    if (!map.getLayer("settlements")) {
         map.addLayer({
-            "id": "buffer",
+            "id": "settlements",
             "type": "fill",
-            "source": "buffer",
+            "source": "polygons",
             "layout": {
                 'visibility': 'visible'
             },
             'paint': {
-                'fill-color': '#aaaaaa',
-                'fill-opacity': 0.75,
+                'fill-color': '#fff67a',
+                'fill-opacity': 1,
                 'fill-outline-color': '#000000'
             }
+            // "filter": ["==", "$type", "Multi"]
         });
+    }
+
+    var sectors = [
+        ['4', '#A5C9A1'], //Mariupol
+        ['5', '#56B3CD'], //Kurakhove
+        ['1', '#806B68'], //Ocheretyne
+        ['3', '#F69E61'], //Toretsk
+        ['2', '#EE5859'], //Bakhmut
+        ['7', '#0067A9'], //Popasna
+        ['6', '#95A0A9'] //Stanytsia Luhanska
+    ];
+    if (!map.getLayer('centroids')) {
         map.addLayer({
-            "id": "BSUs",
-            "type": "fill",
-            "source": "BSUs",
+            "id": "centroids",
+            "type": "circle",
+            // "type": "symbol",
+            "source": "centroids",
             "layout": {
                 'visibility': 'visible'
-            },
-            'paint': {
-                'fill-color': '#ffffff',
-                'fill-opacity': 0.75,
-                'fill-outline-color': '#E2D8CA'
+                // "icon-image": "star-15",
+                // "icon-allow-overlap": true
+                // "icon-image": "star-15",
+                // "icon-allow-overlap": true
             }
-        });
-        map.addLayer({
-            "id": "bsu-borders",
-            "type": "line",
-            "source": "BSUs",
-            "layout": {
-                'visibility': 'visible'
-            },
-            'paint': {
-                "line-color": "#E2D8CA",
-                "line-width": 3
-            }
-        });
-        if (!map.getLayer("settlements")) {
-            map.addLayer({
-                "id": "settlements",
-                "type": "fill",
-                "source": "polygons",
-                "layout": {
-                    'visibility': 'visible'
+            // 'minzoom': 10,
+            , 'paint': {
+                'circle-radius': 6,
+                // 'circle-color': '#56b3cd',
+                'circle-color': {
+                    property: 'BSU_ID',
+                    type: 'categorical',
+                    stops: sectors
                 },
-                'paint': {
-                    'fill-color': '#fff67a',
-                    'fill-opacity': 1,
-                    'fill-outline-color': '#000000'
-                }
-                // "filter": ["==", "$type", "Multi"]
-            });
-        }
 
-        var sectors = [
-            ['4', '#A5C9A1'], //Mariupol
-            ['5', '#56B3CD'], //Kurakhove
-            ['1', '#806B68'], //Ocheretyne
-            ['3', '#F69E61'], //Toretsk
-            ['2', '#EE5859'], //Bakhmut
-            ['7', '#0067A9'], //Popasna
-            ['6', '#95A0A9'] //Stanytsia Luhanska
-        ];
-        if (!map.getLayer('centroids')) {
-            map.addLayer({
-                "id": "centroids",
-                "type": "circle",
-                // "type": "symbol",
-                "source": "centroids",
-                "layout": {
-                    'visibility': 'visible'
-                    // "icon-image": "star-15",
-                    // "icon-allow-overlap": true
-                    // "icon-image": "star-15",
-                    // "icon-allow-overlap": true
-                }
-                // 'minzoom': 10,
-                , 'paint': {
-                    'circle-radius': 6,
-                    // 'circle-color': '#56b3cd',
-                    'circle-color': {
-                        property: 'BSU_ID',
-                        type: 'categorical',
-                        stops: sectors
-                    },
+                // {
+                //     property: 'Sector',
+                //     type: 'categorical',
+                //     stops: sectors
+                // },
 
-                    // {
-                    //     property: 'Sector',
-                    //     type: 'categorical',
-                    //     stops: sectors
-                    // },
-
-                    'circle-stroke-color': '#000000',
-                    'circle-stroke-width': 1,
-                    "circle-opacity": 1
-                }
-                , "filter": ["==", "$type", "Point"]
-            });
-        }
-
-
-        // Popup Logic
-        var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
+                'circle-stroke-color': '#000000',
+                'circle-stroke-width': 1,
+                "circle-opacity": 1
+            }
+            , "filter": ["==", "$type", "Point"]
         });
-        map.on('mouseenter', 'centroids', function (e) {
-            map.getCanvas().style.cursor = 'pointer';
-            popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(e.features[0].properties.adm4NameLa)
-                .addTo(map);
-        });
-        map.on('mouseleave', 'centroids', function () {
-            map.getCanvas().style.cursor = '';
-            popup.remove();
-        });
+    }
+
+
+    // Popup Logic
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+    map.on('mouseenter', 'centroids', function (e) {
+        map.getCanvas().style.cursor = 'pointer';
+        popup.setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(e.features[0].properties.adm4NameLa)
+            .addTo(map);
+    });
+    map.on('mouseleave', 'centroids', function () {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
+    map.on('load', function (e) {
+
+
 
         // OnClick Logic
 
@@ -429,18 +429,18 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets,
     });
 
 }
-//
-//
-// map.on('click', function (e) {
-//
-//     $('#all-info').css('display', '');
-//
-//     var features = map.queryRenderedFeatures(e.point);
-//     var feature = features[0];
-//     var selected_settlement = feature.properties['KOATUU'];
-//
-//     universeCharts(dataset, selected_settlement)
-//
-// });
+
+
+map.on('click', function (e) {
+
+    $('#all-info').css('display', '');
+
+    var features = map.queryRenderedFeatures(e.point);
+    var feature = features[0];
+    var selected_settlement = feature.properties['KOATUU'];
+
+    universeCharts(dataset, selected_settlement)
+
+});
 
 
