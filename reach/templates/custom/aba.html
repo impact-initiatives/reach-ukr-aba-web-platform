@@ -340,6 +340,7 @@
 
 
             $('#loader').hide()
+            console.log('Data loaded')
             // at this stage in data we only have points collected (1033)
 
             //data.features = [].concat(data.features, polygons.features);
@@ -354,11 +355,11 @@
 
             {#            console.log(long)#}
 
-            function dimensionFrom(field) {
-                return function (d) {
-                    return d.properties[field];
-                }
-            }
+{#            function dimensionFrom(field) {#}
+{#                return function (d) {#}
+{#                    return d.properties[field];#}
+{#                }#}
+{#            }#}
 
             {#            var oblast = cf.dimension(function (d) {#}
             {#                return d.properties['current_oblast']#}

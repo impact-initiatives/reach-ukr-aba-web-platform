@@ -5,7 +5,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGVueXNib2lrbyIsImEiOiJjaXpxdzlxMGswMHMzMnFxb
 var map = new mapboxgl.Map({
     container: 'map-container', // container id
     style: 'mapbox://styles/mapbox/streets-v10',
-    //stylesheet location
     center: [38.713, 48.040], // starting position
     zoom: 8, // starting zoom
     maxBounds: [
@@ -243,12 +242,46 @@ var pointsLayer = function (source, quest, choices, fields) {
 
 };
 
+function compileInfo(e) {
+    var features = map.queryRenderedFeatures(e.point);
+    var feature = features[0];
 
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    if (!features.length) {
+        return;
+    }
+
+    var template = _.template("" +
+        "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
+        "<b>Name (en):</b> <%= name_en %><br>" +
+        "<b>Raion:</b> <%= name_ray %><br>" +
+        "<b>Oblast:</b> <%= name_obl %><br>" +
+        "<b>Population:</b> <%= population %><br>" +
+        "");
+
+    if (feature.layer.id === 'centroids') {
+
+        var compiled = template(
+            {
+                type: feature.properties['Admin_4_Level_TYPE'],
+                name_ua: feature.properties['Admin_4_Level_NAME_UA'],
+                name_en: feature.properties['adm4NameLa'],
+                name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
+                name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
+                population: feature.properties['Admin_4_Level_pop_2015']
+            }
+        );
+
+        $('#info').html(compiled);
+    }
+}
+var dataset = []
 function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
-
+    console.log('MapInit started')
     // var dt = crossfilter(data);
 
-    var dataset = data;
+    dataset = data;
     // var sc = single_choice.filter(function (d, i) {
     //     return d['KOATUU'] == selected_settlement;
     // });
@@ -264,29 +297,27 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
     //     return d['comm_q66'];
     // });
 
-
+    console.log('Map is about to start loading')
     map.on('load', function (e) {
+
+        console.log('Map loaded')
+
         map.addSource('buffer', {
             type: 'geojson',
             data: buffer
         });
-
         map.addSource('BSUs', {
             type: 'geojson',
             data: bsus
         });
-
         map.addSource('polygons', {
             type: 'geojson',
             data: polygons
         });
-
-
         map.addSource('centroids', {
             type: 'geojson',
             data: centroids
         });
-
 
         map.addLayer({
             "id": "buffer",
@@ -301,7 +332,6 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
                 'fill-outline-color': '#000000'
             }
         });
-
         map.addLayer({
             "id": "BSUs",
             "type": "fill",
@@ -315,7 +345,6 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
                 'fill-outline-color': '#E2D8CA'
             }
         });
-
         map.addLayer({
             "id": "bsu-borders",
             "type": "line",
@@ -328,15 +357,6 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
                 "line-width": 3
             }
         });
-
-        // Mariupol: #A5C9A1
-        // Kurakhove: #56B3CD
-        // Ocheretyne: #806B68
-        // Toretsk: #F69E61
-        // Bakhmut: #EE5859
-        // Popasna: #0067A9
-        // Stanytsia Luhanska: #95A0A9
-
         if (!map.getLayer("settlements")) {
             map.addLayer({
                 "id": "settlements",
@@ -363,7 +383,6 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
             ['7', '#0067A9'], //Popasna
             ['6', '#95A0A9'] //Stanytsia Luhanska
         ];
-
         if (!map.getLayer('centroids')) {
             map.addLayer({
                 "id": "centroids",
@@ -401,160 +420,41 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, sin
             });
         }
 
+
+        // Popup Logic
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
         });
-
         map.on('mouseenter', 'centroids', function (e) {
             map.getCanvas().style.cursor = 'pointer';
             popup.setLngLat(e.features[0].geometry.coordinates)
                 .setHTML(e.features[0].properties.adm4NameLa)
                 .addTo(map);
         });
-
         map.on('mouseleave', 'centroids', function () {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
 
-        map.on('click', function (e) {
+        // OnClick Logic
 
-            $('#all-info').css('display', '')
-
-            var features = map.queryRenderedFeatures(e.point);
-            var feature = features[0];
-
-            // Populate the popup and set its coordinates
-            // based on the feature found.
-            if (!features.length) {
-                return;
-            }
-
-            // var template = _.template("" +
-            //     "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
-            //     "<b>Name (en):</b> <%= name_en %><br>" +
-            //     "<b>Raion:</b> <%= name_ray %><br>" +
-            //     "<b>Oblast:</b> <%= name_obl %><br>" +
-            //     "<b>Population:</b> <%= population %><br>" +
-            //     "");
-            //
-            // if (feature.layer.id === 'centroids') {
-            //     popup.remove();
-            //     var compiled = template(
-            //         {
-            //             type: feature.properties['Admin_4_Level_TYPE'],
-            //             name_ua: feature.properties['Admin_4_Level_NAME_UA'],
-            //             name_en: feature.properties['adm4NameLa'],
-            //             name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
-            //             name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
-            //             population: feature.properties['Admin_4_Level_pop_2015']
-            //         }
-            //     );
-
-
-            // $('#info').html(compiled);
-
-
-            // settlement.filterExact(selected_settlement).top(Infinity);
-
-            // console.log(settlement.group());
-
-            // var options = dt.dimension(function (d) {
-            //     return d['option_label'];
-            // });
-            //
-            // var question = dt.dimension(function (d) {
-            //     return d['Column'];
-            // });
-            //
-            //
-            // var response = dt.dimension(function (d) {
-            //     return d['Value'];
-            // });
-            //
-            // options.group().reduceSum(function (p) {
-            //     return p['Value']
-            // });
-
-
-            var selected_settlement = feature.properties['KOATUU'];
-
-            // singleChoices(sc)
-
-            universeCharts(dataset, selected_settlement)
-// comm_q9
-
-            // protection.width(250)
-            //     .height(300)
-            //     .margins({top: 10, right: 40, bottom: 35, left: 40})
-            //     .dimension(options)
-            //     // res.dimension
-            //     .group(options.group().reduceSum(function (d) {
-            //         return d["Value"];
-            //     }))
-            //     // res.group
-            //
-            //     .data(function (group) {
-            //         return group.all().filter(function (d) {
-            //             return d.value > 0;
-            //         });
-            //     })
-            //     .ordering(function (d) {
-            //         return d.key === 'Community tension' ? 1 : 9999;
-            //     })
-            //     .transitionDuration(500)
-            //     .colors('#a5c9a1')
-            //     .elasticX(true)
-            //     .on('filtered', function (chart, filter) {
-            //         return;
-            //     })
-            //     .xAxis()
-            //     .tickFormat(d3.format("d"));
-
-            // selected_settlement
-
-
-            // var multiple_options = options.group().reduceSum(function (d) {
-            //     return d["Value"];
-            // }).all().filter(function (d) {
-            //     return d.value > 0;
-            // });
-
-
-            // police.width(250)
-            //     .height(300)
-            //     .margins({top: 10, right: 40, bottom: 35, left: 40})
-            //     .dimension(question)
-            //     .data(function (group) {
-            //         return group.all().filter(function (d) {
-            //             return d.key === 'comm_q1';
-            //         });
-            //     })
-            //     .group(question.group())
-            //     // .data(settlement.filterExact(selected_settlement).top(Infinity))
-            //     .ordering(function (d) {
-            //         return d.value;
-            //     })
-            //     .transitionDuration(500)
-            //     // .xAxisLabel('Provinces')
-            //     // .gap(10)
-            //     .colors('#ee5859')
-            //     .elasticX(true)
-            //     .on('filtered', function (chart, filter) {
-            //     })
-            //     .xAxis()
-            //     .tickFormat(d3.format("d"));
-
-            // dc.renderAll()
-
-            // $('#myModal2').modal('show');
-        });
 
     });
 
 }
 
 
+map.on('click', function (e) {
+
+    $('#all-info').css('display', '');
+
+    var features = map.queryRenderedFeatures(e.point);
+    var feature = features[0];
+    var selected_settlement = feature.properties['KOATUU'];
+
+    universeCharts(dataset, selected_settlement)
+
+});
 
 
