@@ -253,23 +253,21 @@ function compileInfo(e) {
     }
 
     var template = _.template("" +
-        "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
-        "<b>Name (en):</b> <%= name_en %><br>" +
-        "<b>Raion:</b> <%= name_ray %><br>" +
-        "<b>Oblast:</b> <%= name_obl %><br>" +
-        "<b>Population:</b> <%= population %><br>" +
+        // "<b>Name:</b> <%= type %>. <%= name_ua %><br>" +
+        '<h3><%= name_en %> (<%= name_ray %>) <small class="text-muted"><%= name_obl %> oblast</small></h3>' +
+            '<h3><%= population %> <small class="text-muted">total population</small></h3>' +
         "");
 
     if (feature.layer.id === 'centroids') {
 
         var compiled = template(
             {
-                type: feature.properties['Admin_4_Level_TYPE'],
-                name_ua: feature.properties['Admin_4_Level_NAME_UA'],
+                // type: feature.properties['Admin_4_Level_TYPE'],
+                // name_ua: feature.properties['Admin_4_Level_NAME_UA'],
                 name_en: feature.properties['adm4NameLa'],
-                name_ray: feature.properties['Admin_4_Level_NAME_RAY'],
-                name_obl: feature.properties['Admin_4_Level_NAME_OBL'],
-                population: feature.properties['Admin_4_Level_pop_2015']
+                name_ray: feature.properties['adm2NameLa'],
+                name_obl: feature.properties['adm1NameLa'],
+                population: feature.properties['Population']
             }
         );
 
@@ -432,6 +430,8 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets,
 
 
 map.on('click', function (e) {
+
+    compileInfo(e)
 
     $('#all-info').css('display', '');
 

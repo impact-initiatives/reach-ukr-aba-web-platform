@@ -327,7 +327,7 @@
         d3.queue()
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
-            .defer(d3.json, "{% static 'data/aba/ABA_Centroids.geojson' %}")
+            .defer(d3.json, "{% static 'data/aba/ABA_Centroids_Pop.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/aba_116.json' %}")
             .defer(d3.json, "{% static 'data/aba/BSUs.geojson' %}")
             .defer(d3.tsv, "{% static 'data/community/Community.txt' %}")
