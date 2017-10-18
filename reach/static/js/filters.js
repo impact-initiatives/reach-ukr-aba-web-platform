@@ -45,32 +45,29 @@ var createFilter = function (container, dim, settlements) {
     // console.log(settlements);
     var filteredData = [];
     var have_values = (container === '#settlements');
-    var resetDim = function (dim) {
-        dim.filterAll();
-        filteredData = dim.top(Infinity);
-        // pointsLayer(filteredData);
-    };
+    // var resetDim = function (dim) {
+    //     dim.filterAll();
+    //     filteredData = dim.top(Infinity);
+    //     // pointsLayer(filteredData);
+    // };
 
 
     // "adm4NameLa"
     // "KOATUU"
 
-
     d3.select(container).selectAll('li')
-        .data(
-            dim.group().all().map(function (d) {
-                return d.key
-            })
-        )
+        .data(dim.map(function (d) {
+            return d.properties
+        }))
         .enter()
         .append('option')
         .attr({
-            'value': function (datum) {
-                return datum
+            'value': function (d) {
+                return d['KOATUU']
             }
         })
-        .text(function (datum) {
-            return (have_values ? settlements[datum]['C'] : datum)
+        .text(function (d) {
+            return (have_values ? d['adm4NameLa'] : d)
         });
 
     var SelectObj = $(container).selectize({
@@ -93,17 +90,12 @@ var createFilter = function (container, dim, settlements) {
         });
 
 
-        resetDim(dim);
+        // resetDim(dim);
 
         if (filters.length != 0) {
 
-            dim.filterFunction(function (d) {
-                return filters.indexOf(d) != -1
-            });
-            filteredData = dim.top(Infinity);
-            // pointsLayer(filteredData);
             var last_selected = $(this).val();
-            // console.log(last_selected);
+
             if (container === '#settlements' && last_selected !== '') {
 
 

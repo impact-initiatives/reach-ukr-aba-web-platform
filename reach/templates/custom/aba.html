@@ -3,6 +3,11 @@
 
 
 {% block libs %}
+    <!-- Load c3.css -->
+    <link href="{% static 'lib/c3/c3.min.css' %}" rel="stylesheet">
+
+    <!-- Load d3.js and c3.js -->
+    <script src="{% static 'lib/c3/c3.min.js' %}" charset="utf-8"></script>
 
     <script src="{% static 'lib/mapbox/mapbox-gl.js' %}"></script>
     <link href="{% static 'lib/mapbox/mapbox-gl.css' %}" rel='stylesheet'/>
@@ -129,23 +134,23 @@
             </div>
             <div class="col-6">
                 <h5>Key protection concerns</h5>
-                <div id="myDiv"></div>
-                {#                <div id="protection"></div>#}
+                <div id="protection"></div>
             </div>
 
             <div class="col-6">
                 <h5>Key Education challenges</h5>
-                <div id="myDiv2"></div>
+                {#                <div id="myDiv2"></div>#}
+                <div id="education"></div>
             </div>
             <div class="col-6">
                 <h5>Key challenges in accessing medical services</h5>
-                <div id="myDiv3"></div>
+                <div id="medical"></div>
                 {#                <div id="protection"></div>#}
             </div>
 
             <div class="col-6">
                 <h5>Problems in accessing fuel for heating</h5>
-                <div id="myDiv4"></div>
+                <div id="fuel"></div>
             </div>
             <div class="col-12">
 
@@ -324,6 +329,7 @@
     <script>
 
 
+
         d3.queue()
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
             .defer(d3.json, "{% static 'data/aba/inso_buffer.geojson' %}")
@@ -340,7 +346,7 @@
 
 
             $('#loader').hide()
-            console.log('Data loaded')
+
             // at this stage in data we only have points collected (1033)
 
             //data.features = [].concat(data.features, polygons.features);
@@ -351,15 +357,15 @@
 
 
             {#            var featureCount = data.features.length;#}
-            var cf = crossfilter(polygons.features);
+            var cf = crossfilter(centroids.features);
 
             {#            console.log(long)#}
 
-{#            function dimensionFrom(field) {#}
-{#                return function (d) {#}
-{#                    return d.properties[field];#}
-{#                }#}
-{#            }#}
+            {#            function dimensionFrom(field) {#}
+            {#                return function (d) {#}
+            {#                    return d.properties[field];#}
+            {#                }#}
+            {#            }#}
 
             {#            var oblast = cf.dimension(function (d) {#}
             {#                return d.properties['current_oblast']#}
@@ -381,7 +387,7 @@
             var filtersList = [
                 {
                     id: 'settlements',
-                    dimension: settlement,
+                    dimension: centroids.features,
                     label: 'Settlements'
                 }
             ];

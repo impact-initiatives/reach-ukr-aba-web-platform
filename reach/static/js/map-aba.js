@@ -198,7 +198,6 @@ var pointsLayer = function (source, quest, choices, fields) {
         }
 
         map.on('mouseenter', 'responses', function (e) {
-            console.log('moved');
             map.getCanvas().style.cursor = 'pointer';
         });
 
@@ -237,8 +236,6 @@ var pointsLayer = function (source, quest, choices, fields) {
         updateSelect(quest, choices, fields);
     }
 
-    console.log('pointsLayer fired!')
-
 
 };
 
@@ -276,11 +273,9 @@ function compileInfo(e) {
 }
 var dataset = []
 function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets, single_choice) {
-    console.log('MapInit started')
-    // var dt = crossfilter(data);
 
+    // var dt = crossfilter(data);
     dataset = datasets;
-    console.log('Map is about to start loading')
 
     map.addSource('buffer', {
         type: 'geojson',
@@ -298,7 +293,6 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets,
         type: 'geojson',
         data: centroids
     });
-    console.log('Map loaded')
 
     map.addLayer({
         "id": "buffer",
@@ -431,7 +425,7 @@ function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets,
 
 map.on('click', function (e) {
 
-    compileInfo(e)
+    compileInfo(e);
 
     $('#all-info').css('display', '');
 

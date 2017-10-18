@@ -10,9 +10,8 @@ function universeCharts(dataset, selected_settlement) {
             }
         })
     }).then(function (res) {
-        createChart(res.data.filter(function (d) {
-            return d.value.sum > 0
-        }), 'myDiv', '#ee5859');
+
+        createChart(res.data, '#protection', '#ee5859');
 
         return res.universe;
 
@@ -38,13 +37,11 @@ function universeCharts(dataset, selected_settlement) {
             }
         })
     }).then(function (res) {
-        createChart(res.data.filter(function (d) {
-            return d.value.sum > 0
-        }), 'myDiv2', '#a5c9a1');
+        createChart(res.data, '#education', '#a5c9a1');
 
         return res.universe;
     }).then(function (myUniverse) {
-        myUniverse.filterAll()
+        myUniverse.filterAll();
 
         return myUniverse.filterAll([
             {
@@ -64,13 +61,11 @@ function universeCharts(dataset, selected_settlement) {
             }
         })
     }).then(function (res) {
-        createChart(res.data.filter(function (d) {
-            return d.value.sum > 0
-        }), 'myDiv3', '#58585a')
+        createChart(res.data, '#medical', '#58585a');
 
         return res.universe;
     }).then(function (myUniverse) {
-        myUniverse.filterAll()
+        myUniverse.filterAll();
 
         return myUniverse.filterAll([
             {
@@ -90,10 +85,9 @@ function universeCharts(dataset, selected_settlement) {
             }
         })
     }).then(function (res) {
-        createChart(res.data.filter(function (d) {
-            return d.value.sum > 0
-        }), 'myDiv4', '#d2cbb8')
 
+        createChart(res.data, '#fuel', '#d2cbb8');
         return res.universe;
+
     });
 }
