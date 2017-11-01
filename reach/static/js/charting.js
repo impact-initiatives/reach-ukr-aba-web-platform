@@ -18,6 +18,15 @@ function createChart(source, container, color) {
             key: d.key,
             value: d.value.sum
         }
+    }).sort(function (a, b) {
+        if (a.value > b.value) {
+            return -1;
+        }
+        if (a.value < b.value) {
+            return 1;
+        }
+        // a == b
+        return 0;
     });
 
     var chart = c3.generate({
@@ -42,9 +51,12 @@ function createChart(source, container, color) {
         axis: {
             rotated: true,
             x: {
-                type: 'category'
-            }
-            ,
+                type: 'category',
+                tick: {
+                    rotate: 90
+                },
+                inner: true
+            },
             y: {
                 tick: {
                     format: d3.format("d")

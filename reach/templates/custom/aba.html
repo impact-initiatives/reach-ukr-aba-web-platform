@@ -22,6 +22,34 @@
 
     <script src="{% static 'data/aba/univers.js' %}"></script>
     <style>
+        #sidebar {
+            border-left: 1px solid #f0f0f0;
+        }
+
+        #sidebar-toggle {
+            position: absolute;
+
+        }
+        #sidebar.collapse {
+            -webkit-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+            -webkit-transition-duration: .2s;
+            -o-transition-duration: .2s;
+            transition-duration: .2s;
+        }
+
+        #sidebar.collapsing {
+            opacity: 0.8;
+            width: 0;
+            -webkit-transition-timing-function: ease-in;
+            -o-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+            -webkit-transition-property: width;
+            -o-transition-property: width;
+            transition-property: width;
+
+        }
 
         .dc-chart g.row text {
             fill: #000;
@@ -29,16 +57,22 @@
         }
 
         .loader {
-            position: absolute;
 
             top: 150px;
-            left: 50%;
+
             border: 5px solid #f3f3f3; /* Light grey */
             border-top: 5px solid #3498db; /* Blue */
             border-radius: 50%;
             width: 60px;
             height: 60px;
             animation: spin 2s linear infinite;
+
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
         @keyframes spin {
@@ -49,184 +83,99 @@
                 transform: rotate(360deg);
             }
         }
+
+
     </style>
     <script src="{% static 'lib/plotly-latest.min.js' %}"></script>
 {% endblock libs %}
 
 
 {% block content %}
-    <div class="loader" id="loader"></div>
-    <div class="wrappers" style="width:50%">
 
+    <div class="loader" id="loader"></div>
+
+    <a href="#sidebar" data-toggle="collapse" id="sidebar-toggle"><i class="fa fa-navicon fa-lg"></i></a>
+
+    <div class="wrappers" style="width:50%">
         <div id='map-container'></div>
-        {#        <div id='sectors-legend' class='legend'>#}
-        {#            <h6>Sectors</h6>#}
-        {#        </div>#}
     </div>
     <div class="wrappers" style="width:50%; overflow:auto">
 
-    <!-- Sidebar -->
-    <div class="sidebar" style="height: 100%; overflow: auto">
+        <!-- Sidebar -->
+        <div class="sidebar collapse in" style="height: 100%; overflow: auto" id="sidebar">
 
-        <div id="filters" class="form-group row filter">
-            {#                <label for="example-week-input" class="col-2 col-form-label">Week</label>#}
-            {#            <div class="col-7">#}
-            {#                    <input class="form-control" type="week" value="2011-W33" id="example-week-input">#}
-            {#            </div>#}
-            {#            <div class="col-2">#}
-            {#                <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">#}
-            {#                    Clear#}
-            {#                </button>#}
-            {##}
-            {#            </div>#}
-
-        </div>
-
-        {#                <div class="col-2">#}
-        {#                    <button type="button" id="reset" class="btn btn-secondary" style="position: absolute; bottom: 5px;">#}
-        {#                        Clear#}
-        {#                    </button>#}
-        {#                </div>#}
-
-
-        <div class="filter row">
-
-            <div class="col-12" id="info">
-
+            <div id="filters" class="form-group row filter">
 
             </div>
 
+            <div class="filter row">
 
-        </div>
-        <div class="filter row" id="all-info" style="display: none">
-            <div class="col-12">
-                <h5>Availability of Basic Services</h5>
+                <div class="col-12" id="info">
 
-                <table class="table table-sm">
-                    <thead>
-                    {#                    <tr>#}
-                    {#                        <th></th>#}
-                    {#                        <th></th>#}
-                    {#                    </tr>#}
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">Police</th>
-                        <td>
-                            <i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"
-                               data-placement="top" title="Tooltip on top"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Court</th>
-                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Hospital</th>
-                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Pharmacy</th>
-                        <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
-                    </tr>
-                    </tbody>
-                </table>
+                </div>
+
+
             </div>
-            <div class="col-6">
-                <h5>Key protection concerns</h5>
-                <div id="protection"></div>
+            <div class="filter row" id="all-info" style="display: none">
+                <div class="col-12">
+                    <h5>Availability of Basic Services</h5>
+
+                    <table class="table table-sm">
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Police</th>
+                            <td>
+                                <i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"
+                                   data-placement="top" title="Tooltip on top"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Court</th>
+                            <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Hospital</th>
+                            <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pharmacy</th>
+                            <td><i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <h5>Key protection concerns</h5>
+                    <div id="protection"></div>
+                </div>
+
+                <div class="col-6">
+
+                    <h5>Key Education challenges</h5>
+                    <div id="education"></div>
+
+                </div>
+                <div class="col-6">
+
+                    <h5>Key challenges in accessing medical services</h5>
+                    <div id="medical"></div>
+
+                </div>
+
+                <div class="col-6">
+                    <h5>Problems in accessing fuel for heating</h5>
+                    <div id="fuel"></div>
+                </div>
+                <div class="col-12">
+
+
+                    <div id='single-choice'></div>
+                </div>
+
             </div>
-
-            <div class="col-6">
-                <h5>Key Education challenges</h5>
-                {#                <div id="myDiv2"></div>#}
-                <div id="education"></div>
-            </div>
-            <div class="col-6">
-                <h5>Key challenges in accessing medical services</h5>
-                <div id="medical"></div>
-                {#                <div id="protection"></div>#}
-            </div>
-
-            <div class="col-6">
-                <h5>Problems in accessing fuel for heating</h5>
-                <div id="fuel"></div>
-            </div>
-            <div class="col-12">
-
-
-                <div id='single-choice'></div>
-            </div>
-
-
-            {#                <div class="col-12">#}
-            {#                    <div id="accordion" role="tablist" aria-multiselectable="true">#}
-            {#                        <div class="card">#}
-            {#                            <div class="card-header" role="tab" id="headingOne">#}
-            {#                                <h5 class="mb-0">#}
-            {#                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"#}
-            {#                                       aria-expanded="true" aria-controls="collapseOne">#}
-            {#                                        Collapsible Group Item #1#}
-            {#                                    </a>#}
-            {#                                </h5>#}
-            {#                            </div>#}
-            {##}
-            {#                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">#}
-            {#                                <div class="card-block">#}
-            {##}
-            {#                                </div>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                        <div class="card">#}
-            {#                            <div class="card-header" role="tab" id="headingTwo">#}
-            {#                                <h5 class="mb-0">#}
-            {#                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"#}
-            {#                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">#}
-            {#                                        Collapsible Group Item #2#}
-            {#                                    </a>#}
-            {#                                </h5>#}
-            {#                            </div>#}
-            {#                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">#}
-            {#                                <div class="card-block">#}
-            {#                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry#}
-            {#                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor#}
-            {#                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt#}
-            {#                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.#}
-            {#                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente#}
-            {#                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer#}
-            {#                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them#}
-            {#                                    accusamus labore sustainable VHS.#}
-            {#                                </div>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                        <div class="card">#}
-            {#                            <div class="card-header" role="tab" id="headingThree">#}
-            {#                                <h5 class="mb-0">#}
-            {#                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"#}
-            {#                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">#}
-            {#                                        Collapsible Group Item #3#}
-            {#                                    </a>#}
-            {#                                </h5>#}
-            {#                            </div>#}
-            {#                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">#}
-            {#                                <div class="card-block">#}
-            {#                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry#}
-            {#                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor#}
-            {#                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt#}
-            {#                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.#}
-            {#                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente#}
-            {#                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer#}
-            {#                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them#}
-            {#                                    accusamus labore sustainable VHS.#}
-            {#                                </div>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                    </div>#}
-
-            {##}
-            {##}
-            {#                </div>#}
-
         </div>
     </div>
 
@@ -311,7 +260,11 @@
     <script src="{% static 'js/lib/d3-queue.v3.min.js' %}"></script>
     <script src="{% static 'js/lib/underscore-min.js' %}"></script>
     <script src="{% static 'js/lib/dc.min.js' %}"></script>
-
+    <style>
+        {#        .c3-axis-y .tick {#}
+        {#            display: none;#}
+        {#        }#}
+    </style>
 
     {% comment %} End JS Libraries {% endcomment %}
     <script src="{% static 'js/charting.js' %}"></script>
@@ -319,7 +272,6 @@
     <script src="{% static 'js/map-aba.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
-    {#    <script src="{% static 'js/responses/responses.js' %}"></script>#}
     <script>
 
         {% static "" as baseUrl %}
@@ -327,8 +279,6 @@
     </script>
 
     <script>
-
-
 
         d3.queue()
             .defer(d3.json, "{% static 'data/aba/aba_settlements.geojson' %}")
@@ -341,48 +291,24 @@
             .defer(d3.dsv(';'), "{% static 'data/aba/SC_Community.csv' %}")
             .await(loadData);
 
-
         function loadData(error, polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
 
-
-            $('#loader').hide()
+            $('#loader').hide();
 
             // at this stage in data we only have points collected (1033)
-
-            //data.features = [].concat(data.features, polygons.features);
-
+            // data.features = [].concat(data.features, polygons.features);
             // here we have it combined with settlement polygons +(110)
 
             MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice);
 
 
-            {#            var featureCount = data.features.length;#}
             var cf = crossfilter(centroids.features);
 
-            {#            console.log(long)#}
 
-            {#            function dimensionFrom(field) {#}
-            {#                return function (d) {#}
-            {#                    return d.properties[field];#}
-            {#                }#}
-            {#            }#}
-
-            {#            var oblast = cf.dimension(function (d) {#}
-            {#                return d.properties['current_oblast']#}
-            {#            });#}
-            {#            var type = cf.dimension(function (d) {#}
-            {#                return d.properties['QF_Type']#}
-            {#            });#}
             var settlement = cf.dimension(function (d) {
                 return d.properties['KOATUU']
             });
-            {#            var sector = cf.dimension(function (d) {#}
-            {#                return d.properties['QF_Type']#}
-            {#            });#}
 
-            {#        $('#reset').on('click', function(){#}
-            {#            resetSettlement();#}
-            {#        });#}
 
             var filtersList = [
                 {

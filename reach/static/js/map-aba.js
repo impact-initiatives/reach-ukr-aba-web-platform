@@ -272,6 +272,7 @@ function compileInfo(e) {
     }
 }
 var dataset = []
+
 function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets, single_choice) {
 
     // var dt = crossfilter(data);
