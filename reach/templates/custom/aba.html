@@ -28,6 +28,12 @@
 
         #sidebar-toggle {
             position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            width: 24px;
+            z-index: 9000;
 
         }
         #sidebar.collapse {
@@ -94,7 +100,7 @@
 
     <div class="loader" id="loader"></div>
 
-    <a href="#sidebar" data-toggle="collapse" id="sidebar-toggle"><i class="fa fa-navicon fa-lg"></i></a>
+{#    <a href="#sidebar" data-toggle="collapse" id="sidebar-toggle"><i class="fa fa-navicon fa-lg"></i></a>#}
 
     <div class="wrappers" style="width:50%">
         <div id='map-container'></div>
@@ -102,7 +108,7 @@
     <div class="wrappers" style="width:50%; overflow:auto">
 
         <!-- Sidebar -->
-        <div class="sidebar collapse in" style="height: 100%; overflow: auto" id="sidebar">
+        <div class="sidebar" style="height: 100%; overflow: auto" id="sidebar">
 
             <div id="filters" class="form-group row filter">
 
@@ -117,7 +123,9 @@
 
             </div>
             <div class="filter row" id="all-info" style="display: none">
+
                 <div class="col-12">
+
                     <h5>Availability of Basic Services</h5>
 
                     <table class="table table-sm">
@@ -287,8 +295,8 @@
             .defer(d3.json, "{% static 'data/aba/aba_116.json' %}")
             .defer(d3.json, "{% static 'data/aba/BSUs.geojson' %}")
             .defer(d3.tsv, "{% static 'data/community/Community.txt' %}")
-            .defer(d3.dsv(';'), "{% static 'data/aba/Initial Data Sample.csv' %}")
-            .defer(d3.dsv(';'), "{% static 'data/aba/SC_Community.csv' %}")
+            .defer(d3.dsv(';'), "{% static 'data/aba/reach_aba_community_select_many.csv' %}")
+            .defer(d3.dsv(';'), "{% static 'data/aba/reach_aba_community_select_one.csv' %}")
             .await(loadData);
 
         function loadData(error, polygons, buffer, centroids, settlements, bsus, wide, data, single_choice) {
