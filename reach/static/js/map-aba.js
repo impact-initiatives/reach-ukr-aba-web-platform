@@ -23,7 +23,7 @@ function compileInfo(e) {
 
     var template = _.template("" +
         '<h3><%= name_en %> (<%= name_ray %>) <small class="text-muted"><%= name_obl %> oblast</small></h3>' +
-            '<h3><%= population %> <small class="text-muted">total population</small></h3>' +
+        '<h3><%= population %> <small class="text-muted">total population</small></h3>' +
         "");
 
     if (feature.layer.id === 'centroids') {
@@ -42,10 +42,36 @@ function compileInfo(e) {
 }
 
 var dataset = [];
-
+var sc = []
 function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets, single_choice) {
 
+
+    // console.log(single_choice);
+
+
+    single_choice.map(function (d) {
+        if (d['KOATUU'] === "1410200000") {
+            console.log(d)
+        } else {
+
+
+        }
+    });
+
+
+    var avdiivka = {
+        id: "1410200000",
+        hascommunity: 1,
+        communities: ['1410200000_1', '1410200000_2']
+    };
+
+
+    // single_choice.filter(function(d) {
+    //     return d.
+    // })
+
     // var dt = crossfilter(data);
+    sc = single_choice;
     dataset = datasets;
 
     map.addSource('buffer', {
@@ -183,12 +209,85 @@ map.on('click', function (e) {
     compileInfo(e);
 
     $('#all-info').css('display', '');
-
+    $('#single-choice').html('')
     var features = map.queryRenderedFeatures(e.point);
     var feature = features[0];
     var selected_settlement = feature.properties['KOATUU'];
 
-    universeCharts(dataset, selected_settlement)
+    universeCharts(dataset, selected_settlement);
+
+    var select_one = sc.filter(function (d) {
+        return d.KOATUU === selected_settlement;
+    });
+
+
+    var questions = {
+
+        comm_q1: 'Police station',
+        comm_q3: 'Local court',
+        admin_q21_integer: 'Hospital',
+        admin_q23_integer: 'Pharmacy',
+
+        comm_q17: 'Are construction materials available in the community markets or in nearby markets?',
+        comm_q66: 'Are there any landmines/other ERW in community?',
+        comm_q69: 'Are there any child friendly space in the community?',
+        comm_q71: 'Are psycho-social support services available in the community?',
+        comm_q72: 'At which frequency has the community experienced shelling in the last 3 months?',
+        comm_q73: 'What is the primary source of drinking water in the community?',
+        comm_q74: 'Do most households treat the water before drinking?'
+
+    };
+
+
+    function renderSingleChoice(question) {
+
+        var text = d3.select('#single-choice');
+        text.append('h5')
+            .text(questions[question]);
+
+
+        text.append('div')
+            .attr('id', question);
+
+
+        var question_container = d3.select('#' + question)
+            .append('table')
+            .attr('class', 'table')
+            .selectAll("table")
+            .data(select_one.filter(function (d) {
+                return d.question_name === question;
+            }));
+
+        // .data(select_one.filter(function (d) {
+        //         return d.representation === question;
+        //     }));
+
+        // text.insert("h5", ":first-child").text(question);
+
+        var row = question_container.enter()
+            .append("tr");
+
+
+        row.append('td')
+            .text(function (d) {
+                return d.community_name;
+
+            })
+
+        row.append('td')
+            .text(function (d) {
+                return d.value_clean;
+
+            });
+
+    }
+
+    Object.keys(questions).map(function (d) {
+        renderSingleChoice(d);
+    })
+
+    // renderSingleChoice('#single-choice', 'comm_q66')
+
 
 });
 
