@@ -1,0 +1,1118 @@
+KOATUU;community_id;communities;community_name;question_name;question_label;question_type;representation;value_clean
+4423810800;4423810800;5;Zolote;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423810800;4423810800_2;5;Zolote 1;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423810800;4423810800_3;5;Zolote 2;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423810800;4423810800_4;5;Zolote 3;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423810800;4423810800_5;5;Zolote 4;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423810800;4423810800;5;Zolote;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423810800;4423810800_2;5;Zolote 1;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423810800;4423810800_3;5;Zolote 2;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423810800;4423810800_4;5;Zolote 3;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423810800;4423810800_5;5;Zolote 4;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423810800;4423810800_2;5;Zolote 1;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423810800;4423810800_3;5;Zolote 2;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423810800;4423810800_4;5;Zolote 3;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423810800;4423810800_5;5;Zolote 4;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810800;4423810800_2;5;Zolote 1;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810800;4423810800_3;5;Zolote 2;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810800;4423810800_4;5;Zolote 3;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423810800;4423810800_5;5;Zolote 4;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423810800;4423810800_2;5;Zolote 1;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423810800;4423810800_3;5;Zolote 2;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423810800;4423810800_4;5;Zolote 3;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423810800;4423810800_5;5;Zolote 4;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810800;4423810800_2;5;Zolote 1;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810800;4423810800_3;5;Zolote 2;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810800;4423810800_4;5;Zolote 3;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810800;4423810800_5;5;Zolote 4;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810800;4423810800_1;5;Zolote (Rodina);comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;
+4423810800;4423810800_2;5;Zolote 1;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423810800;4423810800_3;5;Zolote 2;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423810800;4423810800_4;5;Zolote 3;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4423810800;4423810800_5;5;Zolote 4;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1410200000;1410200000;2;Avdiivka;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1410200000;1410200000;2;Avdiivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1410200000;1410200000;2;Avdiivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1410200000;1410200000;2;Avdiivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1410200000;1410200000_1;2;Avdiivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1410200000;1410200000_2;2;Avdiivka (Old Town);comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1410200000;1410200000;2;Avdiivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1410200000;1410200000;2;Avdiivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1410200000;1410200000_1;2;Avdiivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1410200000;1410200000_2;2;Avdiivka (Old Town);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1410200000;1410200000;2;Avdiivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4423857700;4423857700;2;Nyzhnie;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423857700;4423857700_1;2;Nyzhnie;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423857700;4423857700_2;2;Nyzhnie (Svetlychne);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423857700;4423857700;2;Nyzhnie;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423857700;4423857700_1;2;Nyzhnie;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423857700;4423857700_2;2;Nyzhnie (Svetlychne);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423857700;4423857700_1;2;Nyzhnie;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+4423857700;4423857700_2;2;Nyzhnie (Svetlychne);comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423857700;4423857700;2;Nyzhnie;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423857700;4423857700_1;2;Nyzhnie;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4423857700;4423857700_2;2;Nyzhnie (Svetlychne);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423857700;4423857700_1;2;Nyzhnie;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423857700;4423857700_2;2;Nyzhnie (Svetlychne);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423857700;4423857700;2;Nyzhnie;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1410665600;1410665600;1;Zaitseve (Maiorsk GCA);comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1411200000;1411200000;1;Toretsk;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1411200000;1411200000;1;Toretsk;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1411200000;1411200000;1;Toretsk;comm_q3;Does the community have a local court?;select_one;Yes/No;1
+1411200000;1411200000;1;Toretsk;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411200000;1411200000;1;Toretsk;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1411200000;1411200000;1;Toretsk;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411200000;1411200000;1;Toretsk;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1411200000;1411200000;1;Toretsk;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411200000;1411200000;1;Toretsk;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1411245300;1411245300;1;Kirove;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1411245300;1411245300;1;Kirove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1411245300;1411245300;1;Kirove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245300;1411245300;1;Kirove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411245300;1411245300;1;Kirove;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1411245300;1411245300;1;Kirove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411245300;1411245300;1;Kirove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411245300;1411245300;1;Kirove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245300;1411245300;1;Kirove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1411245301;1411245301;1;Dachne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245301;1411245301;1;Dachne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245301;1411245301;1;Dachne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245301;1411245301;1;Dachne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1411245301;1411245301;1;Dachne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411245301;1411245301;1;Dachne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411245301;1411245301;1;Dachne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Never happened
+1411245301;1411245301;1;Dachne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245301;1411245301;1;Dachne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411245303;1411245303;1;Dyliivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245303;1411245303;1;Dyliivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245303;1411245303;1;Dyliivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245303;1411245303;1;Dyliivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411245303;1411245303;1;Dyliivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411245303;1411245303;1;Dyliivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411245303;1411245303;1;Dyliivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411245303;1411245303;1;Dyliivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245303;1411245303;1;Dyliivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411245305;1411245305;1;Druzhba;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245305;1411245305;1;Druzhba;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245305;1411245305;1;Druzhba;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245305;1411245305;1;Druzhba;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1411245305;1411245305;1;Druzhba;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1411245305;1411245305;1;Druzhba;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411245305;1411245305;1;Druzhba;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411245305;1411245305;1;Druzhba;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245305;1411245305;1;Druzhba;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411245307;1411245307;1;Ozarianivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245307;1411245307;1;Ozarianivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245307;1411245307;1;Ozarianivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245307;1411245307;1;Ozarianivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1411245307;1411245307;1;Ozarianivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411245307;1411245307;1;Ozarianivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1411245307;1411245307;1;Ozarianivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411245307;1411245307;1;Ozarianivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245307;1411245307;1;Ozarianivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411245600;1411245600;1;Kurdiumivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245600;1411245600;1;Kurdiumivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245600;1411245600;1;Kurdiumivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245600;1411245600;1;Kurdiumivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1411245600;1411245600;1;Kurdiumivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411245600;1411245600;1;Kurdiumivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1411245600;1411245600;1;Kurdiumivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411245600;1411245600;1;Kurdiumivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245600;1411245600;1;Kurdiumivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411245900;1411245900;1;Leninske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411245900;1411245900;1;Leninske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411245900;1411245900;1;Leninske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411245900;1411245900;1;Leninske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411245900;1411245900;1;Leninske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411245900;1411245900;1;Leninske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411245900;1411245900;1;Leninske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1411245900;1411245900;1;Leninske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411245900;1411245900;1;Leninske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1411246200;1411246200;1;Nelipivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411246200;1411246200;1;Nelipivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411246200;1411246200;1;Nelipivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411246200;1411246200;1;Nelipivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present nearby
+1411246200;1411246200;1;Nelipivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1411246200;1411246200;1;Nelipivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411246200;1411246200;1;Nelipivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1411246200;1411246200;1;Nelipivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411246200;1411246200;1;Nelipivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411246500;1411246500;1;Novhorodske;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1411246500;1411246500;1;Novhorodske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411246500;1411246500;1;Novhorodske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411246500;1411246500;1;Novhorodske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411246500;1411246500;1;Novhorodske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1411246500;1411246500;1;Novhorodske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411246500;1411246500;1;Novhorodske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1411246500;1411246500;1;Novhorodske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411246500;1411246500;1;Novhorodske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1411246507;1411246507;1;Yurivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1411246507;1411246507;1;Yurivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411246507;1411246507;1;Yurivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411246507;1411246507;1;Yurivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411246507;1411246507;1;Yurivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411246507;1411246507;1;Yurivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1411246507;1411246507;1;Yurivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1411246507;1411246507;1;Yurivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411246507;1411246507;1;Yurivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1411270300;1411270300;1;Artemove;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1411270300;1411270300;1;Artemove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1411270300;1411270300;1;Artemove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1411270300;1411270300;1;Artemove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1411270300;1411270300;1;Artemove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1411270300;1411270300;1;Artemove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1411270300;1411270300;1;Artemove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1411270300;1411270300;1;Artemove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1411270300;1411270300;1;Artemove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1412365800;1412365800;1;Talakivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1412365800;1412365800;1;Talakivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1412365800;1412365800;1;Talakivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1412365800;1412365800;1;Talakivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1412365800;1412365800;1;Talakivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1412365800;1412365800;1;Talakivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1412365800;1412365800;1;Talakivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1412365800;1412365800;1;Talakivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1412365800;1412365800;1;Talakivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1412365801;1412365801;1;Hnutove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1412365801;1412365801;1;Hnutove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1412365801;1412365801;1;Hnutove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1412365801;1412365801;1;Hnutove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1412365801;1412365801;1;Hnutove;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1412365801;1412365801;1;Hnutove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1412365801;1412365801;1;Hnutove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1412365801;1412365801;1;Hnutove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1412365801;1412365801;1;Hnutove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1412365803;1412365803;1;Lomakyne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1412365803;1412365803;1;Lomakyne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1412365803;1412365803;1;Lomakyne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1412365803;1412365803;1;Lomakyne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1412365803;1412365803;1;Lomakyne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1412365803;1412365803;1;Lomakyne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1412365803;1412365803;1;Lomakyne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1412365803;1412365803;1;Lomakyne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1412365803;1412365803;1;Lomakyne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1420910600;1420910600;1;Svitlodarsk;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1420910600;1420910600;1;Svitlodarsk;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1420910600;1420910600;1;Svitlodarsk;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420910600;1420910600;1;Svitlodarsk;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present nearby
+1420910600;1420910600;1;Svitlodarsk;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1420910600;1420910600;1;Svitlodarsk;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1420910600;1420910600;1;Svitlodarsk;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1420910600;1420910600;1;Svitlodarsk;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420910600;1420910600;1;Svitlodarsk;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1420955400;1420955400;1;Luhanske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1420955400;1420955400;1;Luhanske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1420955400;1420955400;1;Luhanske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420955400;1420955400;1;Luhanske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1420955400;1420955400;1;Luhanske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1420955400;1420955400;1;Luhanske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1420955400;1420955400;1;Luhanske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1420955400;1420955400;1;Luhanske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420955400;1420955400;1;Luhanske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1420955500;1420955500;1;Myronivskyi;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1420955500;1420955500;1;Myronivskyi;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1420955500;1420955500;1;Myronivskyi;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420955500;1420955500;1;Myronivskyi;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1420955500;1420955500;1;Myronivskyi;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1420955500;1420955500;1;Myronivskyi;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1420955500;1420955500;1;Myronivskyi;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1420955500;1420955500;1;Myronivskyi;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420955500;1420955500;1;Myronivskyi;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1420985001;1420985001;1;Kodema;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1420985001;1420985001;1;Kodema;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1420985001;1420985001;1;Kodema;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420985001;1420985001;1;Kodema;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1420985001;1420985001;1;Kodema;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1420985001;1420985001;1;Kodema;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1420985001;1420985001;1;Kodema;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1420985001;1420985001;1;Kodema;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420985001;1420985001;1;Kodema;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1420985005;1420985005;1;Odradivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1420985005;1420985005;1;Odradivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1420985005;1420985005;1;Odradivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420985005;1420985005;1;Odradivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1420985005;1420985005;1;Odradivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1420985005;1420985005;1;Odradivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;
+1420985005;1420985005;1;Odradivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1420985005;1420985005;1;Odradivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420985005;1420985005;1;Odradivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420986201;1420986201;1;Novoluhanske (GCA);comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1420986203;1420986203;1;Semyhiria;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1420986203;1420986203;1;Semyhiria;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1420986203;1420986203;1;Semyhiria;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1420986203;1420986203;1;Semyhiria;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1420986203;1420986203;1;Semyhiria;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1420986203;1420986203;1;Semyhiria;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1420986203;1420986203;1;Semyhiria;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1420986203;1420986203;1;Semyhiria;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1420986203;1420986203;1;Semyhiria;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421556800;1421556800;1;Novotroitske;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1421556800;1421556800;1;Novotroitske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421556800;1421556800;1;Novotroitske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421556800;1421556800;1;Novotroitske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421556800;1421556800;1;Novotroitske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1421556800;1421556800;1;Novotroitske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421556800;1421556800;1;Novotroitske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Don't know
+1421556800;1421556800;1;Novotroitske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421556800;1421556800;1;Novotroitske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1421583701;1421583701;1;Lebedynske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421583701;1421583701;1;Lebedynske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421583701;1421583701;1;Lebedynske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421583701;1421583701;1;Lebedynske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421583701;1421583701;1;Lebedynske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1421583701;1421583701;1;Lebedynske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421583701;1421583701;1;Lebedynske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1421583701;1421583701;1;Lebedynske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421583701;1421583701;1;Lebedynske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421584001;1421584001;1;Mykolaivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421584001;1421584001;1;Mykolaivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421584001;1421584001;1;Mykolaivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421584001;1421584001;1;Mykolaivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421584001;1421584001;1;Mykolaivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1421584001;1421584001;1;Mykolaivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421584001;1421584001;1;Mykolaivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1421584001;1421584001;1;Mykolaivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421584001;1421584001;1;Mykolaivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421584002;1421584002;1;Bohdanivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421584002;1421584002;1;Bohdanivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421584002;1421584002;1;Bohdanivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421584002;1421584002;1;Bohdanivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421584002;1421584002;1;Bohdanivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421584002;1421584002;1;Bohdanivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421584002;1421584002;1;Bohdanivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1421584002;1421584002;1;Bohdanivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421584002;1421584002;1;Bohdanivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421584004;1421584004;1;Novohnativka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421584004;1421584004;1;Novohnativka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421584004;1421584004;1;Novohnativka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421584004;1421584004;1;Novohnativka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421584004;1421584004;1;Novohnativka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1421584004;1421584004;1;Novohnativka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421584004;1421584004;1;Novohnativka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1421584004;1421584004;1;Novohnativka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421584004;1421584004;1;Novohnativka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421585801;1421585801;1;Pavlopil;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421585801;1421585801;1;Pavlopil;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1421585801;1421585801;1;Pavlopil;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421585801;1421585801;1;Pavlopil;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421585801;1421585801;1;Pavlopil;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421585801;1421585801;1;Pavlopil;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421585801;1421585801;1;Pavlopil;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1421585801;1421585801;1;Pavlopil;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421585801;1421585801;1;Pavlopil;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421585802;1421585802;1;Pyshchevyk;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421585802;1421585802;1;Pyshchevyk;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421585802;1421585802;1;Pyshchevyk;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421585802;1421585802;1;Pyshchevyk;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421585802;1421585802;1;Pyshchevyk;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421585802;1421585802;1;Pyshchevyk;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421585802;1421585802;1;Pyshchevyk;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1421585802;1421585802;1;Pyshchevyk;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421585802;1421585802;1;Pyshchevyk;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1421585803;1421585803;1;Chernenko;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421585803;1421585803;1;Chernenko;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421585803;1421585803;1;Chernenko;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421585803;1421585803;1;Chernenko;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421585803;1421585803;1;Chernenko;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421585803;1421585803;1;Chernenko;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421585803;1421585803;1;Chernenko;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1421585803;1421585803;1;Chernenko;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421585803;1421585803;1;Chernenko;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1421587701;1421587701;1;Starohnativka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421587701;1421587701;1;Starohnativka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421587701;1421587701;1;Starohnativka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421587701;1421587701;1;Starohnativka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421587701;1421587701;1;Starohnativka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1421587701;1421587701;1;Starohnativka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421587701;1421587701;1;Starohnativka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1421587701;1421587701;1;Starohnativka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421587701;1421587701;1;Starohnativka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421587702;1421587702;1;Novohryhorivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421587702;1421587702;1;Novohryhorivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421587702;1421587702;1;Novohryhorivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421587702;1421587702;1;Novohryhorivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421587702;1421587702;1;Novohryhorivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421587702;1421587702;1;Novohryhorivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421587702;1421587702;1;Novohryhorivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1421587702;1421587702;1;Novohryhorivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421587702;1421587702;1;Novohryhorivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421588201;1421588201;1;Chermalyk;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421588201;1421588201;1;Chermalyk;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421588201;1421588201;1;Chermalyk;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421588201;1421588201;1;Chermalyk;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421588201;1421588201;1;Chermalyk;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1421588201;1421588201;1;Chermalyk;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421588201;1421588201;1;Chermalyk;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1421588201;1421588201;1;Chermalyk;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421588201;1421588201;1;Chermalyk;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421588202;1421588202;1;Orlovske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421588202;1421588202;1;Orlovske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421588202;1421588202;1;Orlovske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421588202;1421588202;1;Orlovske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421588202;1421588202;1;Orlovske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421588202;1421588202;1;Orlovske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421588202;1421588202;1;Orlovske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1421588202;1421588202;1;Orlovske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421588202;1421588202;1;Orlovske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421588402;1421588402;1;Berdianske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421588402;1421588402;1;Berdianske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available in nearby markets
+1421588402;1421588402;1;Berdianske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421588402;1421588402;1;Berdianske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421588402;1421588402;1;Berdianske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1421588402;1421588402;1;Berdianske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421588402;1421588402;1;Berdianske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1421588402;1421588402;1;Berdianske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421588402;1421588402;1;Berdianske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1421588801;1421588801;1;Hranitne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1421588801;1421588801;1;Hranitne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1421588801;1421588801;1;Hranitne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1421588801;1421588801;1;Hranitne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1421588801;1421588801;1;Hranitne;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1421588801;1421588801;1;Hranitne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1421588801;1421588801;1;Hranitne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1421588801;1421588801;1;Hranitne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1421588801;1421588801;1;Hranitne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423310100;1423310100;1;Marinka;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1423310100;1423310100;1;Marinka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423310100;1423310100;1;Marinka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423310100;1423310100;1;Marinka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423310100;1423310100;1;Marinka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1423310100;1423310100;1;Marinka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423310100;1423310100;1;Marinka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1423310100;1423310100;1;Marinka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423310100;1423310100;1;Marinka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1423310101;1423310101;1;Pobieda;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423310101;1423310101;1;Pobieda;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423310101;1423310101;1;Pobieda;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423310101;1423310101;1;Pobieda;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423310101;1423310101;1;Pobieda;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1423310101;1423310101;1;Pobieda;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423310101;1423310101;1;Pobieda;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1423310101;1423310101;1;Pobieda;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423310101;1423310101;1;Pobieda;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423310400;1423310400;1;Krasnohorivka;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+1423310400;1423310400;1;Krasnohorivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423310400;1423310400;1;Krasnohorivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423310400;1423310400;1;Krasnohorivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423310400;1423310400;1;Krasnohorivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1423310400;1423310400;1;Krasnohorivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423310400;1423310400;1;Krasnohorivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1423310400;1423310400;1;Krasnohorivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423310400;1423310400;1;Krasnohorivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423384504;1423384504;1;Slavne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423384504;1423384504;1;Slavne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423384504;1423384504;1;Slavne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423384504;1423384504;1;Slavne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423384504;1423384504;1;Slavne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1423384504;1423384504;1;Slavne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423384504;1423384504;1;Slavne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1423384504;1423384504;1;Slavne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423384504;1423384504;1;Slavne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423385002;1423385002;1;Heorhiivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423385002;1423385002;1;Heorhiivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423385002;1423385002;1;Heorhiivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423385002;1423385002;1;Heorhiivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1423385002;1423385002;1;Heorhiivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1423385002;1423385002;1;Heorhiivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423385002;1423385002;1;Heorhiivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1423385002;1423385002;1;Heorhiivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423385002;1423385002;1;Heorhiivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423387401;1423387401;1;Stepne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423387401;1423387401;1;Stepne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423387401;1423387401;1;Stepne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423387401;1423387401;1;Stepne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423387401;1423387401;1;Stepne;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1423387401;1423387401;1;Stepne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423387401;1423387401;1;Stepne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Don't know
+1423387401;1423387401;1;Stepne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423387401;1423387401;1;Stepne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423387402;1423387402;1;Berezove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423387402;1423387402;1;Berezove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423387402;1423387402;1;Berezove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423387402;1423387402;1;Berezove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423387402;1423387402;1;Berezove;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1423387402;1423387402;1;Berezove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423387402;1423387402;1;Berezove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Don't know
+1423387402;1423387402;1;Berezove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423387402;1423387402;1;Berezove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1423387405;1423387405;1;Taramchuk;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1423387405;1423387405;1;Taramchuk;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1423387405;1423387405;1;Taramchuk;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1423387405;1423387405;1;Taramchuk;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1423387405;1423387405;1;Taramchuk;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1423387405;1423387405;1;Taramchuk;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1423387405;1423387405;1;Taramchuk;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1423387405;1423387405;1;Taramchuk;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1423387405;1423387405;1;Taramchuk;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425555200;1425555200;1;Verkhnotoretske (GCA);comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425555203;1425555203;1;Troitske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425555203;1425555203;1;Troitske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1425555203;1425555203;1;Troitske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425555203;1425555203;1;Troitske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425555203;1425555203;1;Troitske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1425555203;1425555203;1;Troitske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425555203;1425555203;1;Troitske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1425555203;1425555203;1;Troitske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425555203;1425555203;1;Troitske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425582102;1425582102;1;Vesele;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425582102;1425582102;1;Vesele;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425582102;1425582102;1;Vesele;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425582102;1425582102;1;Vesele;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+1425582102;1425582102;1;Vesele;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425582102;1425582102;1;Vesele;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425582102;1425582102;1;Vesele;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+1425582102;1425582102;1;Vesele;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425582102;1425582102;1;Vesele;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425582103;1425582103;1;Kamianka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425582103;1425582103;1;Kamianka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1425582103;1425582103;1;Kamianka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425582103;1425582103;1;Kamianka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425582103;1425582103;1;Kamianka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425582103;1425582103;1;Kamianka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+1425582103;1425582103;1;Kamianka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+1425582103;1425582103;1;Kamianka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425582103;1425582103;1;Kamianka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425582104;1425582104;1;Novoselivka Druha;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425582104;1425582104;1;Novoselivka Druha;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425582104;1425582104;1;Novoselivka Druha;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425582104;1425582104;1;Novoselivka Druha;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425582104;1425582104;1;Novoselivka Druha;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425582104;1425582104;1;Novoselivka Druha;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425582104;1425582104;1;Novoselivka Druha;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425582104;1425582104;1;Novoselivka Druha;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425582104;1425582104;1;Novoselivka Druha;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;
+1425583101;1425583101;1;Novobakhmutivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425583101;1425583101;1;Novobakhmutivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+1425583101;1425583101;1;Novobakhmutivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425583101;1425583101;1;Novobakhmutivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425583101;1425583101;1;Novobakhmutivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1425583101;1425583101;1;Novobakhmutivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425583101;1425583101;1;Novobakhmutivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1425583101;1425583101;1;Novobakhmutivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425583101;1425583101;1;Novobakhmutivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425585401;1425585401;1;Pervomaiske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425585401;1425585401;1;Pervomaiske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425585401;1425585401;1;Pervomaiske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425585401;1425585401;1;Pervomaiske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425585401;1425585401;1;Pervomaiske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425585401;1425585401;1;Pervomaiske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425585401;1425585401;1;Pervomaiske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Don't know
+1425585401;1425585401;1;Pervomaiske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425585401;1425585401;1;Pervomaiske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425585402;1425585402;1;Nevelske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425585402;1425585402;1;Nevelske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425585402;1425585402;1;Nevelske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425585402;1425585402;1;Nevelske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425585402;1425585402;1;Nevelske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425585402;1425585402;1;Nevelske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425585402;1425585402;1;Nevelske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425585402;1425585402;1;Nevelske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425585402;1425585402;1;Nevelske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425585602;1425585602;1;Vodiane;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425585602;1425585602;1;Vodiane;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425585602;1425585602;1;Vodiane;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425585602;1425585602;1;Vodiane;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425585602;1425585602;1;Vodiane;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425585602;1425585602;1;Vodiane;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425585602;1425585602;1;Vodiane;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425585602;1425585602;1;Vodiane;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425585602;1425585602;1;Vodiane;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1425585604;1425585604;1;Sieverne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425585604;1425585604;1;Sieverne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+1425585604;1425585604;1;Sieverne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425585604;1425585604;1;Sieverne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425585604;1425585604;1;Sieverne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425585604;1425585604;1;Sieverne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425585604;1425585604;1;Sieverne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425585604;1425585604;1;Sieverne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425585604;1425585604;1;Sieverne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+1425586503;1425586503;1;Novoselivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425586503;1425586503;1;Novoselivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425586503;1425586503;1;Novoselivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425586503;1425586503;1;Novoselivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425586503;1425586503;1;Novoselivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+1425586503;1425586503;1;Novoselivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425586503;1425586503;1;Novoselivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+1425586503;1425586503;1;Novoselivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425586503;1425586503;1;Novoselivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1425587606;1425587606;1;Opytne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+1425587606;1425587606;1;Opytne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+1425587606;1425587606;1;Opytne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+1425587606;1425587606;1;Opytne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+1425587606;1425587606;1;Opytne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+1425587606;1425587606;1;Opytne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+1425587606;1425587606;1;Opytne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+1425587606;1425587606;1;Opytne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+1425587606;1425587606;1;Opytne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423110100;4423110100;1;Shchastia;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4423110100;4423110100;1;Shchastia;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423110100;4423110100;1;Shchastia;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423110100;4423110100;1;Shchastia;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423110100;4423110100;1;Shchastia;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+4423110100;4423110100;1;Shchastia;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423110100;4423110100;1;Shchastia;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423110100;4423110100;1;Shchastia;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423110100;4423110100;1;Shchastia;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423183601;4423183601;1;Krymske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423183601;4423183601;1;Krymske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available in nearby markets
+4423183601;4423183601;1;Krymske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423183601;4423183601;1;Krymske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423183601;4423183601;1;Krymske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423183601;4423183601;1;Krymske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423183601;4423183601;1;Krymske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423183601;4423183601;1;Krymske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423183601;4423183601;1;Krymske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423187701;4423187701;1;Trokhizbenka;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4423187701;4423187701;1;Trokhizbenka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423187701;4423187701;1;Trokhizbenka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423187701;4423187701;1;Trokhizbenka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423187701;4423187701;1;Trokhizbenka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423187701;4423187701;1;Trokhizbenka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423187701;4423187701;1;Trokhizbenka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Montly
+4423187701;4423187701;1;Trokhizbenka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423187701;4423187701;1;Trokhizbenka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423187702;4423187702;1;Kriakivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423187702;4423187702;1;Kriakivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423187702;4423187702;1;Kriakivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423187702;4423187702;1;Kriakivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423187702;4423187702;1;Kriakivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423187702;4423187702;1;Kriakivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423187702;4423187702;1;Kriakivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Montly
+4423187702;4423187702;1;Kriakivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423187702;4423187702;1;Kriakivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423187703;4423187703;1;Orikhove-Donetske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423187703;4423187703;1;Orikhove-Donetske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423187703;4423187703;1;Orikhove-Donetske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423187703;4423187703;1;Orikhove-Donetske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423187703;4423187703;1;Orikhove-Donetske;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423187703;4423187703;1;Orikhove-Donetske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423187703;4423187703;1;Orikhove-Donetske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423187703;4423187703;1;Orikhove-Donetske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423187703;4423187703;1;Orikhove-Donetske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423187705;4423187705;1;Lobacheve;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423187705;4423187705;1;Lobacheve;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423187705;4423187705;1;Lobacheve;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423187705;4423187705;1;Lobacheve;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423187705;4423187705;1;Lobacheve;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423187705;4423187705;1;Lobacheve;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423187705;4423187705;1;Lobacheve;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4423187705;4423187705;1;Lobacheve;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423187705;4423187705;1;Lobacheve;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423810100;4423810100;1;Popasna;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4423810100;4423810100;1;Popasna;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423810100;4423810100;1;Popasna;comm_q3;Does the community have a local court?;select_one;Yes/No;1
+4423810100;4423810100;1;Popasna;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423810100;4423810100;1;Popasna;comm_q69;Are there any child friendly space in the community?;select_one;Category;Yes
+4423810100;4423810100;1;Popasna;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810100;4423810100;1;Popasna;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+4423810100;4423810100;1;Popasna;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810100;4423810100;1;Popasna;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423810500;4423810500;1;Hirske;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4423810500;4423810500;1;Hirske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423810500;4423810500;1;Hirske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423810500;4423810500;1;Hirske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present nearby
+4423810500;4423810500;1;Hirske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423810500;4423810500;1;Hirske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423810500;4423810500;1;Hirske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423810500;4423810500;1;Hirske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423810500;4423810500;1;Hirske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4423856200;4423856200;1;Vrubivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856200;4423856200;1;Vrubivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423856200;4423856200;1;Vrubivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856200;4423856200;1;Vrubivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856200;4423856200;1;Vrubivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423856200;4423856200;1;Vrubivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423856200;4423856200;1;Vrubivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4423856200;4423856200;1;Vrubivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856200;4423856200;1;Vrubivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856202;4423856202;1;Novoivanivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856202;4423856202;1;Novoivanivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423856202;4423856202;1;Novoivanivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856202;4423856202;1;Novoivanivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856202;4423856202;1;Novoivanivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423856202;4423856202;1;Novoivanivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856202;4423856202;1;Novoivanivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4423856202;4423856202;1;Novoivanivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856202;4423856202;1;Novoivanivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856502;4423856502;1;Novooleksandrivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856502;4423856502;1;Novooleksandrivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423856502;4423856502;1;Novooleksandrivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856502;4423856502;1;Novooleksandrivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423856502;4423856502;1;Novooleksandrivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856502;4423856502;1;Novooleksandrivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856502;4423856502;1;Novooleksandrivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423856502;4423856502;1;Novooleksandrivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856502;4423856502;1;Novooleksandrivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856900;4423856900;1;Komyshuvakha;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856900;4423856900;1;Komyshuvakha;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423856900;4423856900;1;Komyshuvakha;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856900;4423856900;1;Komyshuvakha;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856900;4423856900;1;Komyshuvakha;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423856900;4423856900;1;Komyshuvakha;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856900;4423856900;1;Komyshuvakha;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4423856900;4423856900;1;Komyshuvakha;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856900;4423856900;1;Komyshuvakha;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856901;4423856901;1;Vyskryva;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856901;4423856901;1;Vyskryva;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423856901;4423856901;1;Vyskryva;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856901;4423856901;1;Vyskryva;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423856901;4423856901;1;Vyskryva;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856901;4423856901;1;Vyskryva;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856901;4423856901;1;Vyskryva;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Never happened
+4423856901;4423856901;1;Vyskryva;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856901;4423856901;1;Vyskryva;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856902;4423856902;1;Viktorivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856902;4423856902;1;Viktorivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423856902;4423856902;1;Viktorivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856902;4423856902;1;Viktorivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856902;4423856902;1;Viktorivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856902;4423856902;1;Viktorivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856902;4423856902;1;Viktorivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Never happened
+4423856902;4423856902;1;Viktorivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856902;4423856902;1;Viktorivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856904;1411245305;1;Druzhba;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856904;1411245305;1;Druzhba;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423856904;1411245305;1;Druzhba;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856904;1411245305;1;Druzhba;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856904;1411245305;1;Druzhba;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856904;1411245305;1;Druzhba;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423856904;1411245305;1;Druzhba;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Infrequently
+4423856904;1411245305;1;Druzhba;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856904;1411245305;1;Druzhba;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856905;4423856905;1;Nyrkove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856905;4423856905;1;Nyrkove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423856905;4423856905;1;Nyrkove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856905;4423856905;1;Nyrkove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423856905;4423856905;1;Nyrkove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856905;4423856905;1;Nyrkove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423856905;4423856905;1;Nyrkove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423856905;4423856905;1;Nyrkove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856905;4423856905;1;Nyrkove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423856906;4423856906;1;Oleksandropillia;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423856906;4423856906;1;Oleksandropillia;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423856906;4423856906;1;Oleksandropillia;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423856906;4423856906;1;Oleksandropillia;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4423856906;4423856906;1;Oleksandropillia;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423856906;4423856906;1;Oleksandropillia;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423856906;4423856906;1;Oleksandropillia;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423856906;4423856906;1;Oleksandropillia;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423856906;4423856906;1;Oleksandropillia;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423857900;4423857900;1;Novotoshkivske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423857900;4423857900;1;Novotoshkivske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4423857900;4423857900;1;Novotoshkivske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423857900;4423857900;1;Novotoshkivske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423857900;4423857900;1;Novotoshkivske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423857900;4423857900;1;Novotoshkivske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423857900;4423857900;1;Novotoshkivske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+4423857900;4423857900;1;Novotoshkivske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423857900;4423857900;1;Novotoshkivske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423881102;4423881102;1;Katerynivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423881102;4423881102;1;Katerynivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423881102;4423881102;1;Katerynivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423881102;4423881102;1;Katerynivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423881102;4423881102;1;Katerynivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423881102;4423881102;1;Katerynivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423881102;4423881102;1;Katerynivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Don't know
+4423881102;4423881102;1;Katerynivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423881102;4423881102;1;Katerynivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423881502;4423881502;1;Orikhove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423881502;4423881502;1;Orikhove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423881502;4423881502;1;Orikhove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423881502;4423881502;1;Orikhove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423881502;4423881502;1;Orikhove;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423881502;4423881502;1;Orikhove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4423881502;4423881502;1;Orikhove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423881502;4423881502;1;Orikhove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423881502;4423881502;1;Orikhove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423885201;1425555203;1;Troitske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423885201;1425555203;1;Troitske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Not available
+4423885201;1425555203;1;Troitske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423885201;1425555203;1;Troitske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423885201;1425555203;1;Troitske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4423885201;1425555203;1;Troitske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423885201;1425555203;1;Troitske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4423885201;1425555203;1;Troitske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423885201;1425555203;1;Troitske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4423885202;4423885202;1;Novozvanivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4423885202;4423885202;1;Novozvanivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4423885202;4423885202;1;Novozvanivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4423885202;4423885202;1;Novozvanivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4423885202;4423885202;1;Novozvanivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4423885202;4423885202;1;Novozvanivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4423885202;4423885202;1;Novozvanivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+4423885202;4423885202;1;Novozvanivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4423885202;4423885202;1;Novozvanivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424855100;4424855100;1;Stanytsia Luhanska;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4424855400;4424855400;1;Petrivka;comm_q1;Does the community have a police station?;select_one;Yes/No;1
+4424855400;4424855400;1;Petrivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424855400;4424855400;1;Petrivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424855400;4424855400;1;Petrivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424855400;4424855400;1;Petrivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424855400;4424855400;1;Petrivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424855400;4424855400;1;Petrivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424855400;4424855400;1;Petrivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424855400;4424855400;1;Petrivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424855401;4424855401;1;Voitove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424855401;4424855401;1;Voitove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424855401;4424855401;1;Voitove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424855401;4424855401;1;Voitove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424855401;4424855401;1;Voitove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424855401;4424855401;1;Voitove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424855401;4424855401;1;Voitove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424855401;4424855401;1;Voitove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424855401;4424855401;1;Voitove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424880501;4424880501;1;Valuiske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424880501;4424880501;1;Valuiske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4424880501;4424880501;1;Valuiske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424880501;4424880501;1;Valuiske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424880501;4424880501;1;Valuiske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424880501;4424880501;1;Valuiske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424880501;4424880501;1;Valuiske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4424880501;4424880501;1;Valuiske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424880501;4424880501;1;Valuiske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4424880502;4424880502;1;Bolotene;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424880502;4424880502;1;Bolotene;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424880502;4424880502;1;Bolotene;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424880502;4424880502;1;Bolotene;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424880502;4424880502;1;Bolotene;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424880502;4424880502;1;Bolotene;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4424880502;4424880502;1;Bolotene;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4424880502;4424880502;1;Bolotene;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424880502;4424880502;1;Bolotene;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424880503;4424880503;1;Vilkhove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424880503;4424880503;1;Vilkhove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424880503;4424880503;1;Vilkhove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424880503;4424880503;1;Vilkhove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424880503;4424880503;1;Vilkhove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424880503;4424880503;1;Vilkhove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4424880503;4424880503;1;Vilkhove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424880503;4424880503;1;Vilkhove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424880503;4424880503;1;Vilkhove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424880504;4424880504;1;Makarove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424880504;4424880504;1;Makarove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424880504;4424880504;1;Makarove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424880504;4424880504;1;Makarove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424880504;4424880504;1;Makarove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424880504;4424880504;1;Makarove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424880504;4424880504;1;Makarove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424880504;4424880504;1;Makarove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424880504;4424880504;1;Makarove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424880505;4424880505;1;Syze;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424880505;4424880505;1;Syze;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424880505;4424880505;1;Syze;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424880505;4424880505;1;Syze;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424880505;4424880505;1;Syze;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424880505;4424880505;1;Syze;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424880505;4424880505;1;Syze;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424880505;4424880505;1;Syze;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424880505;4424880505;1;Syze;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424883501;4424883501;1;Nyzhnoteple;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424883501;4424883501;1;Nyzhnoteple;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424883501;4424883501;1;Nyzhnoteple;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424883501;4424883501;1;Nyzhnoteple;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424883501;4424883501;1;Nyzhnoteple;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424883501;4424883501;1;Nyzhnoteple;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424883501;4424883501;1;Nyzhnoteple;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424883501;4424883501;1;Nyzhnoteple;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424883501;4424883501;1;Nyzhnoteple;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424883502;4424883502;1;Artema;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424883502;4424883502;1;Artema;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4424883502;4424883502;1;Artema;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424883502;4424883502;1;Artema;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424883502;4424883502;1;Artema;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424883502;4424883502;1;Artema;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424883502;4424883502;1;Artema;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Daily
+4424883502;4424883502;1;Artema;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424883502;4424883502;1;Artema;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424883503;4424883503;1;Pishchane;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424883503;4424883503;1;Pishchane;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424883503;4424883503;1;Pishchane;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424883503;4424883503;1;Pishchane;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424883503;4424883503;1;Pishchane;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424883503;4424883503;1;Pishchane;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424883503;4424883503;1;Pishchane;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Weekly
+4424883503;4424883503;1;Pishchane;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424883503;4424883503;1;Pishchane;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424883504;4424883504;1;Nyzhnoteple (Serednoteple);comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424884501;4424884501;1;Nyzhnia Vilkhova;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424884502;4424884502;1;Verkhnia Vilkhova;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424884503;4424884503;1;Malynove;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424884503;4424884503;1;Malynove;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424884503;4424884503;1;Malynove;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424884503;4424884503;1;Malynove;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424884503;4424884503;1;Malynove;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424884503;4424884503;1;Malynove;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424884503;4424884503;1;Malynove;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424884503;4424884503;1;Malynove;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424884503;4424884503;1;Malynove;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424884504;4424884504;1;Plotyna;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424884504;4424884504;1;Plotyna;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4424884504;4424884504;1;Plotyna;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424884504;4424884504;1;Plotyna;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424884504;4424884504;1;Plotyna;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424884504;4424884504;1;Plotyna;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424884504;4424884504;1;Plotyna;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424884504;4424884504;1;Plotyna;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424884504;4424884504;1;Plotyna;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424884505;4424884505;1;Pshenychne;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424884505;4424884505;1;Pshenychne;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424884505;4424884505;1;Pshenychne;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424884505;4424884505;1;Pshenychne;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424884505;4424884505;1;Pshenychne;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424884505;4424884505;1;Pshenychne;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Not required
+4424884505;4424884505;1;Pshenychne;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424884505;4424884505;1;Pshenychne;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424884505;4424884505;1;Pshenychne;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;1
+4424885001;4424885001;1;Peredilske;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424885001;4424885001;1;Peredilske;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4424885001;4424885001;1;Peredilske;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424885001;4424885001;1;Peredilske;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424885001;4424885001;1;Peredilske;comm_q69;Are there any child friendly space in the community?;select_one;Category;Insufficient
+4424885001;4424885001;1;Peredilske;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424885001;4424885001;1;Peredilske;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424885001;4424885001;1;Peredilske;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424885001;4424885001;1;Peredilske;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Available
+4424885002;4424885002;1;Heivka;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are not present
+4424885002;4424885002;1;Heivka;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424885002;4424885002;1;Heivka;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424885002;4424885002;1;Heivka;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424885002;4424885002;1;Heivka;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424885002;4424885002;1;Heivka;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+4424885003;4424885003;1;Staryi Aidar;comm_q1;Does the community have a police station?;select_one;Yes/No;0
+4424885003;4424885003;1;Staryi Aidar;comm_q17;Are construction materials available in the community markets or in nearby markets?;select_one;Category;Limited availability
+4424885003;4424885003;1;Staryi Aidar;comm_q3;Does the community have a local court?;select_one;Yes/No;0
+4424885003;4424885003;1;Staryi Aidar;comm_q66;Are there any landmines/other ERW in community?;select_one;Category;Landmines/ERW are present
+4424885003;4424885003;1;Staryi Aidar;comm_q69;Are there any child friendly space in the community?;select_one;Category;No
+4424885003;4424885003;1;Staryi Aidar;comm_q71;Are psycho-social support services available in the community?;select_one;Category;Required
+4424885003;4424885003;1;Staryi Aidar;comm_q72;At which frequency has the community experienced shelling in the last 3 months?;select_one;Category;Not in last three months but has happened
+4424885003;4424885003;1;Staryi Aidar;comm_q73;What is the primary source of drinking water in the community?;select_one;Category;
+4424885003;4424885003;1;Staryi Aidar;comm_q74;Do most households treat the water before drinking?;select_one;Yes/No;0
+1420955500;1420955500;1;Myronivskyi;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1420955500;1420955500;1;Myronivskyi;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1420910600;1420910600;1;Svitlodarsk;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1420910600;1420910600;1;Svitlodarsk;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1420955400;1420955400;1;Luhanske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1420955400;1420955400;1;Luhanske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1420985001;1420985001;1;Kodema;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1420985001;1420985001;1;Kodema;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1420986201;1420986201;1;Novoluhanske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1420986201;1420986201;1;Novoluhanske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423856900;4423856900;1;Komyshuvakha;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856900;4423856900;1;Komyshuvakha;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1410665600;1410665600;1;Zaitseve;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;
+1410665600;1410665600;1;Zaitseve;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;
+1411200000;1411200000;1;Toretsk;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1411200000;1411200000;1;Toretsk;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1411270300;1411270300;1;Artemove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1411270300;1411270300;1;Artemove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423885201;4423885201;1;Troitske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423885201;4423885201;1;Troitske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1411246500;1411246500;1;Novhorodske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1411246500;1411246500;1;Novhorodske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423810500;4423810500;1;Hirske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423810500;4423810500;1;Hirske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423881502;4423881502;1;Orikhove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423881502;4423881502;1;Orikhove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1425586501;1425586501;1;Rozivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1425586501;1425586501;1;Rozivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1411245300;1411245300;1;Kirove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1411245300;1411245300;1;Kirove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423857900;4423857900;1;Novotoshkivske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423857900;4423857900;1;Novotoshkivske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423857700;4423857700;1;Nyzhnie;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423857700;4423857700;1;Nyzhnie;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425583101;1425583101;1;Novobakhmutivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425583101;1425583101;1;Novobakhmutivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425582104;1425582104;1;Novoselivka Druha;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425582104;1425582104;1;Novoselivka Druha;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425582102;1425582102;1;Vesele;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425582102;1425582102;1;Vesele;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425582103;1425582103;1;Kamianka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425582103;1425582103;1;Kamianka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425555200;1425555200;1;Verkhnotoretske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;
+1425555200;1425555200;1;Verkhnotoretske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;
+4424855400;4424855400;1;Petrivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4424855400;4424855400;1;Petrivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423110100;4423110100;1;Shchastia;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423110100;4423110100;1;Shchastia;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423810800;4423810800;1;Zolote;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423810800;4423810800;1;Zolote;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423810100;4423810100;1;Popasna;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423810100;4423810100;1;Popasna;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423183601;4423183601;1;Krymske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423183601;4423183601;1;Krymske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1421588801;1421588801;1;Hranitne;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1421588801;1421588801;1;Hranitne;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1421588802;1421588802;1;Staromarivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421588802;1421588802;1;Staromarivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421587701;1421587701;1;Starohnativka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421587701;1421587701;1;Starohnativka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421587702;1421587702;1;Novohryhorivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421587702;1421587702;1;Novohryhorivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424855100;4424855100;1;Stanytsia Luhanska;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4424855100;4424855100;1;Stanytsia Luhanska;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1421588201;1421588201;1;Chermalyk;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421588201;1421588201;1;Chermalyk;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421583701;1421583701;1;Lebedynske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1421583701;1421583701;1;Lebedynske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421583703;1421583703;1;Sopyne;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421583703;1421583703;1;Sopyne;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1412365800;1412365800;1;Talakivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1412365800;1412365800;1;Talakivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1421585801;1421585801;1;Pavlopil;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421585801;1421585801;1;Pavlopil;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421585802;1421585802;1;Pyshchevyk;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421585802;1421585802;1;Pyshchevyk;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421585803;1421585803;1;Chernenko;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421585803;1421585803;1;Chernenko;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421588402;1421588402;1;Berdianske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1421588402;1421588402;1;Berdianske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884501;4424884501;1;Nyzhnia Vilkhova;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4424885001;4424885001;1;Peredilske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4424885001;4424885001;1;Peredilske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421584001;1421584001;1;Mykolaivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1421584001;1421584001;1;Mykolaivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423187702;4423187702;1;Kriakivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423187702;4423187702;1;Kriakivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423187703;4423187703;1;Orikhove-Donetske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423187703;4423187703;1;Orikhove-Donetske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423187701;4423187701;1;Trokhizbenka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423187701;4423187701;1;Trokhizbenka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1423310100;1423310100;1;Marinka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1423310100;1423310100;1;Marinka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1423310101;1423310101;1;Pobieda;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1423310101;1423310101;1;Pobieda;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1423310400;1423310400;1;Krasnohorivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1423310400;1423310400;1;Krasnohorivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1423387401;1423387401;1;Stepne;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1423387401;1423387401;1;Stepne;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1423387405;1423387405;1;Taramchuk;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1423387405;1423387405;1;Taramchuk;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1421556800;1421556800;1;Novotroitske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1421556800;1421556800;1;Novotroitske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423881102;4423881102;1;Katerynivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423881102;4423881102;1;Katerynivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424883503;4424883503;1;Pishchane;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424883503;4424883503;1;Pishchane;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424883504;4424883504;1;Serednoteple;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424883504;4424883504;1;Serednoteple;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424883502;4424883502;1;Artema;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424883502;4424883502;1;Artema;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856200;4423856200;1;Vrubivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4423856200;4423856200;1;Vrubivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856202;4423856202;1;Novoivanivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856202;4423856202;1;Novoivanivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424883501;4424883501;1;Nyzhnoteple;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4424883501;4424883501;1;Nyzhnoteple;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4424880504;4424880504;1;Makarove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424880504;4424880504;1;Makarove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424880501;4424880501;1;Valuiske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424880501;4424880501;1;Valuiske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424880502;4424880502;1;Bolotene;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424880502;4424880502;1;Bolotene;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424880505;4424880505;1;Syze;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424880505;4424880505;1;Syze;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424880503;4424880503;1;Vilkhove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+4424880503;4424880503;1;Vilkhove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+1410200000;1410200000;1;Avdiivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1410200000;1410200000;1;Avdiivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;1
+4423885202;4423885202;1;Novozvanivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423885202;4423885202;1;Novozvanivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884505;4424884505;1;Pshenychne;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424884505;4424884505;1;Pshenychne;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884503;4424884503;1;Malynove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424884503;4424884503;1;Malynove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884502;4424884502;1;Verkhnia Vilkhova;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424884502;4424884502;1;Verkhnia Vilkhova;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884504;4424884504;1;Plotyna;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424884504;4424884504;1;Plotyna;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425585401;1425585401;1;Pervomaiske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;1
+1425585401;1425585401;1;Pervomaiske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425585403;1425585403;1;Netailove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425585403;1425585403;1;Netailove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+1425585402;1425585402;1;Nevelske;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+1425585402;1425585402;1;Nevelske;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856905;4423856905;1;Nyrkove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856905;4423856905;1;Nyrkove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856902;4423856902;1;Viktorivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856902;4423856902;1;Viktorivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856906;4423856906;1;Oleksandropillia;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856906;4423856906;1;Oleksandropillia;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856904;4423856904;1;Druzhba;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856904;4423856904;1;Druzhba;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4423856901;4423856901;1;Vyskryva;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4423856901;4423856901;1;Vyskryva;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424884501;4424884501;1;Nyzhnia Vilkhova;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424855401;4424855401;1;Voitove;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424855401;4424855401;1;Voitove;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424885003;4424885003;1;Staryi Aidar;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424885003;4424885003;1;Staryi Aidar;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;admin_q21_integer;Is there a hospital within your community (admin4)?;select_one;Yes/No;0
+4424885002;4424885002;1;Heivka;admin_q23_integer;Is there a pharmacy within your community (admin4)?;select_one;Yes/No;0
