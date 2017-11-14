@@ -42,7 +42,7 @@ function compileInfo(e) {
 }
 
 var dataset = [];
-var sc = []
+var sc = [];
 function MapInit(polygons, buffer, centroids, settlements, bsus, wide, datasets, single_choice) {
 
 
@@ -270,7 +270,6 @@ map.on('click', function (e) {
     // Object.keys(questions).map(function (d) {
     //     renderSingleChoice(d);
     // })
-<<<<<<< HEAD
 
     // Object.keys(avails).map(function (d) {
     //     renderSingleChoice(d);
@@ -324,7 +323,7 @@ map.on('click', function (e) {
     //     renderSingleChoice(d);
     // })
 
-        function renderSingleChoiceavail(avail) {
+    function renderSingleChoiceavail(avail) {
 
         var text = d3.select('#services');
         text.append('h5')
@@ -333,12 +332,10 @@ map.on('click', function (e) {
 
         text.append('div')
             .attr('id', avail);
-=======
 
     // Object.keys(avails).map(function (d) {
     //     renderSingleChoice(d);
     // })
->>>>>>> 1adf8dd3fdd44e18991f6a2d4b1076779aa1dd5c
 
     // renderSingleChoice('#single-choice', 'comm_q66')
     // function renderSingleChoice(question) {
@@ -388,7 +385,6 @@ map.on('click', function (e) {
     //     renderSingleChoice(d);
     // })
 
-<<<<<<< HEAD
         var avail_container = d3.select('#' + avail)
             .append('table')
             .attr('class', 'table')
@@ -396,9 +392,8 @@ map.on('click', function (e) {
             .data(select_one.filter(function (d) {
                 return d.question_name === avail;
             }));
-=======
+
     function renderSingleChoiceavail(availability) {
->>>>>>> 1adf8dd3fdd44e18991f6a2d4b1076779aa1dd5c
 
         d3.select('#services').selectAll('tbody').remove();
             // .selectAll("tr").remove();
@@ -407,18 +402,14 @@ map.on('click', function (e) {
             .selectAll("tbody")
             .data(availability);
 
-<<<<<<< HEAD
-        var row = avail_container.enter()
-=======
+        var row = avail_container.enter();
         var row = avail_container
             .enter()
->>>>>>> 1adf8dd3fdd44e18991f6a2d4b1076779aa1dd5c
             .append("tr");
 
 
         row.append('td')
             .text(function (d) {
-<<<<<<< HEAD
                 return d.community_name;
 
             });
@@ -436,7 +427,6 @@ map.on('click', function (e) {
                     return '<i class="fa fa-question-circle" style="color: rgb(231, 225, 52)"></i>'
                 }
                 // return d.value_clean;
-=======
                 return avails[d.question_name];
             });
 
@@ -444,7 +434,6 @@ map.on('click', function (e) {
             0: "fa fa-times-circle",
             1: "fa fa-check-circle"
         };
->>>>>>> 1adf8dd3fdd44e18991f6a2d4b1076779aa1dd5c
 
         row
             .append('td')
@@ -454,18 +443,15 @@ map.on('click', function (e) {
             });
 
 
-<<<<<<< HEAD
     Object.keys(avails).map(function (d) {
         renderSingleChoiceavail(d);
     })
 
-=======
     }
 
     renderSingleChoiceavail(elect_one.filter(function (d) {
         return Object.keys(avails).indexOf(d.question_name) !== -1
     }))
->>>>>>> 1adf8dd3fdd44e18991f6a2d4b1076779aa1dd5c
 
 });
 
