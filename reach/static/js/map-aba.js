@@ -333,57 +333,57 @@ map.on('click', function (e) {
         text.append('div')
             .attr('id', avail);
 
-    // Object.keys(avails).map(function (d) {
-    //     renderSingleChoice(d);
-    // })
+        // Object.keys(avails).map(function (d) {
+        //     renderSingleChoice(d);
+        // })
 
-    // renderSingleChoice('#single-choice', 'comm_q66')
-    // function renderSingleChoice(question) {
-    //
-    //     var text = d3.select('#single-choice');
-    //     text.append('h5')
-    //         .text(questions[question]);
-    //
-    //
-    //     text.append('div')
-    //         .attr('id', question);
-    //
-    //
-    //     var question_container = d3.select('#' + question)
-    //         .append('table')
-    //         .attr('class', 'table')
-    //         .selectAll("table")
-    //         .data(select_one.filter(function (d) {
-    //             return d.question_name === question;
-    //         }));
-    //
-    //     // .data(select_one.filter(function (d) {
-    //     //         return d.representation === question;
-    //     //     }));
-    //
-    //     // text.insert("h5", ":first-child").text(question);
-    //
-    //     var row = question_container.enter()
-    //         .append("tr");
-    //
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.community_name;
-    //
-    //         })
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.value_clean;
-    //
-    //         });
-    //
-    // }
-    //
-    // Object.keys(questions).map(function (d) {
-    //     renderSingleChoice(d);
-    // })
+        // renderSingleChoice('#single-choice', 'comm_q66')
+        // function renderSingleChoice(question) {
+        //
+        //     var text = d3.select('#single-choice');
+        //     text.append('h5')
+        //         .text(questions[question]);
+        //
+        //
+        //     text.append('div')
+        //         .attr('id', question);
+        //
+        //
+        //     var question_container = d3.select('#' + question)
+        //         .append('table')
+        //         .attr('class', 'table')
+        //         .selectAll("table")
+        //         .data(select_one.filter(function (d) {
+        //             return d.question_name === question;
+        //         }));
+        //
+        //     // .data(select_one.filter(function (d) {
+        //     //         return d.representation === question;
+        //     //     }));
+        //
+        //     // text.insert("h5", ":first-child").text(question);
+        //
+        //     var row = question_container.enter()
+        //         .append("tr");
+        //
+        //
+        //     row.append('td')
+        //         .text(function (d) {
+        //             return d.community_name;
+        //
+        //         })
+        //
+        //     row.append('td')
+        //         .text(function (d) {
+        //             return d.value_clean;
+        //
+        //         });
+        //
+        // }
+        //
+        // Object.keys(questions).map(function (d) {
+        //     renderSingleChoice(d);
+        // })
 
         var avail_container = d3.select('#' + avail)
             .append('table')
@@ -392,6 +392,7 @@ map.on('click', function (e) {
             .data(select_one.filter(function (d) {
                 return d.question_name === avail;
             }));
+    }
 
     function renderSingleChoiceavail(availability) {
 
@@ -449,7 +450,7 @@ map.on('click', function (e) {
 
     }
 
-    renderSingleChoiceavail(elect_one.filter(function (d) {
+    renderSingleChoiceavail(select_one.filter(function (d) {
         return Object.keys(avails).indexOf(d.question_name) !== -1
     }))
 
