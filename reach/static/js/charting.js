@@ -29,8 +29,6 @@ function createChart(source, container, color) {
         return 0;
     });
 
-    console.log(data);
-
     var chart = c3.generate({
         bindto: container,
         size: {
