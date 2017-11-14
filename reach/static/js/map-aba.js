@@ -396,7 +396,7 @@ map.on('click', function (e) {
 
     function renderSingleChoiceavail(availability) {
 
-        d3.select('#services').selectAll('tbody').remove();
+        d3.select('#services').selectAll('*').remove();
             // .selectAll("tr").remove();
 
         var avail_container = d3.select('#services')
@@ -411,25 +411,27 @@ map.on('click', function (e) {
 
         row.append('td')
             .text(function (d) {
-                return d.community_name;
+                console.log()
+                return avails[d.question_name]
+                // return d.community_name;
 
             });
 
-        row.append('td')
-            .attr(function (d) {
-                console.log(d.value_clean);
-                if (d.value_clean === 0){
-                    return '<i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i>'
-                } else if (d.value_clean === 1){
-                    // language=HTML
-                    return '<i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"\n' +
-                        'data-placement="top" title="Tooltip on top"></i>'
-                } else {
-                    return '<i class="fa fa-question-circle" style="color: rgb(231, 225, 52)"></i>'
-                }
-                // return d.value_clean;
-                return avails[d.question_name];
-            });
+        // row.append('td')
+        //     .attr(function (d) {
+        //         console.log(d.value_clean);
+        //         if (d.value_clean === 0){
+        //             return '<i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i>'
+        //         } else if (d.value_clean === 1){
+        //             // language=HTML
+        //             return '<i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"\n' +
+        //                 'data-placement="top" title="Tooltip on top"></i>'
+        //         } else {
+        //             return '<i class="fa fa-question-circle" style="color: rgb(231, 225, 52)"></i>'
+        //         }
+        //         // return d.value_clean;
+        //         return avails[d.question_name];
+        //     });
 
         var icons = {
             0: "fa fa-times-circle",
@@ -444,9 +446,9 @@ map.on('click', function (e) {
             });
 
 
-    Object.keys(avails).map(function (d) {
-        renderSingleChoiceavail(d);
-    })
+    // Object.keys(avails).map(function (d) {
+    //     renderSingleChoiceavail(d);
+    // })
 
     }
 
