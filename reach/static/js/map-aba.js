@@ -457,5 +457,3 @@ map.on('click', function (e) {
     }))
 
 });
-
-

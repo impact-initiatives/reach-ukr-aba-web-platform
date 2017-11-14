@@ -77,7 +77,6 @@ function universeCharts(dataset, selected_settlement) {
     })
 
 
-
 //     .then(
 //         function (myUniverse) {
 //             myUniverse.filterAll();
