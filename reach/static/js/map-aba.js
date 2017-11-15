@@ -191,6 +191,7 @@ map.on('click', function (e) {
 
     $('#all-info').css('display', '');
     $('#single-choice').html('');
+
     var features = map.queryRenderedFeatures(e.point);
     var feature = features[0];
     var selected_settlement = feature.properties['KOATUU'];
@@ -224,214 +225,59 @@ map.on('click', function (e) {
     };
 
 
-    // function renderSingleChoice(question) {
-    //
-    //     var text = d3.select('#single-choice');
-    //     text.append('h5')
-    //         .text(questions[question]);
-    //
-    //
-    //     text.append('div')
-    //         .attr('id', question);
-    //
-    //
-    //     var question_container = d3.select('#' + question)
-    //         .append('table')
-    //         .attr('class', 'table')
-    //         .selectAll("table")
-    //         .data(select_one.filter(function (d) {
-    //             return d.question_name === question;
-    //         }));
-    //
-    //     // .data(select_one.filter(function (d) {
-    //     //         return d.representation === question;
-    //     //     }));
-    //
-    //     // text.insert("h5", ":first-child").text(question);
-    //
-    //     var row = question_container.enter()
-    //         .append("tr");
-    //
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.community_name;
-    //
-    //         })
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.value_clean;
-    //
-    //         });
-    //
-    // }
-    //
-    // Object.keys(questions).map(function (d) {
-    //     renderSingleChoice(d);
-    // })
+    function renderSingleChoice(question) {
 
-    // Object.keys(avails).map(function (d) {
-    //     renderSingleChoice(d);
-    // })
-
-    // renderSingleChoice('#single-choice', 'comm_q66')
-    // function renderSingleChoice(question) {
-    //
-    //     var text = d3.select('#single-choice');
-    //     text.append('h5')
-    //         .text(questions[question]);
-    //
-    //
-    //     text.append('div')
-    //         .attr('id', question);
-    //
-    //
-    //     var question_container = d3.select('#' + question)
-    //         .append('table')
-    //         .attr('class', 'table')
-    //         .selectAll("table")
-    //         .data(select_one.filter(function (d) {
-    //             return d.question_name === question;
-    //         }));
-    //
-    //     // .data(select_one.filter(function (d) {
-    //     //         return d.representation === question;
-    //     //     }));
-    //
-    //     // text.insert("h5", ":first-child").text(question);
-    //
-    //     var row = question_container.enter()
-    //         .append("tr");
-    //
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.community_name;
-    //
-    //         })
-    //
-    //     row.append('td')
-    //         .text(function (d) {
-    //             return d.value_clean;
-    //
-    //         });
-    //
-    // }
-    //
-    // Object.keys(questions).map(function (d) {
-    //     renderSingleChoice(d);
-    // })
-
-    function renderSingleChoiceavail(avail) {
-
-        var text = d3.select('#services');
+        var text = d3.select('#single-choice');
         text.append('h5')
-            .text(avails[avail]);
-
+            .text(questions[question]);
 
         text.append('div')
-            .attr('id', avail);
+            .attr('id', question);
 
-        // Object.keys(avails).map(function (d) {
-        //     renderSingleChoice(d);
-        // })
-
-        // renderSingleChoice('#single-choice', 'comm_q66')
-        // function renderSingleChoice(question) {
-        //
-        //     var text = d3.select('#single-choice');
-        //     text.append('h5')
-        //         .text(questions[question]);
-        //
-        //
-        //     text.append('div')
-        //         .attr('id', question);
-        //
-        //
-        //     var question_container = d3.select('#' + question)
-        //         .append('table')
-        //         .attr('class', 'table')
-        //         .selectAll("table")
-        //         .data(select_one.filter(function (d) {
-        //             return d.question_name === question;
-        //         }));
-        //
-        //     // .data(select_one.filter(function (d) {
-        //     //         return d.representation === question;
-        //     //     }));
-        //
-        //     // text.insert("h5", ":first-child").text(question);
-        //
-        //     var row = question_container.enter()
-        //         .append("tr");
-        //
-        //
-        //     row.append('td')
-        //         .text(function (d) {
-        //             return d.community_name;
-        //
-        //         })
-        //
-        //     row.append('td')
-        //         .text(function (d) {
-        //             return d.value_clean;
-        //
-        //         });
-        //
-        // }
-        //
-        // Object.keys(questions).map(function (d) {
-        //     renderSingleChoice(d);
-        // })
-
-        var avail_container = d3.select('#' + avail)
+        var question_container = d3.select('#' + question)
             .append('table')
             .attr('class', 'table')
             .selectAll("table")
             .data(select_one.filter(function (d) {
-                return d.question_name === avail;
+                return d.question_name === question;
             }));
+
+        var row = question_container.enter()
+            .append("tr");
+
+        row.append('td')
+            .text(function (d) {
+                return d.community_name;
+            });
+
+        row.append('td')
+            .text(function (d) {
+                return d.value_clean;
+            });
     }
+
+    Object.keys(questions).map(function (d) {
+        renderSingleChoice(d);
+    });
+
 
     function renderSingleChoiceavail(availability) {
 
-        d3.select('#services').selectAll('*').remove();
-            // .selectAll("tr").remove();
+        d3.select('#services')
+            .selectAll('*').remove();
 
         var avail_container = d3.select('#services')
             .selectAll("tbody")
             .data(availability);
 
-        var row = avail_container.enter();
         var row = avail_container
             .enter()
             .append("tr");
 
-
         row.append('td')
             .text(function (d) {
-                console.log()
                 return avails[d.question_name]
-                // return d.community_name;
-
             });
-
-        // row.append('td')
-        //     .attr(function (d) {
-        //         console.log(d.value_clean);
-        //         if (d.value_clean === 0){
-        //             return '<i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i>'
-        //         } else if (d.value_clean === 1){
-        //             // language=HTML
-        //             return '<i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"\n' +
-        //                 'data-placement="top" title="Tooltip on top"></i>'
-        //         } else {
-        //             return '<i class="fa fa-question-circle" style="color: rgb(231, 225, 52)"></i>'
-        //         }
-        //         // return d.value_clean;
-        //         return avails[d.question_name];
-        //     });
 
         var icons = {
             0: "fa fa-times-circle",
@@ -441,14 +287,9 @@ map.on('click', function (e) {
         row
             .append('td')
             .append('i')
-            .attr('class', function(d) {
+            .attr('class', function (d) {
                 return d.value_clean === '' ? 'fa fa-question-circle' : icons[d.value_clean];
             });
-
-
-    // Object.keys(avails).map(function (d) {
-    //     renderSingleChoiceavail(d);
-    // })
 
     }
 

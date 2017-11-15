@@ -15,9 +15,6 @@
     <link rel="stylesheet" type="text/css" href='{% static 'css/selectize/selectize.default.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/dc.min.css' %}'/>
     <link rel="stylesheet" type="text/css" href='{% static 'css/font-awesome.min.css' %}'/>
-
-    {#    <script src='{% static 'js/lib/mapbox-gl-draw.js' %}'></script>#}
-    {#    <link rel='stylesheet' href='{% static 'css/mapbox-gl-draw.css' %}' type='text/css'/>#}
     <script src="{% static 'lib/universe.min.js' %}"></script>
 
     <script src="{% static 'data/aba/univers.js' %}"></script>
@@ -36,6 +33,7 @@
             z-index: 9000;
 
         }
+
         #sidebar.collapse {
             -webkit-transition-timing-function: ease;
             -o-transition-timing-function: ease;
@@ -102,6 +100,10 @@
             color: rgb(231, 225, 52)
         }
 
+        {#        .c3-axis-y .tick {#}
+        {#            display: none;#}
+        {#        }#}
+
     </style>
     <script src="{% static 'lib/plotly-latest.min.js' %}"></script>
 {% endblock libs %}
@@ -111,7 +113,6 @@
 
     <div class="loader" id="loader"></div>
 
-{#    <a href="#sidebar" data-toggle="collapse" id="sidebar-toggle"><i class="fa fa-navicon fa-lg"></i></a>#}
 
     <div class="wrappers" style="width:50%">
         <div id='map-container'></div>
@@ -136,67 +137,10 @@
             <div class="filter row" id="all-info" style="display: none">
 
                 <div class="col-12">
-
                     <h5>Availability of Basic Services</h5>
-
-                    <table id="services" class="table table-sm">
-                        <thead>
-
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">Police</th>
-                            <td>
-                                <i class="fa fa-check-circle" style="color: rgb(165, 201, 161)" data-toggle="tooltip"
-                                   data-placement="top" title="Tooltip on top"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Court</th>
-                            <td>
-                                <i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Hospital</th>
-                            <td>
-                                <i class="fa fa-question-circle" style="color: rgb(231, 225, 52)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Pharmacy</th>
-                            <td>
-                                <i class="fa fa-times-circle" style="color: rgb(238, 88, 89)"></i>
-                            </td>
-                        </tr>
-{#                        <tr>#}
-{#                            <th scope="row">Police</th>#}
-{#                            <td>#}
-{#                                <i class="fa fa-check-circle" data-toggle="tooltip"#}
-{#                                   data-placement="top" title="Tooltip on top"></i>#}
-{#                            </td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                            <th scope="row">Court</th>#}
-{#                            <td>#}
-{#                                <i class="fa fa-times-circle"></i>#}
-{#                            </td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                            <th scope="row">Hospital</th>#}
-{#                            <td>#}
-{#                                <i class="fa fa-question-circle"></i>#}
-{#                            </td>#}
-{#                        </tr>#}
-{#                        <tr>#}
-{#                            <th scope="row">Pharmacy</th>#}
-{#                            <td>#}
-{#                                <i class="fa fa-times-circle"></i>#}
-{#                            </td>#}
-{#                        </tr>#}
-                        </tbody>
-                    </table>
+                    <table id="services" class="table table-sm"></table>
                 </div>
+
                 <div class="col-6">
                     <h5>Key protection concerns</h5>
                     <div id="protection"></div>
@@ -255,74 +199,6 @@
         </div>
     </div>
 
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel2">Enter data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="post" action="">{% csrf_token %}
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="save">Save</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
-         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel3">Enter data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form method="post" action="">{% csrf_token %}
-                    <div class="modal-body">
-
-                        <div class="container">
-                            <table id="quest" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Question</th>
-                                    <th>Response</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="save">Save</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-
 {% endblock content %}
 
 
@@ -336,11 +212,6 @@
     <script src="{% static 'js/lib/d3-queue.v3.min.js' %}"></script>
     <script src="{% static 'js/lib/underscore-min.js' %}"></script>
     <script src="{% static 'js/lib/dc.min.js' %}"></script>
-    <style>
-        {#        .c3-axis-y .tick {#}
-        {#            display: none;#}
-        {#        }#}
-    </style>
 
     {% comment %} End JS Libraries {% endcomment %}
     <script src="{% static 'js/charting.js' %}"></script>
@@ -348,11 +219,6 @@
     <script src="{% static 'js/map-aba.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/responses/lib_functions.js' %}"></script>
-    <script>
-
-        {% static "" as baseUrl %}
-
-    </script>
 
     <script>
 
@@ -371,20 +237,13 @@
 
             $('#loader').hide();
 
-            // at this stage in data we only have points collected (1033)
-            // data.features = [].concat(data.features, polygons.features);
-            // here we have it combined with settlement polygons +(110)
-
             MapInit(polygons, buffer, centroids, settlements, bsus, wide, data, single_choice);
 
-
             var cf = crossfilter(centroids.features);
-
 
             var settlement = cf.dimension(function (d) {
                 return d.properties['KOATUU']
             });
-
 
             var filtersList = [
                 {
@@ -394,7 +253,6 @@
                 }
             ];
 
-
             filerContainers(filtersList);
 
             for (var i = 0; i < filtersList.length; i++) {
@@ -402,13 +260,9 @@
                 var container = '#' + filter.id;
                 createFilter(container, filter.dimension, settlements)
             }
-
         }
 
     </script>
 
 
 {% endblock libs2 %}
-
-
-
