@@ -9,5 +9,3 @@
 !.elasticbeanstalk/*.cfg.yml
 
 !.elasticbeanstalk/*.global.yml
-
-*/migrations/*
