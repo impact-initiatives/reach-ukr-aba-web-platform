@@ -252,6 +252,9 @@ map.on('click', function (e) {
 
         row.append('td')
             .text(function (d) {
+                if (d.value_clean === '') {
+                    return 'No information'
+                }
                 return d.value_clean;
             });
     }
