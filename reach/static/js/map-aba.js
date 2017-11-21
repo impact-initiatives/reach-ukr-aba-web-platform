@@ -220,49 +220,10 @@ map.on('click', function (e) {
         comm_q71: 'Are psycho-social support services available in the community?',
         comm_q72: 'At which frequency has the community experienced shelling in the last 3 months?',
         comm_q73: 'What is the primary source of drinking water in the community?',
-        comm_q74: 'Do most households treat the water before drinking?'
+        // comm_q74: 'Do most households treat the water before drinking?'
+        comm_q74: 'How many households treat the water before drinking?'
 
     };
-
-
-    function renderSingleChoice(question) {
-
-        var text = d3.select('#single-choice');
-        text.append('h5')
-            .text(questions[question]);
-
-        text.append('div')
-            .attr('id', question);
-
-        var question_container = d3.select('#' + question)
-            .append('table')
-            .attr('class', 'table')
-            .selectAll("table")
-            .data(select_one.filter(function (d) {
-                return d.question_name === question;
-            }));
-
-        var row = question_container.enter()
-            .append("tr");
-
-        row.append('td')
-            .text(function (d) {
-                return d.community_name;
-            });
-
-        row.append('td')
-            .text(function (d) {
-                if (d.value_clean === '') {
-                    return 'No information'
-                }
-                return d.value_clean;
-            });
-    }
-
-    Object.keys(questions).map(function (d) {
-        renderSingleChoice(d);
-    });
-
 
     function renderSingleChoiceavail(availability) {
 
@@ -287,8 +248,7 @@ map.on('click', function (e) {
             1: "fa fa-check-circle"
         };
 
-        row
-            .append('td')
+        row.append('td')
             .append('i')
             .attr('class', function (d) {
                 return d.value_clean === '' ? 'fa fa-question-circle' : icons[d.value_clean];
@@ -298,6 +258,52 @@ map.on('click', function (e) {
 
     renderSingleChoiceavail(select_one.filter(function (d) {
         return Object.keys(avails).indexOf(d.question_name) !== -1
-    }))
+    }));
+
+
+    function renderSingleChoice(question) {
+
+        var so = select_one.filter(function (d) {
+                return d.question_name === question;
+            });
+
+        if (so.length) {
+            var text = d3.select('#single-choice');
+            text.append('h5')
+                .text(questions[question]);
+
+            text.append('div')
+                .attr('id', question);
+
+            var question_container = d3.select('#' + question)
+                .append('table')
+                .attr('class', 'table')
+                .selectAll("table")
+                .data(so);
+
+            var row = question_container.enter()
+                .append("tr");
+
+            row.append('td')
+                .text(function (d) {
+                    return d.community_name;
+                });
+
+            row.append('td')
+                .attr('align', 'center')
+                .attr('width', '40%')
+                .text(function (d) {
+                    if (d.value_clean === '') {
+                        return 'No information'
+                    }
+                    return d.value_clean;
+                });
+
+        }
+    }
+
+    Object.keys(questions).map(function (d) {
+        renderSingleChoice(d);
+    });
 
 });
